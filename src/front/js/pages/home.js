@@ -1,24 +1,36 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
-import "../../styles/home.scss";
+import ScriptTag from "react-script-tag";
+import { Carta } from "../component/Cards";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
-
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
+		<div>
+			<div className="jumbotron jumbotron-fluid">
+				<div className="container">
+					<h1 className="display-2">
+						A Brand New Way <br />
+						to Access Your <br />
+						Favorite Cocktail <br /> Recipes
+					</h1>
+					<a className="btn btn-primary btn-lg" href="#" role="button">
+						Get Started
+					</a>
+				</div>
+			</div>
+
+			<br />
+			<div
+				className="cards d-flex justify-content-center"
+				data-aos="fade-zoom-in"
+				data-aos-offset="200"
+				data-aos-easing="ease-in-sine"
+				data-aos-duration="600">
+				<Carta />
+				<Carta />
+				<Carta />
+				<ScriptTag src="/workspace/Final-Project-/node_modules/aos/dist/aos.js" />
+			</div>
 		</div>
 	);
 };

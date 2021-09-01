@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&family=Lora:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+// @import url('~aos/src/sass/_animations.scss');
+// @import url('~aos/src/sass/_easing.scss');
+
+body{
+    // background-image: url(https://miro.medium.com/max/1000/1*y-_byCrjIpAhg0SrHjIRTg.jpeg);
+    // color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-x:hidden;
+}
+
+
+.jumbotron{
+    // background-position: 0% 25%;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) ,
+    url("https://miro.medium.com/max/1000/1*y-_byCrjIpAhg0SrHjIRTg.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 5in;
+}
+
+.display-2{
+    color: white;
+    font-size: 55px;
+    text-align:inherit;
+    padding-bottom: 40px;
+}
+
+.btn{
+    font-size: 0.9rem;
+    background-color: firebrick;
+    border: none;
+}
+// .jumbotron:hover{
+//     opacity: 0.5;
+// }
+
+.background1{
+    background-color: beige;
+}
+
+.first-title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.image{
+    width: 50%;
+}
+
+.about{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.image-effect{
+    transition-duration: 0.5s;
+}
+
+.cards{
+    transition-duration: 0.3s;
+}
+
+.card-title{
+    font-size: 100px;
+}
+
+// .navbar-toggler{
+//     background: black;
+//     color: white;
+// }
+
+// .navbar-toggler-icon{
+//     background: white;
+// }
+
+.m-auto{
+    // border: 2px solid #92a39a;
+    // box-shadow: 10px 5px 5px #b97747;
+    background-color: grey;
+
+}
+
+
+.login-text{
+    color: white;
+    text-decoration-color: blue; 
+}
+
+.login-text:hover{
+    color: black;
+    text-decoration-color: #2c2521;  
+}
+
+.sign-in-btn{
+    background: #2c2521;
+    color:white;
+}
+
+.sign-in-btn:hover{
+    background: #3b302a ;
+    color: #92a39a;
+}
+
+.navbar-color{
+    background: #704837;
+}
+.logo-color{
+    transform: skewY(5deg);
+    color: #2c2521;
+}
+.item-color{
+    color: #2c2521;
+}
+
+.contact{
+    width: 35em;
+}
+
+// Color for Account
+.account-color {
+    background:#3b302a;
+}
+.text-color {
+    color: #92a39a;
+}
+
+.account-card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0,0,0,0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.account-btn{
+    background: #2c2521;
+    color:white;
+}
+
+.account-btn:hover{
+    background: #3b302a ;
+    color: #92a39a;
+}
