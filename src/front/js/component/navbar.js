@@ -23,19 +23,14 @@ export const NavBar = () => {
 							Home
 						</Link>
 					</Nav.Link>
-					<Nav.Link href="#aboutus">
-						<Link to="/aboutus" className="nav-link item-color" href="#">
-							About Us
-						</Link>
-					</Nav.Link>
-					<Nav.Link href="#contact">
-						<Link to="/contact" className="nav-link item-color" href="#">
-							Contact
-						</Link>
-					</Nav.Link>
 					<Nav.Link href="#login">
 						<Link to="/login" className="nav-link item-color" href="#">
 							Log In
+						</Link>
+					</Nav.Link>
+					<Nav.Link href="#signup">
+						<Link to="/signup" className="nav-link item-color" href="#">
+							Sign Up
 						</Link>
 					</Nav.Link>
 				</Nav>

@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
-import { Contact } from "./pages/contact";
+import { Contact } from "./component/Contact";
 import { Account } from "./pages/account";
 import { Single } from "./pages/single";
 import { Signup } from "./pages/signup";
 import { Login } from "./pages/login";
-import { Aboutus } from "./pages/aboutus";
+import { Aboutus } from "./component/AboutUs";
 import injectContext from "./store/appContext";
 
 import { NavBar } from "./component/navbar";
