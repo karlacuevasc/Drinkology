@@ -5,24 +5,26 @@ import { Carta } from "../component/Cards";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import { Button } from "react-bootstrap";
 import { Aboutus } from "../component/AboutUs";
 import { Contact } from "../component/Contact";
+import { Banner } from "../component/jumbotron";
 
 export const Home = () => {
 	return (
 		<div>
-			<div className="jumbotron jumbotron-fluid">
+			<div>
+				<Banner />
+			</div>
+			<br />
+			<div className="black-rectangle">
 				<Container>
 					<Row>
 						<Col>
-							<h1 className="display-2">Insert Text</h1>
-							<Button>Show More</Button>
+							<h1 className="text">A Brand New Way To Access Your Favorite Cocktail Recipes</h1>
 						</Col>
 					</Row>
 				</Container>
 			</div>
-			<br />
 			<div
 				className="cards d-flex justify-content-center"
 				data-aos="fade-zoom-in"

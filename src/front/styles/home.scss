@@ -10,35 +10,36 @@ body{
     overflow-x:hidden;
 }
 
+// Style for Jumbotron
 
 .jumbotron{
     // background-position: 0% 25%;
     background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) ,
-    url("https://miro.medium.com/max/1000/1*y-_byCrjIpAhg0SrHjIRTg.jpeg");
+    // linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) ,
+    url("../img/cocktail4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 5in;
+
 }
 
-.display-2{
-    color: white;
-    font-size: 55px;
-    text-align:inherit;
-    padding-bottom: 40px;
-}
-
-.btn{
-    font-size: 0.9rem;
-    background-color: firebrick;
-    border: none;
-}
-// .jumbotron:hover{
-//     opacity: 0.5;
+// .display-2{
+//     color: white;
+//     font-size: 55px;
+//     text-align:inherit;
+//     padding-bottom: 40px;
 // }
 
-.background1{
-    background-color: beige;
+.black-rectangle{
+    background-color: black;
+    height: 5in;
+}
+
+.text{
+    color: white;
+    text-align: center;
+    font-size: 3.5rem;
+ 
 }
 
 .first-title{

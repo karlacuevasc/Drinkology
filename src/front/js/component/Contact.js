@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
+import "../../styles/contact.scss";
 import { Link } from "react-router-dom";
+import "../../styles/contact.scss";
 
 import { Context } from "../store/appContext";
 
@@ -7,67 +9,60 @@ export const Contact = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container text-center">
-			<div className="text-center">
-				<h2>Contact US</h2>
+		<div className="background">
+			<div className="contact">
+				<div className="text-center">
+					<h2>Contact US</h2>
+				</div>
+				<div>
+					<form className="text-center">
+						<div className="row d-block">
+							<div className="mb-4 center col">
+								<input
+									type="text"
+									className="form-control contact"
+									id="formGroupExampleInput"
+									placeholder="First Name"
+								/>
+							</div>
+							<div className="mb-4 col">
+								<input
+									type="text"
+									className="form-control contact"
+									id="formGroupExampleInput"
+									placeholder="Last Name"
+								/>
+							</div>
+							<div className="mb-4 col">
+								<input
+									type="email"
+									className="form-control contact"
+									id="formGroupExampleInput"
+									placeholder="Email"
+								/>
+							</div>
+							<div className="textarea mb-2 col">
+								<label htmlFor="ControlTextarea" className="form-label">
+									<h3>Message</h3>
+								</label>
+								<textarea
+									rows="4"
+									type="textarea"
+									className="form-control contact"
+									id="formGroupExampleInput"
+									placeholder="Enter Your Message"
+								/>
+							</div>
+						</div>
+					</form>
+				</div>
+				<br />
+				<button className="send btn btn-light">Submit</button>
+				<br />
+				{/* <Link to="/">
+					<button className="btn btn-primary">Back home</button>
+				</Link> */}
 			</div>
-			<div>
-				<form className="text-center">
-					<div className="row d-block">
-						<div className="mb-4 center col-6">
-							<label htmlFor="formGroupExampleInput" className="form-label">
-								<h3>First Name</h3>
-							</label>
-							<input
-								type="text"
-								className="form-control contact"
-								id="formGroupExampleInput"
-								placeholder="Enter Your First Name"
-							/>
-						</div>
-						<div className="mb-4 col-6">
-							<label htmlFor="formGroupExampleInput" className="form-label">
-								<h3>Last Name</h3>
-							</label>
-							<input
-								type="text"
-								className="form-control contact"
-								id="formGroupExampleInput"
-								placeholder="Enter Your Last Name"
-							/>
-						</div>
-						<div className="mb-4 col-6">
-							<label htmlFor="inputEmail3" className="form-label">
-								<h3>Email</h3>
-							</label>
-							<input
-								type="email"
-								className="form-control contact"
-								id="formGroupExampleInput"
-								placeholder="Enter Your Email"
-							/>
-						</div>
-						<div className="textarea mb-2 col-12">
-							<label htmlFor="ControlTextarea" className="form-label">
-								<h3>Message</h3>
-							</label>
-							<textarea
-								rows="15"
-								type="textarea"
-								className="form-control contact"
-								id="formGroupExampleInput"
-								placeholder="Enter Your Message"
-							/>
-						</div>
-					</div>
-				</form>
-			</div>
-			<br />
-			<button className="btn btn-light">Send</button>
-			<br />
-			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
-			</Link>
 		</div>
 	);
 };

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { Container } from "react-bootstrap";
+import Logo from "../../img/logo.png";
 
 import "../../styles/navbar.scss";
 
