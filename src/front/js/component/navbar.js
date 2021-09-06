@@ -29,11 +29,11 @@ export const NavBar = () => {
 							Log In
 						</Link>
 					</Nav.Link>
-					<Nav.Link href="#signup">
+					{/* <Nav.Link href="#signup">
 						<Link to="/signup" className="nav-link item-color" href="#">
 							Sign Up
 						</Link>
-					</Nav.Link>
+					</Nav.Link> */}
 				</Nav>
 			</Container>
 		</Navbar>
