@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import Alcohol from "../../img/cocktail2.jpeg";
 import ScriptTag from "react-script-tag";
 import { Context } from "../store/appContext";
+import "../../styles/aboutus.scss";
 
 export const Aboutus = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className=" d-flex">
+		<div className="d-flex">
 			<img className="image container-lg img-fluid" src={Alcohol} />
 
 			<div>
@@ -22,9 +23,6 @@ export const Aboutus = () => {
 						their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
 						purpose (injected humour and the like).
 					</p>
-					<a href="#" className="btn btn-primary">
-						Go somewhere
-					</a>
 					<ScriptTag src="/workspace/Final-Project-/node_modules/aos/dist/aos.js" />
 				</div>
 			</div>

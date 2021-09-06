@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import "../../styles/contact.scss";
+// import "../../styles/contact.scss";
 import { Link } from "react-router-dom";
 import "../../styles/contact.scss";
 
@@ -10,9 +10,9 @@ export const Contact = () => {
 
 	return (
 		<div className="background">
-			<div className="contact">
+			<div className="contact p-5 m-auto col-6">
 				<div className="text-center">
-					<h2>Contact US</h2>
+					<h2>Questions? Feel Free To Send Us a Message!</h2>
 				</div>
 				<div>
 					<form className="text-center">
@@ -57,7 +57,9 @@ export const Contact = () => {
 					</form>
 				</div>
 				<br />
-				<button className="send btn btn-light">Submit</button>
+				<div className="text-center">
+					<button>Send</button>
+				</div>
 				<br />
 				{/* <Link to="/">
 					<button className="btn btn-primary">Back home</button>

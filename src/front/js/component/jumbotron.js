@@ -5,17 +5,12 @@ import { Col } from "react-bootstrap";
 import Logo from "../../img/logo.png";
 import Image from "react-bootstrap/Image";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../../styles/jumbotron.scss";
 
 export const Banner = () => {
 	return (
 		<div className="jumbotron m-0 jumbotron-fluid">
-			<Container>
-				<Row>
-					<Col>
-						<image className="display-2" src={Logo} />
-					</Col>
-				</Row>
-			</Container>
+			<Container>{/* <Image className="l-image" src={Logo} /> */}</Container>
 		</div>
 	);
 };

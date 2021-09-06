@@ -14,7 +14,7 @@ export const NavBar = () => {
 				<Navbar.Brand href="#home">
 					<Link to="/">
 						<span className="navbar-brand mb-0 h1" href="#">
-							<i className="pl-3 fas fa-glass-martini-alt fa-2x logo-color" />
+							<img src={Logo} className="logo" />
 						</span>
 					</Link>
 				</Navbar.Brand>
