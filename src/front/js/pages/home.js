@@ -39,7 +39,7 @@ export const Home = () => {
 			</div>
 			<br />
 			<br />
-			<div className="black-rectangle">
+			{/* <div className="black-rectangle">
 				<Container>
 					<Row>
 						<Col>
@@ -47,11 +47,11 @@ export const Home = () => {
 						</Col>
 					</Row>
 				</Container>
-			</div>
-			<Aboutus />
+			</div> */}
+			{/* <Aboutus /> */}
 			<br />
 			<br />
-			<Contact />
+			{/* <Contact /> */}
 		</div>
 	);
 };
