@@ -9,11 +9,11 @@ export const Signup = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="vh-100" style={{ backgroundColor: "#508bfc" }}>
+		<div className="signupBackground vh-100">
 			<div className="container py-5 h-100">
 				<div className="row d-flex justify-content-center align-items-center h-100">
 					<div className="col-12 col-md-8 col-lg-6 col-xl-5">
-						<div className="card shadow-2-strong" style={{ borderRadius: "1rem" }}>
+						<div className="card signupCardBackground shadow-2-strong" style={{ borderRadius: "1rem" }}>
 							<div className="card-body p-5 text-center">
 								<ul className="nav d-flex justify-content-center" id="myTab" role="tablist">
 									<li className="nav-item" role="presentation">
@@ -118,7 +118,7 @@ export const Signup = () => {
 												Remember password{" "}
 											</label>
 										</div>
-										<button className="btn btn-primary btn-lg btn-block" type="submit">
+										<button className="signupButton btn btn-primary btn-lg btn-block" type="submit">
 											Login
 										</button>
 									</form>

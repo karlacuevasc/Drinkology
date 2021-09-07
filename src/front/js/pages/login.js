@@ -9,11 +9,11 @@ export const Login = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="vh-100" style={{ backgroundColor: "#508bfc" }}>
+		<div className="loginBackground vh-100">
 			<div className="container py-5 h-100">
 				<div className="row d-flex justify-content-center align-items-center h-100">
 					<div className="col-12 col-md-8 col-lg-6 col-xl-5">
-						<div className="card shadow-2-strong" style={{ borderRadius: "1rem" }}>
+						<div className="card cardBackground shadow-2-strong" style={{ borderRadius: "1rem" }}>
 							<div className="card-body p-5 text-center">
 								<ul className="nav d-flex justify-content-center" id="myTab" role="tablist">
 									<li className="nav-item" role="presentation">
@@ -60,7 +60,7 @@ export const Login = () => {
 										<div className="form-group input-group">
 											<div className="input-group-prepend" />
 
-											<div className="email form-outline mb-4">
+											<div className="email m-auto form-outline mb-4">
 												<input
 													type="email"
 													id="typeEmailX"
@@ -71,7 +71,7 @@ export const Login = () => {
 										</div>
 										<div className="form input d-flex justify">
 											<div className="input-group-prepend" />
-											<div className="password form-outline mb-4">
+											<div className="password m-auto form-outline mb-4">
 												<input
 													type="password"
 													id="typePasswordX"
@@ -81,14 +81,14 @@ export const Login = () => {
 											</div>
 										</div>
 										{/* <!-- Checkbox --> */}
-										<div className="form-check d-flex justify-content-start mb-4">
+										<div className="form-check d-flex justify-content-start mb-4 pt-4">
 											<input
 												className="form-check-input"
 												type="checkbox"
 												value=""
 												id="form1Example3"
 											/>
-											<label className="form-check-label" htmlFor="form1Example3">
+											<label className="loginCheckbox form-check-label" htmlFor="form1Example3">
 												{" "}
 												Remember password{" "}
 											</label>
@@ -96,7 +96,7 @@ export const Login = () => {
 												<a href="#">Forgot Password</a>
 											</span>
 										</div>
-										<button className="btn btn-primary btn-lg btn-block" type="submit">
+										<button className="loginButton btn btn-primary btn-lg btn-block" type="submit">
 											Login
 										</button>
 									</form>

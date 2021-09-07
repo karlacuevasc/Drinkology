@@ -9,7 +9,7 @@ export const Aboutus = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="d-flex">
+		<div className="aboutusContainer d-flex">
 			<img className="image container-lg img-fluid" src={Alcohol} />
 
 			<div>

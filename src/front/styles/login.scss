@@ -1,10 +1,30 @@
 
+.loginBackground{
+    background-color: white;
+    
+}
+
+.cardBackground{
+    box-shadow: 5px 10px 18px #888888
+}
+
+.loginButton{
+    background-color: rgb(54, 54, 54);
+    border: none;
+}
+
+.loginButton:hover{
+    background-color: black;
+}
+
+.loginCheckbox{
+    padding-right: 15px;
+}
 
 .logInText:active{
     color: #508bfc;
 
 }
-
 
 
 .signUpText{
