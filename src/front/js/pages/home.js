@@ -26,17 +26,23 @@ export const Home = () => {
 					</Row>
 				</Container>
 			</div>
-			<div
-				className="cards d-flex justify-content-center"
+			<Row
+				className="cards justify-content-center"
 				data-aos="fade-zoom-in"
 				data-aos-offset="200"
 				data-aos-easing="ease-in-sine"
 				data-aos-duration="600">
-				<Carta />
-				<Carta />
-				<Carta />
+				<Col sm={4}>
+					<Carta />
+				</Col>
+				<Col sm={4}>
+					<Carta />
+				</Col>
+				<Col sm={4}>
+					<Carta />
+				</Col>
 				<ScriptTag src="/workspace/Final-Project-/node_modules/aos/dist/aos.js" />
-			</div>
+			</Row>
 			<br />
 			<br />
 			{/* <div className="black-rectangle">

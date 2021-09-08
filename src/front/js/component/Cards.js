@@ -10,7 +10,7 @@ import "../../styles/cards.scss";
 
 export const Carta = () => {
 	return (
-		<Card className="cartas" style={{ width: "30rem" }}>
+		<Card className="cartas">
 			{/* <Card.Img
 				variant="top"
 				src="https://images.theconversation.com/files/194291/original/file-20171113-27595-ox08qm.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"

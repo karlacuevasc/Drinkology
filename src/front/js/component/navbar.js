@@ -12,22 +12,16 @@ export const NavBar = () => {
 		<Navbar bg="light" sticky="top" variant="light">
 			<Container>
 				<Navbar.Brand href="#home">
-					<Link to="/">
-						<span className="navbar-brand mb-0 h1" href="#">
-							<img src={Logo} className="logo" />
-						</span>
-					</Link>
+					<span className="navbar-brand mb-0 h1" href="#">
+						<img src={Logo} className="logo" />
+					</span>
 				</Navbar.Brand>
 				<Nav className="me-auto">
 					<Nav.Link href="#home">
-						<Link to="/" className="nav-link item-color" aria-current="page" href="#">
-							<i className="fa fa-beer" aria-hidden="true" />
-						</Link>
+						<i className="fa fa-beer" aria-hidden="true" />
 					</Nav.Link>
 					<Nav.Link href="#login">
-						<Link to="/login" className="nav-link item-color" href="#">
-							<i className="fa fa-user" aria-hidden="true" />
-						</Link>
+						<i className="fa fa-user" aria-hidden="true" />
 					</Nav.Link>
 					{/* <Nav.Link href="#signup">
 						<Link to="/signup" className="nav-link item-color" href="#">

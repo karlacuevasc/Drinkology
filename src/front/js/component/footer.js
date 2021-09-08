@@ -30,44 +30,6 @@ export const Footer = () => {
 										</div>
 									</div>
 								</div>
-								<div className="col-md-7 col-lg-6 mt-5 mt-md-0">
-									<div className="row">
-										<div className="col-6 col-md-4 mb-4 mb-md-0">
-											<h3 className="h6 text-uppercase mb-3">Company</h3>
-											<ul className="list-unstyled">
-												<li className="mb-1">
-													<a href="#" className="text-reset">
-														About Us
-													</a>
-												</li>
-												<li className="mb-1">
-													<a href="#" className="text-reset">
-														Contact
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div className="col-md-7 col-lg-6 mt-5 mt-md-0">
-									<div className="row">
-										<div className="col-6 col-md-4 mb-4 mb-md-0">
-											<h3 className="h6 text-uppercase mb-3">Company</h3>
-											<ul className="list-unstyled">
-												<li className="mb-1">
-													<a href="#" className="text-reset">
-														About Us
-													</a>
-												</li>
-												<li className="mb-1">
-													<a href="#" className="text-reset">
-														Contact
-													</a>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
