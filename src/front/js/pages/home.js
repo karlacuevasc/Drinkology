@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, Component } from "react";
 import { Context } from "../store/appContext";
 import ScriptTag from "react-script-tag";
-import { Carta } from "../component/Cards";
-import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import { Carta } from "../component/Cards";
 import { Aboutus } from "../component/AboutUs";
 import { Contact } from "../component/Contact";
 import { Banner } from "../component/jumbotron";
