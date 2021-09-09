@@ -13,7 +13,7 @@ export const Banner = () => {
 			<Container>
 				<Row>
 					<Col>
-						<Image className="l-image" src={Logo} style={{ width: "100%" }} />
+						<Image className="l-image pr-0 pl-0" src={Logo} style={{ width: "100%" }} />
 					</Col>
 				</Row>
 			</Container>

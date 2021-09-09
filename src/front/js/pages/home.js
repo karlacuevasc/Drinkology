@@ -8,6 +8,7 @@ import { Col } from "react-bootstrap";
 import { Aboutus } from "../component/AboutUs";
 import { Contact } from "../component/Contact";
 import { Banner } from "../component/jumbotron";
+import { Welcome } from "../component/welcome";
 import "../../styles/cards.scss";
 
 export const Home = () => {
@@ -19,13 +20,8 @@ export const Home = () => {
 				</Col>
 			</Row>
 			<br />
-			<Container className="black-rectangle">
-				<Row>
-					<Col>
-						<h1 className="text">A Brand New Way To Access Your Favorite Cocktail Recipes.</h1>
-					</Col>
-				</Row>
-			</Container>
+			<Welcome />
+
 			<Row
 				className="cards"
 				data-aos="fade-zoom-in"
