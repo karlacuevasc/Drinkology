@@ -13,13 +13,11 @@ body{
 // Style for Jumbotron
 
 .jumbotron{
-    // background-position: 0% 25%;
-    background-image: 
-    // linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) ,
-    url("../img/cocktail4.jpg");
+    background-image: url("../img/cocktail4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 5in;
+    background-position: center;
+    height: 10in;
 
 }
 
@@ -33,9 +31,7 @@ body{
 .black-rectangle{
     background-color: black;
     height: 5in;
-
-  position: relative;
-
+    position: relative
 }
 
 .text{
@@ -69,10 +65,6 @@ body{
 
 .cards{
     transition-duration: 0.3s;
-}
-
-.card-title{
-    font-size: 100px;
 }
 
 // .navbar-toggler{

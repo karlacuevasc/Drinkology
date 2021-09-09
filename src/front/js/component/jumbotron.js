@@ -9,8 +9,14 @@ import "../../styles/jumbotron.scss";
 
 export const Banner = () => {
 	return (
-		<div className="jumbotron m-0 jumbotron-fluid">
-			<Container>{/* <Image className="l-image" src={Logo} /> */}</Container>
+		<div className="jumbotron p-0 m-0 jumbotron-fluid">
+			<Container>
+				<Row>
+					<Col>
+						<Image className="l-image" src={Logo} style={{ width: "100%" }} />
+					</Col>
+				</Row>
+			</Container>
 		</div>
 	);
 };

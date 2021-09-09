@@ -13,21 +13,21 @@ import "../../styles/cards.scss";
 export const Home = () => {
 	return (
 		<div>
-			<div>
-				<Banner />
-			</div>
+			<Row md={"auto"}>
+				<Col className="pr-0">
+					<Banner />
+				</Col>
+			</Row>
 			<br />
-			<div className="black-rectangle">
-				<Container>
-					<Row>
-						<Col>
-							<h1 className="text">A Brand New Way To Access Your Favorite Cocktail Recipes.</h1>
-						</Col>
-					</Row>
-				</Container>
-			</div>
+			<Container className="black-rectangle">
+				<Row>
+					<Col>
+						<h1 className="text">A Brand New Way To Access Your Favorite Cocktail Recipes.</h1>
+					</Col>
+				</Row>
+			</Container>
 			<Row
-				className="cards justify-content-center"
+				className="cards"
 				data-aos="fade-zoom-in"
 				data-aos-offset="200"
 				data-aos-easing="ease-in-sine"
@@ -43,21 +43,6 @@ export const Home = () => {
 				</Col>
 				<ScriptTag src="/workspace/Final-Project-/node_modules/aos/dist/aos.js" />
 			</Row>
-			<br />
-			<br />
-			{/* <div className="black-rectangle">
-				<Container>
-					<Row>
-						<Col>
-							<h1 className="text">About Us</h1>
-						</Col>
-					</Row>
-				</Container>
-			</div> */}
-			{/* <Aboutus /> */}
-			<br />
-			<br />
-			{/* <Contact /> */}
 		</div>
 	);
 };
