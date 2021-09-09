@@ -1,12 +1,13 @@
 .drink{
-  background: url(https://i.ytimg.com/vi/QGJNh3utLps/maxresdefault.jpg);
-  resize:inherit;
+  // background: url(https://i.ytimg.com/vi/QGJNh3utLps/maxresdefault.jpg);
+    background-image: url("../img/cocktail4.jpg");
+    background-position: center;
 }
 
 .l-image{
   text-align: center;
   margin-top: 50vh;
-  transform: translate(-20vw,-50%);
+  transform: translate(-15vw,-50%);
 }
 
 @media only screen 

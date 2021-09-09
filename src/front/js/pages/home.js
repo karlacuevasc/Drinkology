@@ -16,7 +16,6 @@ export const Home = () => {
 		<div>
 			<Banner />
 
-			<br />
 			<Welcome />
 
 			<Row

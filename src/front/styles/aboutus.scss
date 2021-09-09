@@ -1,9 +1,39 @@
 
 
-.aboutusContainer{
-   padding-top: 10px;
+.aboutusImage{
+      background-image: url("../img/aboutus-image.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 7.5in;
+      position: relative;
+  
 }
+
+.storytitleDiv{
+   max-width: 60%;
+   height: 30vh;
+   position: absolute;
+   top: 30vh;
+   padding-left: 30px;
+}
+
 
 .storyTitle{
    font-size: 4.5rem;
+   color: white;
+
+}
+
+.storytitleDrinkology{
+   font-size: 4.5rem;
+   color: white;
+
+}
+
+.aboutusBody{
+   font-size: 2.5rem;
+   padding: 30px
+
+   ;
 }
