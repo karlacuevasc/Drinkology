@@ -1,12 +1,22 @@
+.cartica{
+    text-align: center;
+    width: calc((var(--grid-width) + var(--grid-gutter) - var(--grid-padding)*2)/var(--grid-column-count)*12 - var(--grid-gutter));
+    background-color: #EFECE8;
+    padding-top: 4.861111111111112vw;
+    padding-bottom: 4.861111111111112vw;
+}
 
+.text{
+    color: black;
+    font-size: large;
+}
 
-.logInText:active{
+.text:active{
     color: #508bfc;
 
 }
 
-
-
 .signUpText{
     color: lightgray;
 }
+
