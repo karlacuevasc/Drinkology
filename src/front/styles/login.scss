@@ -1,11 +1,14 @@
-
 .cartica{
-    box-shadow: 5px 10px 18px #888888;
     text-align: center;
+    width: calc((var(--grid-width) + var(--grid-gutter) - var(--grid-padding)*2)/var(--grid-column-count)*12 - var(--grid-gutter));
+    background-color: #EFECE8;
+    padding-top: 4.861111111111112vw;
+    padding-bottom: 4.861111111111112vw;
 }
 
 .text{
     color: black;
+    font-size: large;
 }
 
 .text:active{
@@ -16,3 +19,4 @@
 .signUpText{
     color: lightgray;
 }
+

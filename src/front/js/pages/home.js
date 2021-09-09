@@ -14,11 +14,8 @@ import "../../styles/cards.scss";
 export const Home = () => {
 	return (
 		<div>
-			<Row md={"auto"}>
-				<Col className="pr-0">
-					<Banner />
-				</Col>
-			</Row>
+			<Banner />
+
 			<br />
 			<Welcome />
 

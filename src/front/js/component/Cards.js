@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
 import "../../styles/cards.scss";
 
 export const Carta = () => {
 	return (
 		<Card className="cartas">
-			<Card.Img
+			<Image
 				variant="top"
 				src="https://images.theconversation.com/files/194291/original/file-20171113-27595-ox08qm.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
 				roundedCircle

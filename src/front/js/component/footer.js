@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import LogoWhite from "../../img/logo(white).png";
 import "../../styles/footer.scss";
 
@@ -19,10 +20,14 @@ export const Footer = () => {
 										<h1 className="company">Company</h1>
 									</div>
 									<div>
-										<h5 className="about">About</h5>
+										<Link to="/aboutus">
+											<h5 className="about">About</h5>
+										</Link>
 									</div>
 									<div>
-										<h5 className="contact">Contact</h5>
+										<Link to="/contact">
+											<h5 className="contact">Contact</h5>
+										</Link>
 									</div>
 								</Col>
 							</Row>

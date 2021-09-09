@@ -2,32 +2,42 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
+import { DropdownButton } from "react-bootstrap";
 import { Container } from "react-bootstrap";
+import { NavDropdown } from "react-bootstrap";
 import Logo from "../../img/logo.png";
 
 import "../../styles/navbar.scss";
 
 export const NavBar = () => {
 	return (
-		<Navbar bg="light" sticky="top" variant="light">
-			<Container>
-				<Navbar.Brand href="#home">
-					<span className="navbar-brand mb-0 h1" href="#">
-						{/* <img src={Logo} className="logo" /> */}
-					</span>
-				</Navbar.Brand>
-				<Nav className="me-auto">
-					<Nav.Link href="#home">
-						<i className="fa fa-beer" aria-hidden="true" />
-					</Nav.Link>
-					<Nav.Link href="#login">
-						<i className="fa fa-user" aria-hidden="true" />
-					</Nav.Link>
-					{/* <Nav.Link href="#signup">
-						<Link to="/signup" className="nav-link item-color" href="#">
-							Sign Up
-						</Link>
-					</Nav.Link> */}
+		<Navbar variant="light" bg="light" expand="lg">
+			<Container fluid>
+				<Navbar.Brand href="#home">Drinkology</Navbar.Brand>
+				<Nav className="justify-content-center" activeKey="/home">
+					<Nav.Item>
+						<Nav.Link href="/">
+							<DropdownButton id="dropdown-basic-button" variant="none" title="Home" />
+						</Nav.Link>
+					</Nav.Item>
+
+					<Nav.Item>
+						<Nav.Link href="/login">
+							<DropdownButton id="dropdown-basic-button" variant="none" title="Log In" />
+						</Nav.Link>
+					</Nav.Item>
+
+					<Nav.Item>
+						<Nav.Link href="/signup">
+							<DropdownButton id="dropdown-basic-button" variant="none" title="Sign Up" />
+						</Nav.Link>
+					</Nav.Item>
+
+					<Nav.Item>
+						<Nav.Link href="/aboutus">
+							<DropdownButton id="dropdown-basic-button" variant="none" title="About Us" />
+						</Nav.Link>
+					</Nav.Item>
 				</Nav>
 			</Container>
 		</Navbar>

@@ -13,12 +13,14 @@ export const Login = () => {
 		<div className="cartica vh-100">
 			<Nav className="justify-content-center" defaultActiveKey="/login" as="ul">
 				<Nav.Item as="li">
-					<Nav.Link variant="dark" href="/login">
+					<Nav.Link className="text" href="/login">
 						Log In
 					</Nav.Link>
 				</Nav.Item>
 				<Nav.Item as="li">
-					<Nav.Link href="/signup">Sign Up</Nav.Link>
+					<Nav.Link className="text" href="/signup">
+						Sign Up
+					</Nav.Link>
 				</Nav.Item>
 			</Nav>
 			<Form>
