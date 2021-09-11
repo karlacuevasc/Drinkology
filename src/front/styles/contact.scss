@@ -1,15 +1,37 @@
 
 .contactImage{
-    background-image: url("../img/friends.jpeg");
+    background-image: 
+    url("../img/friends.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 5in;
+    
 }
 
 .contactTitle{
     color: white;
     text-align: center;
     font-size: 3.5rem;
+}
+
+.contactFormBackground{
+    background-color: white;
+}
+
+.contactForm{
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+.fields{
+    padding: 10%;
+    padding: 5%;
+    text-align: center;
+}
+
+.contactButton{
+    width: 20%;
 }
 

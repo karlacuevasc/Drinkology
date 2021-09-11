@@ -22,28 +22,64 @@ export const Contact = () => {
 					</Container>
 				</div>
 			</Jumbotron>
-
-			<Row>
-				<Col sm={4} />
-				<Col sm={4}>
+			<div className="contactFormBackground">
+				{/* <Row>
+					<Col sm={4} />
+					<Col className="contactForm" sm={4}>
+						<Form>
+							<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+								<Form.Control type="email" placeholder="First Name" />
+							</Form.Group>
+							<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+								<Form.Control type="email" placeholder="Last Name" />
+							</Form.Group>
+							<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+								<Form.Control type="email" placeholder="Email Address" />
+							</Form.Group>
+							<Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+								<Form.Control as="textarea" rows={10} placeholder="Message" />
+							</Form.Group>
+						</Form>
+						<Button className="contactButton" variant="dark">
+							Send
+						</Button>
+					</Col>
+					<Col sm={4} />
+				</Row> */}
+				<div className="fields">
 					<Form>
-						<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-							<Form.Control type="email" placeholder="First Name" />
-						</Form.Group>
-						<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-							<Form.Control type="email" placeholder="Last Name" />
-						</Form.Group>
-						<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-							<Form.Control type="email" placeholder="Email Address" />
-						</Form.Group>
-						<Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-							<Form.Control as="textarea" rows={3} placeholder="Message" />
-						</Form.Group>
+						<Row>
+							<Col sm={4}>
+								<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+									<Form.Control type="email" placeholder="First name" />
+								</Form.Group>
+							</Col>
+							<Col sm={4}>
+								<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+									<Form.Control type="email" placeholder="Last name" />
+								</Form.Group>
+							</Col>
+							<Col sm={4}>
+								<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+									<Form.Control type="email" placeholder="email" />
+								</Form.Group>
+							</Col>
+						</Row>
 					</Form>
-					<Button variant="dark">Dark</Button>
-				</Col>
-				<Col sm={4} />
-			</Row>
+					<Form>
+						<Row>
+							<Col>
+								<Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+									<Form.Control as="textarea" rows={10} placeholder="Message" />
+								</Form.Group>
+							</Col>
+						</Row>
+					</Form>
+					<Button className="contactButton" variant="dark">
+						Send
+					</Button>
+				</div>
+			</div>
 		</>
 	);
 };
