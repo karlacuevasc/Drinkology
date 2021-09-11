@@ -1,18 +1,15 @@
 
 .contactImage{
-    background-image: url("");
+    background-image: url("../img/friends.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 5in;
 }
 
-.contactusTitle{
+.contactTitle{
+    color: white;
     text-align: center;
+    font-size: 3.5rem;
 }
 
-.contact{
-    background-color: white;
-    border-radius: 2rem;
-}
-
-.background{
-    background-color: black;
-    height: 60%;
-}
