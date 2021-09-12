@@ -1,7 +1,7 @@
 
 
 
-.black-rectangle{
+.black-rectangle-instructions{
     background-color: black;
     height: 9in;
     position: relative
@@ -9,14 +9,15 @@
 
 
 
-.textWhite{
+.textWhiteInstructions{
     color: white;
     text-align: center;
-    margin-top: 50vh;
     position: absolute;
     left: 50%;
+    top: 50vh;
     font-size: 3.5rem;
-    transform: translate(-25vw,-50%);
+    transform: translate(-50%);
+    margin: auto;
 
  
 }

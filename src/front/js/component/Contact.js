@@ -46,6 +46,10 @@ export const Contact = () => {
 					</Col>
 					<Col sm={4} />
 				</Row> */}
+				<div className="questions">
+					<p className="questionTitle">Got a question? </p>
+					<p>We would love to hear from you! Send us a message and we will respond as soon as possible.</p>
+				</div>
 				<div className="fields">
 					<Form>
 						<Row>

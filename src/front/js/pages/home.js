@@ -8,6 +8,7 @@ import { Aboutus } from "../component/AboutUs";
 import { Contact } from "../component/Contact";
 import { Banner } from "../component/jumbotron";
 import { Welcome } from "../component/welcome";
+import { Instructions } from "../component/instructions";
 import "../../styles/cards.scss";
 
 export const Home = () => {
@@ -34,6 +35,7 @@ export const Home = () => {
 				</Col>
 				<ScriptTag src="/workspace/Final-Project-/node_modules/aos/dist/aos.js" />
 			</Row>
+			<Instructions />
 		</div>
 	);
 };

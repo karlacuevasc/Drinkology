@@ -10,18 +10,43 @@
     background-color: rgb(36, 35, 34);
 }
 
-.companyPadding{
-    padding-top: 50px;
+.footerCompanySection{
+    padding-top: 4%;
 }
-
 .company{
     font-size: 1.5rem;
 }
 
 .about{
     font-size: 1rem;
+    color: white;
+    
+    
 }
+
+.about:hover{
+    color: black; 
+
+}
+
+.aboutuslink:hover { text-decoration: none; }
+
+
+.aboutuslink:active { text-decoration: none; }
+
+
 
 .contact{
     font-size: 1rem;
+    color: white;
 }
+
+.contact:hover{
+    color: black; 
+
+}
+
+.contactlink:hover { text-decoration: none; }
+
+
+.contactlink:active { text-decoration: none; }

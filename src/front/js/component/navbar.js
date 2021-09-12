@@ -13,30 +13,20 @@ export const NavBar = () => {
 	return (
 		<Navbar variant="light" bg="light" expand="lg">
 			<Container fluid>
-				<Navbar.Brand href="#home">Drinkology</Navbar.Brand>
+				<Navbar.Brand href="/">
+					<i className="fas fa-cocktail" />
+				</Navbar.Brand>
 				<Nav className="justify-content-center" activeKey="/home">
-					<Nav.Item>
-						<Nav.Link href="/">
-							<DropdownButton id="dropdown-basic-button" variant="none" title="Home" />
-						</Nav.Link>
+					<Nav.Item className="loginTab pr-3">
+						<Nav.Link href="/login">Log In</Nav.Link>
+					</Nav.Item>
+
+					<Nav.Item className="signupTab pr-3">
+						<Nav.Link href="/signup">Sign Up</Nav.Link>
 					</Nav.Item>
 
 					<Nav.Item>
-						<Nav.Link href="/login">
-							<DropdownButton id="dropdown-basic-button" variant="none" title="Log In" />
-						</Nav.Link>
-					</Nav.Item>
-
-					<Nav.Item>
-						<Nav.Link href="/signup">
-							<DropdownButton id="dropdown-basic-button" variant="none" title="Sign Up" />
-						</Nav.Link>
-					</Nav.Item>
-
-					<Nav.Item>
-						<Nav.Link href="/aboutus">
-							<DropdownButton id="dropdown-basic-button" variant="none" title="About Us" />
-						</Nav.Link>
+						<Nav.Link href="/aboutus">About Us</Nav.Link>
 					</Nav.Item>
 				</Nav>
 			</Container>
