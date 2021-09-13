@@ -1,22 +1,52 @@
-.cartica{
-    text-align: center;
-    width: calc((var(--grid-width) + var(--grid-gutter) - var(--grid-padding)*2)/var(--grid-column-count)*12 - var(--grid-gutter));
-    background-color: #EFECE8;
-    padding-top: 4.861111111111112vw;
-    padding-bottom: 4.861111111111112vw;
+// .cartica{
+//     text-align: center;
+//     width: calc((var(--grid-width) + var(--grid-gutter) - var(--grid-padding)*2)/var(--grid-column-count)*12 - var(--grid-gutter));
+//     background-color: #EFECE8;
+//     padding-top: 4.861111111111112vw;
+//     padding-bottom: 4.861111111111112vw;
+// }
+
+// .text{
+//     color: black;
+//     font-size: large;
+// }
+
+// .text:active{
+//     color: #508bfc;
+
+// }
+
+// .signUpText{
+//     color: lightgray;
+// }
+
+.loginImage{
+    background-image:  linear-gradient(217deg, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555) 70.71%), url("../img/Cocktail3.jpeg");
+
 }
 
-.text{
-    color: black;
-    font-size: large;
+
+.loginTitle{
+    font-size: 1.5rem;
+    padding-bottom: 10px;
 }
 
-.text:active{
-    color: #508bfc;
 
+.loginCardBackground{
+        box-shadow: 5px 5px 25px  #000000bb
 }
 
-.signUpText{
-    color: lightgray;
+
+.loginButton{
+    background-color: rgb(54, 54, 54);
+    border: none;
+}
+
+.loginButton:hover{
+    background-color: black;
+}
+
+.settings{
+    display: flex;
 }
 
