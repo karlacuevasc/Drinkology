@@ -1,21 +1,17 @@
-// .logInText{
-//     color: lightgray;
+.signupImage{
+    background-image:  linear-gradient(217deg, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555) 70.71%), url("../img/alcohol.jpeg");
 
-// }
-
-
-
-// .signUpText:active{
-//     color: #508bfc;
-
-// }
-
-.signupBackground{
-    background-color: white;
 }
 
+
+.signupTitle{
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+}
+
+
 .signupCardBackground{
-        box-shadow: 5px 10px 18px #888888
+        box-shadow: 5px 5px 25px  #000000bb
 }
 
 
