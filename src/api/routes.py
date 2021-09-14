@@ -11,14 +11,6 @@ from flask_jwt_extended import JWTManager
 
 api = Blueprint('api', __name__)
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend"
-    }
-
-    return jsonify(response_body), 200
 
 @api.route('/users', methods=['GET'])
 def get_users():
@@ -41,6 +33,19 @@ def get_cocktails():
 
     return jsonify(all_cocktails), 200
 
+@api.route('/cocktail', methods=["POST"])
+def new_cocktail():
+    body = request.get_json()
+
+    if body is None:
+        raise APIException("You need to specify the request body as a json object", status_code=400)
+
+    cocktail = Cocktail(name=body['name'], instructions=body['instructions'], ingredients=body['ingredients'], measurements=body['measurements'])
+    db.session.add(cocktail)
+    db.session.commit()
+
+    return jsonify(cocktail.serialize()), 200
+
 @api.route("/login", methods=["POST"])
 def login():
     username = request.json.get("username", None)
@@ -55,19 +60,6 @@ def login():
     access_token = create_access_token(identity=username)
     return jsonify(access_token=access_token)
 
-@api.route('/cocktail', methods=["POST"])
-def new_cocktail():
-    body = request.get_json()
-
-    if body is None:
-        raise APIException("You need to specify the request body as a json object", status_code=400)
-
-    cocktail = Cocktail(name=body['name'], instructions=body['instructions'], ingredients=body['ingredients'], measurements=body['measurements'])
-    db.session.add(cocktail)
-    db.session.commit()
-
-    return jsonify(cocktail.serialize()), 200
-
 @api.route('/favorites', methods=["POST"])
 def favorite_cocktail():
     body = request.get_json()
@@ -81,8 +73,17 @@ def favorite_cocktail():
 
     return jsonify(favorite.serialize()), 200
 
+@api.route('/user/<id>', methods=['DELETE'])
+def remove_user(id):
+    delete_user = User.query.get(id)
+    if delete_user is None:
+        raise APIException('Cocktail not found', status_code=404)
+    db.session.delete(delete_user)
+    db.session.commit()
+    return jsonify({"Message": "Item Removed"})
+
 @api.route('/cocktail/<id>', methods=['DELETE'])
-def remove_cocktails(id):
+def remove_cocktail(id):
     delete_cocktail = Cocktail.query.get(id)
     if delete_cocktail is None:
         raise APIException('Cocktail not found', status_code=404)

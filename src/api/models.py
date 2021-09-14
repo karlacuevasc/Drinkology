@@ -30,7 +30,9 @@ class Cocktail(db.Model):
     name = db.Column(db.String(120), unique=False, nullable=False)
     instructions = db.Column(db.String(120), unique=False, nullable=False)
     ingredients = db.Column(db.String(120), unique=False, nullable=False)
-    measurements= db.Column(db.String(120), unique=False, nullable=False)
+    measurements = db.Column(db.String(120), unique=False, nullable=False)
+    garnishes = db.Column(db.String(120), unique=False, nullable=False)
+    glassware = db.Column(db.String(120), unique=False, nullable=False)
     favorite_cocktails = db.relationship('FavoriteCocktail', backref='cocktail', lazy=True)
    
     def __repr__(self):
@@ -42,8 +44,9 @@ class Cocktail(db.Model):
             "name": self.name,
             "instructions": self.instructions,
             "ingredients": self.ingredients,
-            "measurements": self.measurements
-            # do not serialize the password, its a security breach
+            "measurements": self.measurements,
+            "garnishes": self.garnishes,
+            "glassware": self.glassware
         }
 
 class FavoriteCocktail(db.Model):
@@ -56,6 +59,4 @@ class FavoriteCocktail(db.Model):
             "id": self.id,
             "user_id": self.user_id,
             "cocktail_id": self.cocktail_id
-          
-            # do not serialize the password, its a security breach
         }
