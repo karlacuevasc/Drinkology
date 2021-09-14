@@ -13,7 +13,9 @@ export const Carta = () => {
 		<Card className="cartas">
 			<Image className="cartasImage" variant="top" src={Iphone} />
 			<Card.Body className="cartasBody">
-				<Card.Title className="title">Cocktail Recipes On The Go</Card.Title>
+				<Card.Title className="title">
+					<strong>Cocktail Recipes On The Go</strong>
+				</Card.Title>
 				<Card.Text className="body">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
@@ -27,7 +29,9 @@ export const Carta2 = () => {
 		<Card className="cartas">
 			<Image className="cartasImage" variant="top" src={Over10} />
 			<Card.Body className="cartasBody">
-				<Card.Title className="title">Over 10+ Recipe Library</Card.Title>
+				<Card.Title className="title">
+					<strong>Over 10+ Recipes Library</strong>
+				</Card.Title>
 				<Card.Text className="body">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>
@@ -41,7 +45,9 @@ export const Carta3 = () => {
 		<Card className="cartas">
 			<Image className="cartasImage" variant="top" src={Share} />
 			<Card.Body className="cartasBody">
-				<Card.Title className="title">Share With Family and Friends!</Card.Title>
+				<Card.Title className="title">
+					<strong>Share With Family and Friends!</strong>
+				</Card.Title>
 				<Card.Text className="body">
 					Some quick example text to build on the card title and make up the bulk of the cards content.
 				</Card.Text>

@@ -4,7 +4,9 @@
 .black-rectangle-instructions{
     background-color: black;
     height: 9in;
-    position: relative
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -12,12 +14,7 @@
 .textWhiteInstructions{
     color: white;
     text-align: center;
-    position: absolute;
-    left: 50%;
-    top: 50vh;
-    font-size: 3.5rem;
-    transform: translate(-50%);
-    margin: auto;
+     font-size: 3.5rem;
 
  
 }

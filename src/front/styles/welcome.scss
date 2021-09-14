@@ -4,7 +4,10 @@
 .black-rectangle{
     background-color: black;
     height: 9in;
-    position: relative
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 
@@ -12,20 +15,11 @@
 .textWhite{
     color: white;
     text-align: center;
-    margin-top: 50vh;
-    position: absolute;
-    left: 50%;
-    font-size: 3.5rem;
-    transform: translate(-25vw,-50%);
+     font-size: 3.5rem;
+
 
  
 }
 
-// @media only screen 
-//   and (min-device-width: 320px) 
-//   and (max-device-width: 480px)
-//   and (-webkit-min-device-pixel-ratio: 2) {
-//   .textWhite{
-//     transform: translate(25vw);
-//   }
-// }
+
+

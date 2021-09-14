@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+
 .m-auto{
     background-color: white;
 }
@@ -25,7 +29,7 @@
     -webkit-transform: scale(2) rotate(0deg);
     -o-transform: scale(2) rotate(0deg);
     -ms-transform: scale(2) rotate(0deg);
-    transform: scale(1.02) rotate(0deg);
+    transform: scale(1.07) rotate(0deg);
     -webkit-transition: 0.8s;
     -moz-transition: 0.8s;
     -o-transition: 0.8s;
@@ -41,6 +45,7 @@
 .title{
     text-align: center;
     font-size: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .cartasBody{

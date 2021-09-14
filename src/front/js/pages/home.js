@@ -7,10 +7,10 @@ import { Carta, Carta2, Carta3 } from "../component/Cards";
 import { Aboutus } from "../component/AboutUs";
 import { Contact } from "../component/Contact";
 import { Banner } from "../component/jumbotron";
-import { Image } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Welcome } from "../component/welcome";
 import Logo from "../../img/logo.png";
+import { DrinkologyLogo } from "../component/logo";
 import { Instructions } from "../component/instructions";
 import "../../styles/cards.scss";
 
@@ -19,14 +19,10 @@ export const Home = () => {
 		<div>
 			<Banner />
 
-			{/* <Welcome /> */}
-			<Container>
-				<Row>
-					<Col>
-						<Image src={Logo} />
-					</Col>
-				</Row>
-			</Container>
+			<DrinkologyLogo />
+
+			<Welcome />
+
 			<Row className="cards">
 				<Col sm={4}>
 					<Carta />
