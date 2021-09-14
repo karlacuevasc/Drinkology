@@ -36,8 +36,9 @@ export const Aboutus = () => {
 								you! <br />
 								<br /> Based out of Miami, FL, Drinkology was created to keep users from scrolling
 								endlessly through different sites when looking for confusing recipes that they will most
-								likely forget. Everyone who is 21+ will have the opportunity to get quick access to
-								their favorite cocktails from anywhere!{" "}
+								likely forget. Our site allows everyone who is 21+ to create a profile where they can
+								search for their favorite cocktail recipes a they will be able to will have the
+								opportunity to get quick access to their favorite cocktails from anywhere!{" "}
 							</p>
 						</div>
 					</Col>

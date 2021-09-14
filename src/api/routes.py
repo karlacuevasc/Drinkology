@@ -30,6 +30,7 @@ def get_users():
 @api.route('/user/<id>', methods=['GET'])
 def get_single_user(id):
     single_user = User.query.get(id)
+    
 
     return jsonify(single_user.serialize()), 200
 
