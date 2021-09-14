@@ -16,9 +16,20 @@
     color: white;
     text-align: center;
      font-size: 3.5rem;
-
-
  
+}
+.textWhite:hover{
+    -moz-transform: scale(2) rotate(0deg);
+    -webkit-transform: scale(2) rotate(0deg);
+    -o-transform: scale(2) rotate(0deg);
+    -ms-transform: scale(2) rotate(0deg);
+    transform: scale(1.14) rotate(0deg);
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -o-transition: 0.8s;
+    -ms-transition: 0.8s;
+    transition: 0.5s;
+    cursor: default;
 }
 
 

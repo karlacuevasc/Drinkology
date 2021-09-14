@@ -16,7 +16,7 @@ export const Welcome = () => {
 					<Container>
 						<Col>
 							<h1 className="textWhite">
-								Discover A Brand New Way To Access Your Favorite Cocktail Recipes.
+								Discover a Brand New Way to Access your Favorite Cocktail Recipes.
 							</h1>
 						</Col>
 					</Container>

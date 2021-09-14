@@ -33,7 +33,6 @@ export const Home = () => {
 				<Col sm={4}>
 					<Carta3 />
 				</Col>
-				<ScriptTag src="/workspace/Final-Project-/node_modules/aos/dist/aos.js" />
 			</Row>
 			<Instructions />
 		</div>
