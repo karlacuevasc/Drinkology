@@ -1,12 +1,12 @@
 
 
 .aboutusImage{
-      background-image: url("../img/aboutus-image.jpeg");
+      background-image: linear-gradient(217deg, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555) 70.71%),
+      url("../img/aboutus.jpeg");
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 10in;
-      position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 5in;
   
 }
 
@@ -22,16 +22,20 @@
 .storyTitle{
    font-size: 5rem;
    color: white;
+   text-align: center;
 
 }
 
 .welcomeTitle{
+   padding-top: 40px;
    text-align: center;
+   font-size: 2.5rem;
 }
 
 
 .aboutusBody{
-   font-size: 2rem;
+   font-size: 1.5rem;
    padding: 60px;
    text-align: center;
+   padding-bottom: 100px;
 }
