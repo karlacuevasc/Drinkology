@@ -6,6 +6,7 @@ import Image from "react-bootstrap/Image";
 import Iphone from "../../img/on-the-go.jpeg";
 import Over10 from "../../img/over10.jpeg";
 import Share from "../../img/share-with-friends.jpeg";
+import Lucho from "../../img/luis.jpg";
 import "../../styles/cards.scss";
 
 export const Carta = () => {
@@ -54,7 +55,7 @@ export const Carta3 = () => {
 export const Karla = () => {
 	return (
 		<Card className="cartas">
-			<Image className="cartasImage" variant="top" src={Share} />
+			<Image className="cartasImage" variant="top" />
 			<Card.Body className="cartasBody">
 				<Card.Title className="title">Karla Cuevas</Card.Title>
 				<Card.Text className="body">
@@ -68,7 +69,7 @@ export const Karla = () => {
 export const Luis = () => {
 	return (
 		<Card className="cartas">
-			<Image className="cartasImage" variant="top" src={Share} />
+			<Image className="cartasImage" variant="top" src={Lucho} style={{ width: "500px" }} />
 			<Card.Body className="cartasBody">
 				<Card.Title className="title">Luis Furlan</Card.Title>
 				<Card.Text className="body">

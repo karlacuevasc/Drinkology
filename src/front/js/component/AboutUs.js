@@ -5,7 +5,7 @@ import ScriptTag from "react-script-tag";
 import { Context } from "../store/appContext";
 import { Karla } from "../component/Cards";
 import { Luis } from "../component/Cards";
-import { Jumbotron } from "react-bootstrap";
+import { Container, Jumbotron } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Image } from "react-bootstrap";
@@ -21,7 +21,7 @@ export const Aboutus = () => {
 				<h1 className="companyTitle">Drinkology</h1>
 			</Jumbotron>
 
-			<Row>
+			<Row className="aboutus">
 				<Col sm={6} className="aboutuscontainer">
 					<h1 className="welcomeTitle">It All Started With </h1>
 					<p className="aboutusBody">
@@ -36,7 +36,7 @@ export const Aboutus = () => {
 						anywhere at anytime!{" "}
 					</p>
 				</Col>
-				<Col sm={6}>
+				<Col sm={6} className="aboutusimage">
 					<Image
 						className="firstImage"
 						src="https://media.istockphoto.com/photos/close-up-of-pouring-red-wine-into-a-glass-outdoors-picture-id1044127598?k=20&m=1044127598&s=612x612&w=0&h=ncH8Xemdp-Me-Ht1NVum2sc0tsrnBv0mCSOuJhbIKQs="
@@ -44,8 +44,8 @@ export const Aboutus = () => {
 				</Col>
 			</Row>
 
-			<Row>
-				<Col sm={6}>
+			<Row className="aboutus2">
+				<Col sm={6} className="aboutusimage2">
 					<Image
 						className="firstImage"
 						src="https://media.istockphoto.com/photos/close-up-of-pouring-red-wine-into-a-glass-outdoors-picture-id1044127598?k=20&m=1044127598&s=612x612&w=0&h=ncH8Xemdp-Me-Ht1NVum2sc0tsrnBv0mCSOuJhbIKQs="
@@ -66,6 +66,9 @@ export const Aboutus = () => {
 					</p>
 				</Col>
 			</Row>
+			<Col>
+				<h1 className="teamTitle">Meet the Team</h1>
+			</Col>
 
 			<Row className="cards">
 				<Col sm={6}>
