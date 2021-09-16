@@ -9,21 +9,11 @@ import "../../styles/welcome.scss";
 
 export const Welcome = () => {
 	return (
-		<div className="black-rectangle">
-			<Container>
-				<Row>
-					<Col />
-					<Container>
-						<Col>
-							<h1 className="textWhite">
-								Discover a Brand New Way to Access your Favorite Cocktail Recipes.
-							</h1>
-						</Col>
-					</Container>
-					<Col />
-				</Row>
-			</Container>
-		</div>
+		<Container>
+			<Col>
+				<h1 className="textWhite">Discover a Brand New Way to Access your Favorite Cocktail Recipes.</h1>
+			</Col>
+		</Container>
 
 		// <Container className="containerB" fluid>
 		// 	<div className="black-rectangle">
