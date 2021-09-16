@@ -23,17 +23,23 @@ export const Home = () => {
 
 			<Welcome />
 
-			<Row className="cards">
-				<Col sm={4}>
+			{/* <Row className="cards"> */}
+			{/* <Col sm={4}>
 					<Carta />
-				</Col>
-				<Col sm={4}>
+				</Col> */}
+			{/* <Col sm={4}>
 					<Carta2 />
-				</Col>
-				<Col sm={4}>
+				</Col> */}
+			{/* <Col sm={4}>
 					<Carta3 />
-				</Col>
-			</Row>
+				</Col> */}
+			{/* </Row> */}
+			<Carta />
+
+			<Carta2 />
+
+			<Carta3 />
+
 			<Instructions />
 		</div>
 	);

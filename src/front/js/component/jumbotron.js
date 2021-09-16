@@ -9,7 +9,9 @@ import "../../styles/jumbotron.scss";
 export const Banner = () => {
 	return (
 		<Jumbotron className="drink">
-			<Container>{/* <Image className="l-image pr-0 pl-0" src={Logo} style={{ width: "80%" }} /> */}</Container>
+			<Container>
+				<h1 className="jumboTitle">Introducing a Brand New Way to Access your Favorite Cocktail Recipes.</h1>
+			</Container>
 		</Jumbotron>
 	);
 };

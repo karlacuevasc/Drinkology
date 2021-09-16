@@ -1,7 +1,23 @@
 .drink{
-  // background: url(https://i.ytimg.com/vi/QGJNh3utLps/maxresdefault.jpg);
-    background-image: url("../img/Abbracci.png");
+  background: linear-gradient(217deg, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555) 70.71%),
+  url("../img//bartender.jpeg");
+    // background-image: url("../img/Abbracci.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
+    height: 7in;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumboTitle{
+font-size: 4rem;
+color: white;
+text-align: center;
+margin: auto;
+
 }
 
 .l-image{

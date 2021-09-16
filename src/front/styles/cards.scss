@@ -6,23 +6,50 @@
     background-color: white;
 }
 .cartas{
-    border: none;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 35px;
 }
 
 .cartasImage{
-    width: 800px;
+    width: 850px;
     height:530px;
     margin: auto;
     max-width: 100%;
+    padding-left: 50px;
     height: auto;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -o-transition: 0.4s;
     -ms-transition: 0.4s;
     transition: 0.4s;
+}
+
+.cartasImageMiddle{
+    width: 850px;
+    height:530px;
+    margin: auto;
+    max-width: 100%;
+    padding-left: 50px;
+    height: auto;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    -ms-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.cartasImageMiddle:hover{
+    -moz-transform: scale(2) rotate(0deg);
+    -webkit-transform: scale(2) rotate(0deg);
+    -o-transform: scale(2) rotate(0deg);
+    -ms-transform: scale(2) rotate(0deg);
+    transform: scale(1.07) rotate(0deg);
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -o-transition: 0.8s;
+    -ms-transition: 0.8s;
+    transition: 0.8s;
 }
 
 .cartasImage:hover{
@@ -38,23 +65,56 @@
     transition: 0.8s;
 }
 
+.cartasImageMiddle{
+    padding-right: 50px;
+}
+
 .cocktails{
     height: 300px;
     background-color: white;
 }
 
 .title{
-    text-align: center;
+    text-align: inherit;
     font-size: 40px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-bottom: 30px;
 }
 
 .cartasBody{
-    text-align: center;
-    padding-top: 80px;
     font-size: 20px;
 }
 
-.body{
-    padding-top: 20px;
+
+.cartasMiddle{
+    font-size: 20px;
+    padding-left: 50px;
+    margin: auto;
+}
+
+.cartasmiddlecontainer, .cartasbottomcontainer{
+    padding-top: 18vh
+}
+
+.cartasbottomcontainer{
+    padding-bottom: 5vh;
+}
+
+
+
+.cartasTeam{
+    border: none;
+    margin: auto;
+}
+
+.cartasImageLuis{
+    margin: auto;
+}
+
+.cartasBodyTeam{
+    text-align: center;
+}
+
+.titleTeam{
+    font-size: 2rem;
 }
