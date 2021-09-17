@@ -21,7 +21,7 @@ export const Home = () => {
 
 			<DrinkologyLogo />
 
-			<Welcome />
+			{/* <Welcome /> */}
 
 			{/* <Row className="cards"> */}
 			{/* <Col sm={4}>

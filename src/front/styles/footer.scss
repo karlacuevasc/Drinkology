@@ -1,24 +1,27 @@
-.footerParent{
+// .footerParent{
     
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+// }
 
-.footerBackground{
+// .footerBackground{
 
-    background-color: rgb(36, 35, 34);
-}
+//     background-color: rgb(36, 35, 34);
+// }
+
 
 .footerCompanySection{
-    padding-top: 4%;
-    left: 15vw;
+    margin: auto;
+    padding-left: 20%;
+    
 }
 .company{
     font-size: 1.5rem;
+    color: white;
 }
 
-.about{
+.about, .contact{
     font-size: 1rem;
     color: white;
     
@@ -37,11 +40,6 @@
 
 
 
-.contact{
-    font-size: 1rem;
-    color: white;
-}
-
 .contact:hover{
     color: black; 
 
@@ -51,3 +49,8 @@
 
 
 .contactlink:active { text-decoration: none; }
+
+.footerParent{
+    max-width: 100%; 
+    background-color: rgb(51, 51, 51);
+}

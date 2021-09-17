@@ -6,10 +6,11 @@ import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Jumbotron } from "react-bootstrap";
+import "../../styles/logo.scss";
 
 export const DrinkologyLogo = () => {
 	return (
-		<Container>
+		<Container className="logoBackground">
 			<Row>
 				<Col>
 					<Image src={Logo} />

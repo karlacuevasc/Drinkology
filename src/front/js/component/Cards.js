@@ -24,7 +24,7 @@ export const Carta = () => {
 		// 	</Card.Body>
 		// </Card>
 
-		<Row>
+		<Row className="cartasimagepadding">
 			<Col sm={6}>
 				<Image className="cartasImage" src={Iphone} />
 			</Col>
@@ -53,7 +53,7 @@ export const Carta2 = () => {
 
 		<Row className="cartasmiddlecontainer">
 			<Col sm={6} className="cartasMiddle">
-				<h1 className="title">Library Contains Over 10+ Recipes</h1>
+				<h1 className="title">Over 10+ Recipes</h1>
 				<p className="cartasBody">
 					Our exclusive library contains a variety of fun recipes that everyone will absolutely love!
 				</p>

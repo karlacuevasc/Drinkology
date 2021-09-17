@@ -55,6 +55,18 @@ export const Signup = () => {
 
 												<div className="email form-outline mb-4">
 													<input
+														type="DOB"
+														id="typeLastNameX"
+														className="form-control form-control-lg"
+														placeholder="mm/dd/yyyy"
+													/>
+												</div>
+											</div>
+											<div>
+												<div className="input-group-prepend" />
+
+												<div className="email form-outline mb-4">
+													<input
 														type="email"
 														id="typeEmailX"
 														className="form-control form-control-lg"

@@ -23,7 +23,7 @@ export const Aboutus = () => {
 
 			<Row className="aboutus">
 				<Col sm={6} className="aboutuscontainer">
-					<h1 className="welcomeTitle">It All Started With </h1>
+					<h1 className="welcomeTitle">It All Started With... </h1>
 					<p className="aboutusBody">
 						Are you are an aspiring bartender? Or are you just a fun individual who is looking to learn new
 						cocktail recipes to impress family and friends? Dont worry we are here for you! <br />

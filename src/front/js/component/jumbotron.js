@@ -10,7 +10,7 @@ export const Banner = () => {
 	return (
 		<Jumbotron className="drink">
 			<Container>
-				<h1 className="jumboTitle">Introducing a Brand New Way to Access your Favorite Cocktail Recipes.</h1>
+				<h1 className="jumboTitle">Introducing a New Way to Access your Favorite Cocktail Recipes.</h1>
 			</Container>
 		</Jumbotron>
 	);

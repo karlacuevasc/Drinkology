@@ -58,7 +58,7 @@ export const Login = () => {
 												</div>
 											</div>
 
-											<div className="form input d-flex justify">
+											<div className="form input justify">
 												<div className="input-group-prepend" />
 												<div className="password form-outline mb-4">
 													<input
@@ -81,10 +81,10 @@ export const Login = () => {
 												<label className="form-check-label" htmlFor="form1Example3">
 													{" "}
 													Remember password{" "}
-													<div>
-														<p>Forgot Password</p>
-													</div>
 												</label>
+												<div style={{ paddingLeft: "10px" }}>
+													<a href="#">Forgot Password</a>
+												</div>
 											</div>
 											<button
 												className="loginButton btn btn-primary btn-lg btn-block"
