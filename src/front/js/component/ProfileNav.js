@@ -32,16 +32,6 @@ export const ProfileNavbar = () => {
 				</li>
 			</ul>
 			<hr />
-			<div className="dropdown">
-				<a
-					href="#"
-					className="d-flex align-iems-center text-white text-decoration-none dropdown-toggle"
-					id="dropdownUser1"
-					data-bs-toggle="dropdown"
-					aria-expanded="false">
-					Fist Name
-				</a>
-			</div>
 		</div>
 	);
 };

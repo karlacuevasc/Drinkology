@@ -9,11 +9,7 @@ export const Account = () => {
 			<div>
 				<ProfileNavbar />
 			</div>
-			<div>
-				<ProfileCarta />
-				<ProfileCarta />
-				<ProfileCarta />
-				<ProfileCarta />
+			<div className="m-auto pb-5">
 				<ProfileCarta />
 			</div>
 		</div>
