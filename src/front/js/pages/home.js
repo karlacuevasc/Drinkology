@@ -17,8 +17,6 @@ export const Home = () => {
 			<Carta2 />
 
 			<Carta3 />
-
-			<Instructions />
 		</div>
 	);
 };

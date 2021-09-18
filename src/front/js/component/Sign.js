@@ -3,11 +3,21 @@ import { Context } from "../store/appContext";
 import { Container, Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import "../../styles/login.scss";
 
 export const SignIn = () => {
+	const { store, actions } = useContext(Context);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const history = useHistory();
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		actions.login(email, password, history);
+	};
+
 	return (
 		<div className="loginImage">
 			<div className="loginBackground vh-100">
@@ -18,7 +28,7 @@ export const SignIn = () => {
 								<div className="card-body p-5 text-center">
 									<ul className="nav d-flex justify-content-center" id="myTab" role="tablist" />
 									<div className="form input d-flex justify-content-center">
-										<form>
+										<form onSubmit={handleSubmit}>
 											<div>
 												<h1 className="signupTitle">Log In</h1>
 											</div>
@@ -31,6 +41,8 @@ export const SignIn = () => {
 														id="typeFirstNameX"
 														className="form-control form-control-lg"
 														placeholder="Email"
+														onChange={e => setEmail(e.target.value)}
+														value={email}
 													/>
 												</div>
 											</div>
@@ -43,6 +55,8 @@ export const SignIn = () => {
 														id="typePasswordX"
 														className="form-control form-control-lg"
 														placeholder="Password"
+														onChange={e => setPassword(e.target.value)}
+														value={password}
 													/>
 												</div>
 											</div>
