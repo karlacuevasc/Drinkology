@@ -48,16 +48,16 @@ def new_cocktail():
 
 @api.route("/login", methods=["POST"])
 def login():
-    username = request.json.get("username", None)
+    email = request.json.get("email", None)
     password = request.json.get("password", None)
-    user = User.query.filter_by(email=username).first()
+    user = User.query.filter_by(email=email).first()
     if user is None:
         return jsonify({"Message": "Please contact your administrator"}), 401
 
     if password != user.password:
         return jsonify({"Message": "Please check your credentials"}), 401
         
-    access_token = create_access_token(identity=username)
+    access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token)
 
 @api.route('/favorites', methods=["POST"])

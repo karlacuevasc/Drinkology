@@ -55,7 +55,9 @@ export const Footer = () => {
 									<h5 className="about">About</h5>
 								</Link>
 								<Link className="contactlink" to="/contact">
-									<h5 className="contact">Contact</h5>
+									<h5 style={{ width: "0px" }} className="contact">
+										Contact
+									</h5>
 								</Link>
 							</div>
 						</Col>

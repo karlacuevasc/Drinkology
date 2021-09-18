@@ -1,6 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			baseURL: "https://3001-coral-earwig-n6i85jt9.ws-us15.gitpod.io/api",
+			token: JSON.parse(localStorage.getItem("token")),
+
 			demo: [
 				{
 					title: "FIRST",
@@ -15,6 +18,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			login: async (email, password, history) => {
+				try {
+					const res = await fetch(`${getStore().baseURL}/login`, {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({ email, password })
+					});
+					if (res.ok) {
+						const token = await res.json();
+
+						localStorage.setItem("token", JSON.stringify(token));
+						history.push("/aboutus");
+					}
+				} catch (error) {
+					console.log(error);
+				}
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
