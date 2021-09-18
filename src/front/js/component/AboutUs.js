@@ -26,8 +26,9 @@ export const Aboutus = () => {
 				<Col sm={6} className="aboutuscontainer">
 					<h1 className="welcomeTitle">It All Started With... </h1>
 					<p className="aboutusBody">
-						Based out of <strong>Miami, FL</strong>, <strong>Drinkology</strong> was established in 2021 to
-						bring inspiration to those who love to get creative when making drinks.
+						Based out of <strong>Miami, FL</strong>, Luis Furlan and Karla Cuevas created{" "}
+						<strong>Drinkology</strong> in 2021 to motivate and inspire those who love to get creative when
+						making drinks.
 						<br />
 					</p>
 				</Col>

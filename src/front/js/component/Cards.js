@@ -97,7 +97,6 @@ export const Karla = () => {
 			<Image className="cartasImageKarla" variant="top" />
 			<Card.Body className="cartasBodyTeam">
 				<Card.Title className="titleTeam">Karla Cuevas</Card.Title>
-				<Card.Text className="bodyTeam">(about team member)</Card.Text>
 			</Card.Body>
 		</Card>
 	);
@@ -109,7 +108,6 @@ export const Luis = () => {
 			<Image className="cartasImageLuis" variant="top" src={Lucho} style={{ width: "500px" }} />
 			<Card.Body className="cartasBodyTeam">
 				<Card.Title className="titleTeam">Luis Furlan</Card.Title>
-				<Card.Text className="bodyTeam">(about team member)</Card.Text>
 			</Card.Body>
 		</Card>
 	);
