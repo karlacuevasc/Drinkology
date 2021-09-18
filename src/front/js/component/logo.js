@@ -1,21 +1,13 @@
 import React, { Component } from "react";
 import { Image } from "react-bootstrap";
 import Logo from "../../img/logo.png";
-import Alcohol from "../../img/aboutus-image.jpeg";
 import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Jumbotron } from "react-bootstrap";
 import "../../styles/logo.scss";
 
 export const DrinkologyLogo = () => {
 	return (
 		<Container className="logoBackground">
-			<Row>
-				<Col>
-					<Image src={Logo} />
-				</Col>
-			</Row>
+			<Image src={Logo} />
 		</Container>
 	);
 };

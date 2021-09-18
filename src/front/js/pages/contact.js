@@ -23,29 +23,6 @@ export const Contact = () => {
 				</div>
 			</Jumbotron>
 			<div className="contactFormBackground">
-				{/* <Row>
-					<Col sm={4} />
-					<Col className="contactForm" sm={4}>
-						<Form>
-							<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-								<Form.Control type="email" placeholder="First Name" />
-							</Form.Group>
-							<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-								<Form.Control type="email" placeholder="Last Name" />
-							</Form.Group>
-							<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-								<Form.Control type="email" placeholder="Email Address" />
-							</Form.Group>
-							<Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-								<Form.Control as="textarea" rows={10} placeholder="Message" />
-							</Form.Group>
-						</Form>
-						<Button className="contactButton" variant="dark">
-							Send
-						</Button>
-					</Col>
-					<Col sm={4} />
-				</Row> */}
 				<div className="questions">
 					<p className="questionTitle">Got a question? </p>
 					<p>We would love to hear from you! Send us a message and we will respond as soon as possible.</p>

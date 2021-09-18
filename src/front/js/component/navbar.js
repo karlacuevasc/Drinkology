@@ -21,15 +21,6 @@ export const NavBar = () => {
 
 				<Nav className="justify-content-center" activeKey="/home">
 					<Nav.Item className="loginTab pr-3">
-						<InputGroup className="mb-3">
-							<InputGroup.Text id="inputGroup-sizing-default">
-								<i className="fas fa-search" />
-							</InputGroup.Text>
-							<FormControl aria-label="Default" aria-describedby="inputGroup-sizing-default" />
-						</InputGroup>
-					</Nav.Item>
-
-					<Nav.Item className="loginTab pr-3">
 						<Nav.Link href="/login">Log In</Nav.Link>
 					</Nav.Item>
 
@@ -38,10 +29,25 @@ export const NavBar = () => {
 					</Nav.Item>
 
 					<Nav.Item>
-						<Nav.Link href="/aboutus">About Us</Nav.Link>
+						<Nav.Link href="/about">About</Nav.Link>
+					</Nav.Item>
+
+					<Nav.Item>
+						<Nav.Link href="/contact">Contact</Nav.Link>
 					</Nav.Item>
 				</Nav>
 			</Container>
 		</Navbar>
 	);
 };
+
+{
+	/* <Nav.Item className="loginTab pr-3">
+						<InputGroup className="mb-3">
+							<InputGroup.Text id="inputGroup-sizing-default">
+								<i className="fas fa-search" />
+							</InputGroup.Text>
+							<FormControl aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+						</InputGroup>
+					</Nav.Item> */
+}

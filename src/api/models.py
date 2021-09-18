@@ -28,7 +28,11 @@ class User(db.Model):
 class Cocktail(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)
-    instructions = db.Column(db.String(120), unique=False, nullable=False)
+    first_step = db.Column(db.String(120), unique=False, nullable=False)
+    second_step = db.Column(db.String(120), unique=False, nullable=False)
+    third_step = db.Column(db.String(120), unique=False, nullable=True)
+    fourth_step = db.Column(db.String(120), unique=False, nullable=True)
+    fifth_step = db.Column(db.String(120), unique=False, nullable=True)
     ingredients = db.Column(db.String(120), unique=False, nullable=False)
     measurements = db.Column(db.String(120), unique=False, nullable=False)
     garnishes = db.Column(db.String(120), unique=False, nullable=False)
@@ -42,7 +46,11 @@ class Cocktail(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "instructions": self.instructions,
+            "first_step": self.first_step,
+            "second_step": self.second_step,
+            "third_step": self.third_step,
+            "fourth_step": self.fourth_step,
+            "fifth_step": self.fifth_step,
             "ingredients": self.ingredients,
             "measurements": self.measurements,
             "garnishes": self.garnishes,
