@@ -74,7 +74,9 @@ export const Login = () => {
 													Remember password{" "}
 												</label>
 												<div style={{ paddingLeft: "10px" }}>
-													<a href="#">Forgot Password</a>
+													<a className="forgotPassword" href="#">
+														Forgot Password
+													</a>
 												</div>
 											</div>
 											<button

@@ -5,7 +5,7 @@ import { ProfileNavbar } from "../component/ProfileNav";
 
 export const Account = () => {
 	return (
-		<div className="d-flex">
+		<div className="">
 			<div>
 				<ProfileNavbar />
 			</div>

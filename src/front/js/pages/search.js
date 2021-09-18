@@ -11,13 +11,14 @@ import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import "../../styles/profilecard.scss";
+import "../../styles/search.scss";
 
 export const Search = () => {
 	return (
 		<Container>
-			<div className="searchCarta" style={{ width: "55rem", height: "70rem" }}>
-				<Card.Body>
-					<Form className="d-flex">
+			<div className="searchCarta">
+				<Card.Body className="cartaBody">
+					<Form className="cartaForm d-flex">
 						<FormControl type="search" placeholder="Search" className="mr-2" aria-label="Search" />
 						<Button className="searchbutton">Search</Button>
 					</Form>

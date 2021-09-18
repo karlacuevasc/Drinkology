@@ -25,28 +25,28 @@
 
 .pillstyle{
     border: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    color: black;
 }
 
 .recipespill{
     border: transparent;
-    background-color: black;
     border-radius: 5px;
+
 }
 
-
-.searchCarta{
-    margin: auto;
-    width: 60%;
-    margin-top: 10px;
-    padding: 10px;
-}
-
-.searchbutton{
+.nav-tabs .nav-link.active{
     background-color: rgb(54, 54, 54);
- border-color: transparent;
+
+    color: white;
+    border-radius: 5px;
+    border: none;
 }
 
-.searchbutton:hover{
-    background-color: black;
-    border-color: transparent;
-}
+
+
