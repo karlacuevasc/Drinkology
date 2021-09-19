@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-import Alcohol from "../../img/aboutus-image.jpeg";
-import ScriptTag from "react-script-tag";
 import { Context } from "../store/appContext";
-import { Karla } from "../component/Cards";
-import { Luis } from "../component/Cards";
-import { Container, Jumbotron } from "react-bootstrap";
+import { Karla } from "../component/AboutUsCards";
+import { Luis } from "../component/AboutUsCards";
+import { Jumbotron } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Image } from "react-bootstrap";

@@ -9,7 +9,7 @@ import { Single } from "./pages/single";
 import { Signup } from "./pages/signup";
 import { Login } from "./pages/login";
 import { Aboutus } from "./component/AboutUs";
-import { Cocktails } from "./pages/cocktails";
+import { Cocktails } from "./pages/library";
 import injectContext from "./store/appContext";
 
 import { NavBar } from "./component/navbar";
@@ -36,7 +36,7 @@ const Layout = () => {
 						<Route exact path="/signup">
 							<Signup />
 						</Route>
-						<Route exact path="/cocktails">
+						<Route exact path="/library">
 							<Cocktails />
 						</Route>
 						<Route exact path="/login">

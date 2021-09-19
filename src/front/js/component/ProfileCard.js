@@ -1,19 +1,11 @@
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Card } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
-import Iphone from "../../img/on-the-go.jpeg";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import Nav from "react-bootstrap/Nav";
-import { Container } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
-import { Search } from "../pages/search";
+import { Tab } from "react-bootstrap";
+import { Tabs } from "react-bootstrap";
+import { Search } from "./search";
+import PropTypes from "prop-types";
 import "../../styles/profilecard.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const ProfileCarta = () => {
 	return (
@@ -36,4 +28,13 @@ export const ProfileCarta = () => {
 			</Tab>
 		</Tabs>
 	);
+};
+
+ProfileCarta.propTypes = {
+	name: PropTypes.string,
+	gender: PropTypes.string,
+	hair_color: PropTypes.string,
+	eye_color: PropTypes.string,
+	i: PropTypes.string,
+	source: PropTypes.string
 };

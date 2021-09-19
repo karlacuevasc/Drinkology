@@ -1,38 +1,54 @@
-import React, { useContext, useEffect, Component } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Card } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
-import Iphone from "../../img/on-the-go.jpeg";
-import Over10 from "../../img/over10.jpeg";
-import Share from "../../img/share-with-friends.jpeg";
-import Lucho from "../../img/luis.jpg";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
+import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import "../../styles/cards.scss";
+import PropTypes from "prop-types";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-export const Cocktails = () => {
+export const Cocktails = props => {
+	const { store, actions } = useContext(Context);
+	const params = useParams();
 	return (
-		// <Card className="cartas">
-		// 	<Image className="cartasImage" variant="top" src={Over10} />
-		// 	<Card.Body className="cartasBody">
-		// 		<Card.Title className="title">Library Contains Over 10+ Recipes </Card.Title>
-		// 		<Card.Text className="body">
-		// 			Our exclusive library contains a variety of fun recipes that everyone will absolutely love!
-		// 		</Card.Text>
-		// 	</Card.Body>
-		// </Card>
-
-		<Row className="cartasmiddlecontainer">
-			<Col sm={6} className="cartasMiddle">
-				<h1 className="title">Over 10+ Recipes</h1>
-				<p className="cartasBody">
-					Our exclusive library contains a variety of fun recipes that everyone will absolutely love!
-				</p>
-			</Col>
-			<Col sm={6}>
-				<Image className="cartasImageMiddle pl-0" src={Over10} />
-			</Col>
-		</Row>
+		<div className="main">
+			<div className="d-flex">
+				<div>
+					<img
+						className="charimage"
+						src="https://lumiere-a.akamaihd.net/v1/images/quasar-fire-class-cruiser-carrier-169_26592dcb.jpeg?region=0%2C0%2C1560%2C878&width=1536"
+					/>
+				</div>
+				<div>
+					<h1 className="display-4">{store.starships[params.theid].name}</h1>
+					<h4 className="chartext">
+						Sed ut perspiciatis unde onis iste natus error sit voluptatem accusantium doloremque laudantium,
+						totam rem aperiam, aeque ipsa quae ab illoinventore veritatis et quasi architecto beatae vitae
+						dicta sunt explicabo. Nemo enim ipsma voluptatem quia voluptas sit aspernatur aut odit aut
+						fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi{" "}
+					</h4>
+				</div>
+			</div>
+			<hr className="line" />
+			<Container>
+				<Row>
+					{/* <Col sm={2}><div className="col-6 col-sm-2">{store.starships[params.theid].vehicle_class || "NA"}</div></Col> */}
+					<Col sm={2} />
+					<Col sm={2} />
+					<Col sm={2} />
+					<Col sm={2} />
+					<Col sm={2} />
+					<Col sm={2} />
+				</Row>
+				<Row>
+					<Col sm={2} />
+					<Col sm={2} />
+					<Col sm={2} />
+					<Col sm={2} />
+					<Col sm={2} />
+					<Col sm={2} />
+				</Row>
+			</Container>
+		</div>
 	);
 };

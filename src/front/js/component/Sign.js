@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Container, Form } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import { Nav } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import Image from "react-bootstrap/Image";
+import { useHistory } from "react-router-dom";
 import "../../styles/login.scss";
 
 export const SignIn = () => {

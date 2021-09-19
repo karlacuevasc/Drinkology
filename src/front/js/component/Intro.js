@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Container } from "react-bootstrap";
-import { Image } from "react-bootstrap";
 import { Jumbotron } from "react-bootstrap";
-import Logo from "../../img/logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/jumbotron.scss";
 
