@@ -9,7 +9,8 @@ import { Single } from "./pages/single";
 import { Signup } from "./pages/signup";
 import { Login } from "./pages/login";
 import { Aboutus } from "./pages/AboutUs";
-import { Cocktails } from "./pages/library";
+import { Library } from "./pages/library";
+import { CocktailsInfo } from "./pages/cocktails";
 import injectContext from "./store/appContext";
 
 import { NavBar } from "./component/navbar";
@@ -30,14 +31,14 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/cocktail/:theid">
-							<Single />
+						<Route exact path="/cocktails/:theid">
+							<CocktailsInfo />
 						</Route>
 						<Route exact path="/signup">
 							<Signup />
 						</Route>
 						<Route exact path="/library">
-							<Cocktails />
+							<Library />
 						</Route>
 						<Route exact path="/login">
 							<Login />

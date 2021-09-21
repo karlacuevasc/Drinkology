@@ -7,7 +7,7 @@ import { Col } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const CocktailsRecipeCard = props => {
+export const CocktailsInfo = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
@@ -53,6 +53,6 @@ export const CocktailsRecipeCard = props => {
 	);
 };
 
-CocktailsRecipeCard.propTypes = {
+CocktailsInfo.propTypes = {
 	match: PropTypes.object
 };

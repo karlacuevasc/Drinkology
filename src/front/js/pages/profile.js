@@ -4,9 +4,8 @@ import { Link } from "react-router-dom";
 import { Tab } from "react-bootstrap";
 import { Tabs } from "react-bootstrap";
 import { Search } from "../component/search";
-import { ProfileCarta } from "../component/ProfileCard";
+import { ProfileCarta } from "../component/ProfileCards";
 import { ProfileNavbar } from "../component/ProfileNav";
-import { Drink } from "../component/LibraryCards";
 
 export const Account = () => {
 	const { store } = useContext(Context);
@@ -20,19 +19,25 @@ export const Account = () => {
 					<div className="scroll">
 						{store.filteredCocktails.map((cocktail, i) => {
 							return (
-								<Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />
+								<ProfileCarta
+									key={i}
+									strDrink={cocktail.strDrink}
+									strDrinkThumb={cocktail.strDrinkThumb}
+									idDrink={cocktail.idDrink}
+								/>
 							);
 						})}
 					</div>
 					{store.filteredCocktails.length === 0 && (
 						<>
 							<div className="scroll">
-								{store.random.map((cocktail, i) => {
+								{store.cocktails.map((cocktail, i) => {
 									return (
-										<Drink
+										<ProfileCarta
 											key={i}
 											strDrink={cocktail.strDrink}
 											strDrinkThumb={cocktail.strDrinkThumb}
+											idDrink={cocktail.idDrink}
 										/>
 									);
 								})}
@@ -41,10 +46,11 @@ export const Account = () => {
 							<div className="scroll">
 								{store.alcoholic.map((cocktail, i) => {
 									return (
-										<Drink
+										<ProfileCarta
 											key={i}
 											strDrink={cocktail.strDrink}
 											strDrinkThumb={cocktail.strDrinkThumb}
+											idDrink={cocktail.idDrink}
 										/>
 									);
 								})}
@@ -52,10 +58,11 @@ export const Account = () => {
 							<div className="scroll">
 								{store.nonAlcoholic.map((cocktail, i) => {
 									return (
-										<Drink
+										<ProfileCarta
 											key={i}
 											strDrink={cocktail.strDrink}
 											strDrinkThumb={cocktail.strDrinkThumb}
+											idDrink={cocktail.idDrink}
 										/>
 									);
 								})}
@@ -64,6 +71,10 @@ export const Account = () => {
 					)}
 				</Tab>
 			</Tabs>
+			<br />
+			<br />
+			<br />
+			<br />
 		</div>
 	);
 };

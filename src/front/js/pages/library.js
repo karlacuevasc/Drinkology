@@ -14,7 +14,7 @@ import Miami from "../../img/miami.jpeg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/library.scss";
 
-export const Cocktails = props => {
+export const Library = props => {
 	const { store } = useContext(Context);
 	return (
 		<div>
