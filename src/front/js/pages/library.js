@@ -18,7 +18,7 @@ export const Cocktails = () => {
 				<h1 className="cocktailbarTitle">Cocktail Bar</h1>
 			</Jumbotron>
 			<div className="scroll">
-				{store.cocktails.map((cocktail, i) => {
+				{store.random.map((cocktail, i) => {
 					return <Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />;
 				})}
 			</div>

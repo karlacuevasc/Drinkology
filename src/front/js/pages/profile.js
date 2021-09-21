@@ -18,26 +18,50 @@ export const Account = () => {
 				<Tab eventKey="profile" title="Search" className="searchPill">
 					<Search />
 					<div className="scroll">
-						{store.cocktails.map((cocktail, i) => {
+						{store.filteredCocktails.map((cocktail, i) => {
 							return (
 								<Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />
 							);
 						})}
 					</div>
-					<div className="scroll">
-						{store.alcoholic.map((cocktail, i) => {
-							return (
-								<Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />
-							);
-						})}
-					</div>
-					<div className="scroll">
-						{store.nonAlcoholic.map((cocktail, i) => {
-							return (
-								<Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />
-							);
-						})}
-					</div>
+					{store.filteredCocktails.length === 0 && (
+						<>
+							<div className="scroll">
+								{store.random.map((cocktail, i) => {
+									return (
+										<Drink
+											key={i}
+											strDrink={cocktail.strDrink}
+											strDrinkThumb={cocktail.strDrinkThumb}
+										/>
+									);
+								})}
+							</div>
+							<h1>Alcoholic</h1>
+							<div className="scroll">
+								{store.alcoholic.map((cocktail, i) => {
+									return (
+										<Drink
+											key={i}
+											strDrink={cocktail.strDrink}
+											strDrinkThumb={cocktail.strDrinkThumb}
+										/>
+									);
+								})}
+							</div>
+							<div className="scroll">
+								{store.nonAlcoholic.map((cocktail, i) => {
+									return (
+										<Drink
+											key={i}
+											strDrink={cocktail.strDrink}
+											strDrinkThumb={cocktail.strDrinkThumb}
+										/>
+									);
+								})}
+							</div>
+						</>
+					)}
 				</Tab>
 			</Tabs>
 		</div>
