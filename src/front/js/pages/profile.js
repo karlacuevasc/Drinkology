@@ -25,21 +25,14 @@ export const Account = () => {
 						})}
 					</div>
 					<div className="scroll">
-						{store.cocktails.map((cocktail, i) => {
+						{store.alcoholic.map((cocktail, i) => {
 							return (
 								<Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />
 							);
 						})}
 					</div>
 					<div className="scroll">
-						{store.cocktails.map((cocktail, i) => {
-							return (
-								<Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />
-							);
-						})}
-					</div>
-					<div className="scroll">
-						{store.cocktails.map((cocktail, i) => {
+						{store.nonAlcoholic.map((cocktail, i) => {
 							return (
 								<Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />
 							);

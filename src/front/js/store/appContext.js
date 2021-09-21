@@ -25,6 +25,7 @@ const injectContext = PassedComponent => {
 		useEffect(() => {
 			state.actions.cocktailsInfo();
 			state.actions.fetchalcoholicInfo();
+			state.actions.fetchnonalcoholicInfo();
 		}, []);
 
 		return (

@@ -35,6 +35,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			fetchnonalcoholicInfo: async () => {
+				const store = getStore();
+				try {
+					let waitForNonAlcoholicCocktails = await fetch(store.nonalcURL);
+					let jsonOfNonAlcoholicCocktails = await waitForNonAlcoholicCocktails.json();
+					setStore({ nonAlcoholic: jsonOfNonAlcoholicCocktails.drinks });
+				} catch (error) {
+					console.log(error);
+				}
+			},
+
 			favoritesInfo: item => {
 				let myFavorites = getStore().favorites;
 				let selected = myFavorites.find(element => element === item);
