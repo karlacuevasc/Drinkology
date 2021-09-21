@@ -7,7 +7,7 @@ import { Col } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const Cocktails = props => {
+export const CocktailsRecipeCard = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
@@ -20,7 +20,7 @@ export const Cocktails = props => {
 					/>
 				</div>
 				<div>
-					<h1 className="display-4">{store.starships[params.theid].name}</h1>
+					<h1>{params.theid}</h1>
 					<h4 className="chartext">
 						Sed ut perspiciatis unde onis iste natus error sit voluptatem accusantium doloremque laudantium,
 						totam rem aperiam, aeque ipsa quae ab illoinventore veritatis et quasi architecto beatae vitae
@@ -51,4 +51,8 @@ export const Cocktails = props => {
 			</Container>
 		</div>
 	);
+};
+
+CocktailsRecipeCard.propTypes = {
+	match: PropTypes.object
 };

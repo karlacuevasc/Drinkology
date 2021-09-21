@@ -2,15 +2,19 @@ import React, { useContext, useEffect, Component } from "react";
 import { Context } from "../store/appContext";
 import { Drink } from "../component/LibraryCards";
 import { Button } from "react-bootstrap";
+import { Link, useParams } from "react-router-dom";
+import { PropTypes } from "prop-types";
+import { CocktailsRecipeCard } from "./cocktails";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import { Jumbotron } from "react-bootstrap";
 import Miami from "../../img/miami.jpeg";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/library.scss";
 
-export const Cocktails = () => {
+export const Cocktails = props => {
 	const { store } = useContext(Context);
 	return (
 		<div>
@@ -19,17 +23,15 @@ export const Cocktails = () => {
 			</Jumbotron>
 			<div className="scroll">
 				{store.cocktails.map((cocktail, i) => {
-					return <Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />;
+					return (
+						<Link to={`cocktail/${cocktail.strDrink}`} key={i}>
+							<Drink key={i} strDrink={cocktail.strDrink} strDrinkThumb={cocktail.strDrinkThumb} />
+						</Link>
+					);
 				})}
 			</div>
 
 			<Row className="aboutus2">
-				{/* <Col sm={6} className="aboutusimage2">
-					<Image
-						className="firstImage"
-						src="https://media.istockphoto.com/photos/close-up-of-pouring-red-wine-into-a-glass-outdoors-picture-id1044127598?k=20&m=1044127598&s=612x612&w=0&h=ncH8Xemdp-Me-Ht1NVum2sc0tsrnBv0mCSOuJhbIKQs="
-					/>
-				</Col> */}
 				<Col sm={8} className="aboutuscontainer2" style={{ paddingBottom: "100px" }}>
 					<h1 className="welcomeTitle" style={{ fontSize: "5rem", textAlign: "center" }}>
 						But wait... there&#39;s more!
@@ -49,4 +51,8 @@ export const Cocktails = () => {
 			<br />
 		</div>
 	);
+};
+
+Cocktails.propTypes = {
+	strDrink: PropTypes.string
 };
