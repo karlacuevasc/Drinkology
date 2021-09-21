@@ -5,4 +5,103 @@
     overflow-x: scroll;
 }
 
+.libraryJumbo{
+  height: 4in;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: black 2px;
+}
+
+.cocktailbarTitle{
+  font-size: 4rem;
+}
+
+
+.aboutusImage{
+    background-image: linear-gradient(217deg, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555) 70.71%),
+    url("../img/aboutus.jpeg");
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 5in;
+
+}
+
+.storytitleDiv{
+ max-width: 60%;
+ height: 30vh;
+ position: absolute;
+ top: 35vh;
+ padding-left: 60px;
+}
+
+
+.storyTitle{
+ font-size: 5rem;
+ color: white;
+ text-align: center;
+}
+
+.companyTitle{
+ font-style: italic;
+ font-size: 5rem;
+ color: white;
+ text-align: center;
+}
+
+.aboutusimage{
+ text-align: center;
+}
+
+.aboutusimage2{
+ text-align: center;
+}
+
+.firstImage{
+ padding-top: 50px;
+ height: 600px;
+}
+
+.aboutuscontainer{
+ padding-top: 60px;
+ padding-left: 80px;
+ padding-right: 60px;
+ margin: auto;
+}
+
+.aboutus2{
+ padding-top: 100px;
+}
+
+.aboutuscontainer2{
+ padding-right: 80px;
+ padding-left: 60px;
+ padding-top: 60px;
+ margin: auto;
+
+}
+
+
+.teamTitle{
+ text-align: center;
+ font-size: 4rem;
+ padding-top: 130px;
+ padding-bottom: 100px;
+}
+
+.welcomeTitle{
+ padding-bottom: 40px;
+ font-size: 3rem;;
+
+
+}
+
+.aboutusBody{
+ font-size: 1.5rem;
+
+
+}
+
 

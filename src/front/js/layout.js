@@ -8,7 +8,7 @@ import { Account } from "./pages/profile";
 import { Single } from "./pages/single";
 import { Signup } from "./pages/signup";
 import { Login } from "./pages/login";
-import { Aboutus } from "./component/AboutUs";
+import { Aboutus } from "./pages/AboutUs";
 import { Cocktails } from "./pages/library";
 import injectContext from "./store/appContext";
 

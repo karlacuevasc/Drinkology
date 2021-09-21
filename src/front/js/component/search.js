@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { Container } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { FormControl } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,15 +9,11 @@ import "../../styles/search.scss";
 
 export const Search = () => {
 	return (
-		<Container>
-			<div className="searchCarta">
-				<Card.Body className="cartaBody">
-					<Form className="cartaForm d-flex">
-						<FormControl type="search" placeholder="Search" className="mr-2" aria-label="Search" />
-						<Button className="searchbutton">Search</Button>
-					</Form>
-				</Card.Body>
-			</div>
-		</Container>
+		<Card.Body className="cartaBody">
+			<Form className="cartaForm d-flex">
+				<FormControl type="search" placeholder="Search" className="mr-2" aria-label="Search" />
+				<Button className="searchbutton">Search</Button>
+			</Form>
+		</Card.Body>
 	);
 };
