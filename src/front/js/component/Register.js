@@ -9,13 +9,15 @@ export const Register = () => {
 	const [password, setPassword] = useState("");
 	const [first_name, setFirst_name] = useState("");
 	const [last_name, setLast_name] = useState("");
+	const [date, setDate] = useState("");
 	const [error, setError] = useState(null);
 	const history = useHistory();
 
 	const handleSubmit = e => {
 		e.preventDefault();
+		console.log(email, password, first_name, last_name, date);
 		actions
-			.signup(email, password, first_name, last_name)
+			.signup(email, password, first_name, last_name, date)
 			.then(() => history.push("/profile"))
 			.catch(error => {
 				setError(error);
@@ -69,10 +71,11 @@ export const Register = () => {
 
 												<div className="email form-outline mb-4">
 													<input
-														type="DOB"
+														type="date"
 														id="typeLastNameX"
 														className="form-control form-control-lg"
-														placeholder="mm/dd/yyyy"
+														onChange={e => setDate(e.target.value)}
+														value={date}
 													/>
 												</div>
 											</div>

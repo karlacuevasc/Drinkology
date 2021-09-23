@@ -62,25 +62,29 @@ def login():
 
 @api.route("/user", methods=["POST"])
 def create_user():
-    email = request.json.get("email", None)
-    password = request.json.get("password", None)
-    first_name = request.json.get("password", None)
-    last_name = request.json.get("password", None)
-    user = User.query.filter_by(email=email).first()
-    if user is None:
-        return User.query.append(email)
+    body = request.get_json()
+    print("/////////////////////", body)
+    email = body["email"]
+    password = body["password"]
+    first_name = body["first_name"]
+    last_name = body["last_name"]
+    date = body["date"]
+    user_exists = User.query.filter_by(email=email).first()
+    print("/////////////////////", user_exists)
+    if user_exists is not None:
+        raise APIException("user already exists", 400)
 
-    if password is None:
-        return User.query.append(password)
+    user = User(first_name=first_name, 
+    last_name=last_name, 
+    email=email, 
+    password=password, 
+    date=date) 
+    
+    db.session.add(user)
+    db.session.commit()
 
-    if first_name is None:
-        return User.query.append(first_name)
-        
-    if last_name is None:
-        return User.query.append(last_name)
-
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
+    
+    return jsonify(user.serialize()), 201
 
 
 @api.route('/favorites', methods=["POST"])

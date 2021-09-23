@@ -8,6 +8,7 @@ class User(db.Model):
     password = db.Column(db.String(80), unique=False, nullable=False)
     first_name = db.Column(db.String(120), unique=False, nullable=False)
     last_name = db.Column(db.String(120), unique=False, nullable=False)
+    date = db.Column(db.String(120), unique=False, nullable=False)
     favorite_cocktails = db.relationship('FavoriteCocktail', backref='user', lazy=True)
     
 
@@ -20,6 +21,7 @@ class User(db.Model):
             "email": self.email,
             "first_name": self.first_name,
             "last_name": self.last_name, 
+            "date": self.date, 
             "favorite_cocktails": list(map(lambda favorite: favorite.serialize(), self.favorite_cocktails))
             # do not serialize the password, its a security breach
         }

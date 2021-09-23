@@ -112,7 +112,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					throw Error("Wrong email or password");
 				}
 			},
-			signup: async (email, password, first_name, last_name) => {
+			signup: async (email, password, first_name, last_name, date) => {
 				console.log("I am the signup function");
 				try {
 					const res = await fetch(`${process.env.BACKEND_URL}/user`, {
@@ -120,7 +120,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						headers: {
 							"Content-Type": "application/json"
 						},
-						body: JSON.stringify({ email, password, first_name, last_name })
+						body: JSON.stringify({ email, password, first_name, last_name, date })
 					});
 					if (res.ok) {
 						const token = await res.json();
