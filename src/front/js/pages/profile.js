@@ -17,7 +17,7 @@ export const Account = () => {
 				<Tab eventKey="profile" title="Search" className="searchPill">
 					<Search />
 					<div className="scroll">
-						{store.filteredCocktails.map((cocktail, i) => {
+						{store.filteredCocktails.map((cocktail, ingredient, i) => {
 							return (
 								<ProfileCarta
 									key={i}
@@ -44,25 +44,25 @@ export const Account = () => {
 							</div>
 							<h1>Alcoholic</h1>
 							<div className="scroll">
-								{store.alcoholic.map((cocktail, i) => {
+								{store.alcoholic.map((alcoholic, i) => {
 									return (
 										<ProfileCarta
 											key={i}
-											strDrink={cocktail.strDrink}
-											strDrinkThumb={cocktail.strDrinkThumb}
-											idDrink={cocktail.idDrink}
+											strDrink={alcoholic.strDrink}
+											strDrinkThumb={alcoholic.strDrinkThumb}
+											idDrink={alcoholic.idDrink}
 										/>
 									);
 								})}
 							</div>
 							<div className="scroll">
-								{store.nonAlcoholic.map((cocktail, i) => {
+								{store.nonAlcoholic.map((nonAlcoholic, i) => {
 									return (
 										<ProfileCarta
 											key={i}
-											strDrink={cocktail.strDrink}
-											strDrinkThumb={cocktail.strDrinkThumb}
-											idDrink={cocktail.idDrink}
+											strDrink={nonAlcoholic.strDrink}
+											strDrinkThumb={nonAlcoholic.strDrinkThumb}
+											idDrink={nonAlcoholic.idDrink}
 										/>
 									);
 								})}

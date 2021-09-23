@@ -23,7 +23,7 @@ export const Footer = () => {
 								<h1 className="company">Company</h1>
 							</div>
 							<div>
-								<Link className="aboutuslink" to="/aboutus">
+								<Link className="aboutuslink" to="/about">
 									<h5 className="about">About</h5>
 								</Link>
 								<Link className="contactlink" to="/contact">

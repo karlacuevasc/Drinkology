@@ -60,6 +60,29 @@ def login():
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token)
 
+@api.route("/user", methods=["POST"])
+def create_user():
+    email = request.json.get("email", None)
+    password = request.json.get("password", None)
+    first_name = request.json.get("password", None)
+    last_name = request.json.get("password", None)
+    user = User.query.filter_by(email=email).first()
+    if user is None:
+        return User.query.append(email)
+
+    if password is None:
+        return User.query.append(password)
+
+    if first_name is None:
+        return User.query.append(first_name)
+        
+    if last_name is None:
+        return User.query.append(last_name)
+
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token)
+
+
 @api.route('/favorites', methods=["POST"])
 def favorite_cocktail():
     body = request.get_json()

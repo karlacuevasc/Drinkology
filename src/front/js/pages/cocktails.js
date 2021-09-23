@@ -4,55 +4,103 @@ import { Context } from "../store/appContext";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import PropTypes from "prop-types";
+import { Card } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../../styles/cocktails.scss";
 
 export const CocktailsInfo = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+	const [currentCocktail, setCurrentCocktail] = useState(null);
+	useEffect(async () => {
+		setCurrentCocktail(await actions.getCocktailByID(params.cocktailId));
+	}, []);
+	//We always need to check for null, for all variables that are being set by and API call//
+	if (currentCocktail === null) {
+		return <Image className="mx-auto d-block" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" />;
+	}
 	return (
-		<div className="main">
-			<div className="d-flex">
-				<div>
-					<img
-						className="charimage"
-						src="https://lumiere-a.akamaihd.net/v1/images/quasar-fire-class-cruiser-carrier-169_26592dcb.jpeg?region=0%2C0%2C1560%2C878&width=1536"
-					/>
-				</div>
-				<div>
-					<h1>{params.theid}</h1>
-					<h4 className="chartext">
-						Sed ut perspiciatis unde onis iste natus error sit voluptatem accusantium doloremque laudantium,
-						totam rem aperiam, aeque ipsa quae ab illoinventore veritatis et quasi architecto beatae vitae
-						dicta sunt explicabo. Nemo enim ipsma voluptatem quia voluptas sit aspernatur aut odit aut
-						fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi{" "}
-					</h4>
-				</div>
-			</div>
-			<hr className="line" />
-			<Container>
-				<Row>
-					{/* <Col sm={2}><div className="col-6 col-sm-2">{store.starships[params.theid].vehicle_class || "NA"}</div></Col> */}
-					<Col sm={2} />
-					<Col sm={2} />
-					<Col sm={2} />
-					<Col sm={2} />
-					<Col sm={2} />
-					<Col sm={2} />
-				</Row>
-				<Row>
-					<Col sm={2} />
-					<Col sm={2} />
-					<Col sm={2} />
-					<Col sm={2} />
-					<Col sm={2} />
-					<Col sm={2} />
-				</Row>
-			</Container>
-		</div>
-	);
-};
+		<Container className=" text-center">
+			<h1 className="cocktailRecipeCartaTitle">{currentCocktail.strDrink}</h1>
 
-CocktailsInfo.propTypes = {
-	match: PropTypes.object
+			<Card className="cocktailRecipeCarta" style={{ width: "40rem", border: "none" }}>
+				<Card.Img variant="top" src={currentCocktail.strDrinkThumb} />
+			</Card>
+
+			<hr className="line" />
+			<Row className="cocktailRecipeCartaTitleList">
+				<Col>Ingredients</Col>
+				<Col> Measurements</Col>
+				<Col> Glassware </Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col>{currentCocktail.strIngredient1}</Col>
+				<Col>{currentCocktail.strMeasure1}</Col>
+				<Col>{currentCocktail.strGlass}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient2}</Col>
+				<Col md={4}>{currentCocktail.strMeasure2}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient3}</Col>
+				<Col md={4}>{currentCocktail.strMeasure3}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient4}</Col>
+				<Col md={4}>{currentCocktail.strMeasure4}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient5}</Col>
+				<Col md={4}>{currentCocktail.strMeasure5}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient6}</Col>
+				<Col md={4}>{currentCocktail.strMeasure6}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient7}</Col>
+				<Col md={4}>{currentCocktail.strMeasure7}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient8}</Col>
+				<Col md={4}>{currentCocktail.strMeasure8}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient9}</Col>
+				<Col md={4}>{currentCocktail.strMeasure9}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient10}</Col>
+				<Col md={4}>{currentCocktail.strMeasure10}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient10}</Col>
+				<Col md={4}>{currentCocktail.strMeasure10}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient11}</Col>
+				<Col md={4}>{currentCocktail.strMeasure12}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient13}</Col>
+				<Col md={4}>{currentCocktail.strMeasure13}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient14} </Col>
+				<Col md={4}>{currentCocktail.strMeasure14}</Col>
+			</Row>
+			<Row className="cocktailRecipeCartaList">
+				<Col md={4}>{currentCocktail.strIngredient15}</Col>
+				<Col md={4}>{currentCocktail.strMeasure15}</Col>
+			</Row>
+
+			<h1 className="cocktailRecipeCartaTitle">Instructions</h1>
+			<Row>
+				<Col md={6}>Step 1</Col>
+				<Col md={6}>{currentCocktail.strInstructions}</Col>
+			</Row>
+		</Container>
+	);
 };

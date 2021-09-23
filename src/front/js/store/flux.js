@@ -10,34 +10,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 			filteredCocktails: []
 		},
 		actions: {
-			cocktailsInfo: () => {
-				const cocktailsEndPoint = `${process.env.APIURL}/9973533/search.php?s=margarita`;
-				fetch(cocktailsEndPoint)
-					.then(response => response.json())
-					.then(data => {
-						setStore({
-							cocktails: data.drinks
-						});
-					})
-					.then(() => console.log(getStore().cocktails));
+			allCocktailsDescription: async () => {
+				const store = getStore();
+				try {
+					let waitForCocktailsDescription = await fetch(
+						`${process.env.APIURL}/${process.env.APIKEY}/search.php?s=margarita`
+					);
+					let jsonOfCocktailsDescription = await waitForCocktailsDescription.json();
+					setStore({ cocktails: jsonOfCocktailsDescription.drinks });
+				} catch (error) {
+					console.log(error);
+				}
 			},
-
 			randomcocktailsInfo: () => {
-				const randomEndPoint = `${process.env.APIURL}/9973533/randomselection.php`;
+				const randomEndPoint = `${process.env.APIURL}/${process.env.APIKEY}/randomselection.php`;
 				fetch(randomEndPoint)
 					.then(response => response.json())
 					.then(data => {
 						setStore({
 							random: data.drinks
 						});
-					})
-					.then(() => console.log(getStore().cocktails));
+					});
 			},
-
 			fetchalcoholicInfo: async () => {
 				const store = getStore();
 				try {
-					let waitForAlcoholicCocktails = await fetch(`${process.env.APIURL}/9973533/filter.php?a=Alcoholic`);
+					let waitForAlcoholicCocktails = await fetch(
+						`${process.env.APIURL}/${process.env.APIKEY}/filter.php?a=Alcoholic`
+					);
 					let jsonOfAlcoholicCocktails = await waitForAlcoholicCocktails.json();
 					setStore({ alcoholic: jsonOfAlcoholicCocktails.drinks });
 				} catch (error) {
@@ -49,7 +49,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				try {
 					let waitForNonAlcoholicCocktails = await fetch(
-						`${process.env.APIURL}/9973533/filter.php?a=Non_Alcoholic`
+						`${process.env.APIURL}/${process.env.APIKEY}/filter.php?a=Non_Alcoholic`
 					);
 					let jsonOfNonAlcoholicCocktails = await waitForNonAlcoholicCocktails.json();
 					setStore({ nonAlcoholic: jsonOfNonAlcoholicCocktails.drinks });
@@ -60,12 +60,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			searchCocktailsInfo: searchParam => {
 				const cocktailStore = getStore().cocktails;
-				console.log(cocktailStore);
-				const filtered = cocktailStore.filter(cocktail =>
+				const filteredName = cocktailStore.filter(cocktail =>
 					cocktail.strDrink.toLowerCase().includes(searchParam.toLowerCase())
 				);
-				setStore({ filteredCocktails: filtered });
-				console.log(filtered);
+				const filteredIngredient = cocktailStore.filter(cocktail =>
+					cocktail.strIngredient1.toLowerCase().includes(searchParam.toLowerCase())
+				);
+				setStore({ filteredCocktails: filteredName });
+				// setStore({ filteredCocktails: filteredIngredient });
+			},
+
+			getCocktailByID: async cocktailID => {
+				const cocktailsEndPoint = `${process.env.APIURL}/${process.env.APIKEY}/lookup.php?i=${cocktailID}`;
+				const response = await fetch(cocktailsEndPoint);
+				const data = await response.json();
+				setStore({ cocktails: data.drinks });
+				return data.drinks.find(cocktail => true);
 			},
 
 			favoritesInfo: item => {
@@ -103,8 +113,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			signup: async (email, password, first_name, last_name) => {
+				console.log("I am the signup function");
 				try {
-					const res = await fetch(`${process.env.BACKEND_URL}/signup`, {
+					const res = await fetch(`${process.env.BACKEND_URL}/user`, {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json"
@@ -121,7 +132,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						throw "Something went wrong";
 					}
 				} catch (error) {
-					throw Error("Wrong email or password");
+					throw Error("Something went wrong");
 				}
 			}
 		}
