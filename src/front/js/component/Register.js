@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
+import Alert from "react-bootstrap/Alert";
 import "../../styles/signup.scss";
 
 export const Register = () => {
@@ -13,17 +14,23 @@ export const Register = () => {
 	const [error, setError] = useState(null);
 	const history = useHistory();
 
+	const [messageState, setMessageState] = useState({
+		isActive: false,
+		message: "hola"
+	});
+
 	const handleSubmit = e => {
 		e.preventDefault();
 		console.log(email, password, first_name, last_name, date);
 		actions
-			.signup(email, password, first_name, last_name, date)
-			.then(() => history.push("/profile"))
+			.signup(email, password, first_name, last_name, date, setMessageState, history)
+			.then(data => console.log("data"))
 			.catch(error => {
 				setError(error);
 				console.log("This is my error", error);
 			});
 	};
+
 	return (
 		<div className="signupImage">
 			<div className="signupBackground vh-100">
@@ -125,6 +132,9 @@ export const Register = () => {
 												type="submit">
 												Sign Up
 											</button>
+											{messageState.isActive && (
+												<Alert variant="danger">{messageState.message}</Alert>
+											)}
 										</form>
 									</div>
 								</div>

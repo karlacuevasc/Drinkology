@@ -1,20 +1,46 @@
 .cocktailRecipeCarta{
     margin-left: 235px;
+    padding-bottom: 50px;
 }
-.line{
-    border: 0.5px solid red;
+
+.therecipe{
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
+
+.cocktailRecipeCartaTitle{
+    padding-bottom: 50px;
+    font-size: 45px;
+}
+
+// .line{
+//     border: 0.5px solid black;
+// }
 
 .mainImage{
     height: 700px;
     width: 700px;
     display: block;
+    
 }
 
 .cocktailRecipeCartaTitleList{
-    font-size: 40px;
+    font-size: 35px;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 .cocktailRecipeCartaList{
-    font-size: 20px;
+    font-size: 25px;
+    padding: 5px
+}
+
+.cocktailRecipeCartaTitleInstructions{
+    font-size: 35px;
+    padding-bottom: 20px;;
+}
+
+.cocktaiInstructionsList {
+    font-size: 25px;
+    padding-bottom: 20px;
 }

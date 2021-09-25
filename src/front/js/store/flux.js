@@ -112,8 +112,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					throw Error("Wrong email or password");
 				}
 			},
-			signup: async (email, password, first_name, last_name, date) => {
+
+			ageCheck: date => {
+				let currentDate = new Date();
+				let currentYear = currentDate.getFullYear();
+				let userDate = new Date(date);
+				let userYear = userDate.getFullYear();
+				let yearDiff = currentYear - userYear;
+				if (yearDiff < 21) {
+					console.log("You must be 21+ to sign up");
+					return false;
+				} else {
+					console.log("");
+					return true;
+				}
+			},
+			signup: async (email, password, first_name, last_name, date, setMessageState, history) => {
 				console.log("I am the signup function");
+				if (!getActions().ageCheck(date)) {
+					setMessageState({ isActive: true, message: "You must be 21+" });
+					return;
+				}
 				try {
 					const res = await fetch(`${process.env.BACKEND_URL}/user`, {
 						method: "POST",
@@ -127,6 +146,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 						localStorage.setItem("token", JSON.stringify(token));
 						console.log("The response is ok", res);
+						history.push("/profile");
 						return true;
 					} else {
 						throw "Something went wrong";

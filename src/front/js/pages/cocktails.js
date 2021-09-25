@@ -6,6 +6,7 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Image } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/cocktails.scss";
 
@@ -21,10 +22,10 @@ export const CocktailsInfo = props => {
 		return <Image className="mx-auto d-block" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" />;
 	}
 	return (
-		<Container className=" text-center">
+		<Container className=" therecipe text-center">
 			<h1 className="cocktailRecipeCartaTitle">{currentCocktail.strDrink}</h1>
 
-			<Card className="cocktailRecipeCarta" style={{ width: "40rem", border: "none" }}>
+			<Card className="cocktailRecipeCarta m-auto" style={{ width: "40rem", border: "none" }}>
 				<Card.Img variant="top" src={currentCocktail.strDrinkThumb} />
 			</Card>
 
@@ -95,11 +96,17 @@ export const CocktailsInfo = props => {
 				<Col md={4}>{currentCocktail.strIngredient15}</Col>
 				<Col md={4}>{currentCocktail.strMeasure15}</Col>
 			</Row>
-
-			<h1 className="cocktailRecipeCartaTitle">Instructions</h1>
 			<Row>
-				<Col md={6}>Step 1</Col>
-				<Col md={6}>{currentCocktail.strInstructions}</Col>
+				<Col>
+					<h1 className="cocktailRecipeCartaTitleInstructions text-center">Instructions</h1>
+
+					<p className="cocktaiInstructionsList text-center">{currentCocktail.strInstructions}</p>
+					<Link to={"/profile"}>
+						<Button variant="dark" size="lg">
+							Go back
+						</Button>
+					</Link>
+				</Col>
 			</Row>
 		</Container>
 	);
