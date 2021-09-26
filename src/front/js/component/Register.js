@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Alert from "react-bootstrap/Alert";
 import "../../styles/signup.scss";
@@ -12,8 +12,8 @@ export const Register = () => {
 	const [last_name, setLast_name] = useState("");
 	const [date, setDate] = useState("");
 	const [error, setError] = useState(null);
+	const [LoginStatus, setLoginStatus] = useState("");
 	const history = useHistory();
-
 	const [messageState, setMessageState] = useState({
 		isActive: false,
 		message: "hola"
@@ -41,7 +41,7 @@ export const Register = () => {
 								<div className="card-body p-5 text-center">
 									<ul className="nav d-flex justify-content-center" id="myTab" role="tablist" />
 									<div className="form input d-flex justify-content-center">
-										<form onSubmit={handleSubmit}>
+										<form className="loginForm" onSubmit={handleSubmit}>
 											<div>
 												<h1 className="signupTitle">Sign Up</h1>
 											</div>
@@ -50,6 +50,7 @@ export const Register = () => {
 
 												<div className="email form-outline mb-4">
 													<input
+														name="name"
 														type="first name"
 														id="typeFirstNameX"
 														className="form-control form-control-lg"

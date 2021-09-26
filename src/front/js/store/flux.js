@@ -113,6 +113,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			// loggedIn: async first_name => {},
+
 			ageCheck: date => {
 				let currentDate = new Date();
 				let currentYear = currentDate.getFullYear();
@@ -133,6 +135,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setMessageState({ isActive: true, message: "You must be 21+" });
 					return;
 				}
+
+				console.log(first_name);
+
 				try {
 					const res = await fetch(`${process.env.BACKEND_URL}/user`, {
 						method: "POST",
