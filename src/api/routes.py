@@ -26,6 +26,15 @@ def get_single_user(id):
 
     return jsonify(single_user.serialize()), 200
 
+@api.route('/user/active', methods=['POST'])
+def get_active_user():
+    body = request.get_json()
+    print("//////////////////////////////", body)
+    single_user = User.query.filter_by(email = body["email"]).first()
+    print(single_user)
+
+    return jsonify(single_user.serialize()), 200
+
 @api.route('/cocktails', methods=['GET'])
 def get_cocktails():
     cocktails = Cocktail.query.all()
@@ -58,6 +67,7 @@ def login():
         return jsonify({"Message": "Please check your credentials"}), 401
         
     access_token = create_access_token(identity=email)
+    print(user.first_name)
     return jsonify(access_token=access_token)
 
 @api.route("/user", methods=["POST"])

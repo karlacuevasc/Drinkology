@@ -7,7 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			alcoholic: [],
 			nonAlcoholic: [],
 			favorites: [],
-			filteredCocktails: []
+			filteredCocktails: [],
+			activeUser: []
 		},
 		actions: {
 			allCocktailsDescription: async () => {
@@ -90,6 +91,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			getActiveUser: async email => {
+				try {
+					const res = await fetch(`${process.env.BACKEND_URL}/user/active`, {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({ email })
+					});
+					const activeUser = await res.json();
+					setStore({ activeUser: activeUser });
+					sessionStorage.setItem("activeUser", activeUser.first_name);
+				} catch (error) {
+					throw Error("Wrong email or password");
+				}
+			},
+
 			login: async (email, password) => {
 				try {
 					const res = await fetch(`${process.env.BACKEND_URL}/login`, {
@@ -104,6 +122,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						// localStorage.setItem("first_name", JSON.stringify(first_name));
 						localStorage.setItem("token", JSON.stringify(token));
 						console.log("The response is ok", res);
+						getActions().getActiveUser(email);
 
 						return true;
 					} else {
@@ -128,6 +147,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return true;
 				}
 			},
+
 			signup: async (email, password, first_name, last_name, date, setMessageState, history) => {
 				console.log("I am the signup function");
 				if (!getActions().ageCheck(date)) {
@@ -151,6 +171,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						// localStorage.setItem("first_name", JSON.stringify(first_name));
 						localStorage.setItem("token", JSON.stringify(token));
 						console.log("The response is ok", res);
+						getActions().getActiveUser(email);
 						history.push("/profile");
 
 						return true;

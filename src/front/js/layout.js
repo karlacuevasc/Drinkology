@@ -10,6 +10,7 @@ import { Signup } from "./pages/signup";
 import { Login } from "./pages/login";
 import { Aboutus } from "./pages/AboutUs";
 import { Library } from "./pages/library";
+import { SignOut } from "./pages/signout";
 import { CocktailsInfo } from "./pages/cocktails";
 import injectContext from "./store/appContext";
 
@@ -51,6 +52,9 @@ const Layout = () => {
 						</Route>
 						<Route excat path="/profile">
 							<Account />
+						</Route>
+						<Route excat path="/signout">
+							<SignOut />
 						</Route>
 					</Switch>
 					<Footer />
