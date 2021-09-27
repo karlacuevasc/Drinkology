@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { Tab } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { Tabs } from "react-bootstrap";
 import { Search } from "../component/search";
 import { ProfileCarta } from "../component/ProfileCards";
@@ -42,8 +44,15 @@ export const Account = () => {
 									);
 								})}
 							</div>
-							<h1>Alcoholic</h1>
-							<div className="scroll">
+							<Row>
+								<Col>
+									<h1 className="text-center p-5" style={{ fontSize: "4rem" }}>
+										Alcoholic
+									</h1>
+								</Col>
+							</Row>
+
+							<div className="scroll pb-5">
 								{store.alcoholic.map((alcoholic, i) => {
 									return (
 										<ProfileCarta
@@ -55,6 +64,15 @@ export const Account = () => {
 									);
 								})}
 							</div>
+
+							<Row>
+								<Col>
+									<h1 className="text-center p-5" style={{ fontSize: "4rem" }}>
+										Non-Alcoholic
+									</h1>
+								</Col>
+							</Row>
+
 							<div className="scroll">
 								{store.nonAlcoholic.map((nonAlcoholic, i) => {
 									return (
@@ -70,6 +88,7 @@ export const Account = () => {
 						</>
 					)}
 				</Tab>
+				<Tab eventKey="create" title="Create your own" className="recipespill" />
 			</Tabs>
 			<br />
 			<br />

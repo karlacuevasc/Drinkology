@@ -11,7 +11,6 @@ import { Login } from "./pages/login";
 import { Aboutus } from "./pages/AboutUs";
 import { Library } from "./pages/library";
 import { CocktailsInfo } from "./pages/cocktails";
-import { NewDrink } from "./pages/newdrink";
 import injectContext from "./store/appContext";
 
 import { NavBar } from "./component/navbar";
@@ -52,9 +51,6 @@ const Layout = () => {
 						</Route>
 						<Route excat path="/profile">
 							<Account />
-						</Route>
-						<Route excat path="/newdrink">
-							<NewDrink />
 						</Route>
 					</Switch>
 					<Footer />

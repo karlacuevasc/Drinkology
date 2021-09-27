@@ -101,9 +101,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					if (res.ok) {
 						const token = await res.json();
-
+						// localStorage.setItem("first_name", JSON.stringify(first_name));
 						localStorage.setItem("token", JSON.stringify(token));
 						console.log("The response is ok", res);
+
 						return true;
 					} else {
 						throw "Something went wrong";
@@ -112,8 +113,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					throw Error("Wrong email or password");
 				}
 			},
-
-			// loggedIn: async first_name => {},
 
 			ageCheck: date => {
 				let currentDate = new Date();
@@ -149,9 +148,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (res.ok) {
 						const token = await res.json();
 
+						// localStorage.setItem("first_name", JSON.stringify(first_name));
 						localStorage.setItem("token", JSON.stringify(token));
 						console.log("The response is ok", res);
 						history.push("/profile");
+
 						return true;
 					} else {
 						throw "Something went wrong";
