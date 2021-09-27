@@ -131,7 +131,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			signup: async (email, password, first_name, last_name, date, setMessageState, history) => {
 				console.log("I am the signup function");
 				if (!getActions().ageCheck(date)) {
-					setMessageState({ isActive: true, message: "You must be 21+" });
+					setMessageState({ isActive: true, message: "You must be 21+ to sign up" });
 					return;
 				}
 

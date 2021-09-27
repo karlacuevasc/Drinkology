@@ -133,6 +133,7 @@ export const Register = () => {
 												type="submit">
 												Sign Up
 											</button>
+											<br />
 											{messageState.isActive && (
 												<Alert variant="danger">{messageState.message}</Alert>
 											)}
