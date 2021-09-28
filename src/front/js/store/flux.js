@@ -1,3 +1,5 @@
+import { useHistory } from "react-router-dom";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -147,6 +149,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return true;
 				}
 			},
+
+			// handleLogOut: () => {
+			// 	localStorage.clear();
+			// 	sessionStorage.clear();
+			// 	history.push("/login");
+			// },
 
 			signup: async (email, password, first_name, last_name, date, setMessageState, history) => {
 				console.log("I am the signup function");
