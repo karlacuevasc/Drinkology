@@ -46,6 +46,9 @@ export const NavBar = () => {
 						<Nav.Link href="/contact">Contact</Nav.Link>
 					</Nav.Item>
 					<Nav.Item>
+						<Nav.Link href="/profile">Profile</Nav.Link>
+					</Nav.Item>
+					<Nav.Item>
 						<Nav.Link onClick={() => handleLogOut()}>Sign Out</Nav.Link>
 						{/* <Nav.Link onClick={() => actions.handleLogOut()}>Sign Out</Nav.Link> */}
 						{/* <SignOut /> */}

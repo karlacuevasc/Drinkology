@@ -70,7 +70,9 @@ export const SignIn = () => {
 							Remember password{" "}
 						</label>
 						<div style={{ paddingLeft: "10px" }}>
-							<a href="#">Forgot Password</a>
+							<a href="#">
+								<i>Forgot Password</i>
+							</a>
 						</div>
 					</div>
 					<button className="loginButton btn btn-primary btn-lg btn-block" type="submit">

@@ -12,7 +12,7 @@ export const ProfileNavbar = () => {
 
 	return (
 		<h1 style={{ textAlign: "center", paddingTop: "5vh", paddingBottom: "5vh", fontSize: "3rem" }}>
-			{sessionStorage.getItem("activeUser")} what are we drinking today?
+			Hi {sessionStorage.getItem("activeUser")}, what are we drinking today?
 		</h1>
 	);
 };
