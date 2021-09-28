@@ -91,6 +91,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					myFavorites = [...myFavorites, item];
 					setStore({ favorites: myFavorites });
 				}
+				console.log(getStore().favorites);
 			},
 
 			getActiveUser: async email => {

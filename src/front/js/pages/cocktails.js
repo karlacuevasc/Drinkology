@@ -9,6 +9,7 @@ import { Image } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/cocktails.scss";
+import { Drink } from "../component/LibraryCards";
 
 export const CocktailsInfo = props => {
 	const { store, actions } = useContext(Context);
@@ -101,11 +102,13 @@ export const CocktailsInfo = props => {
 					<h1 className="cocktailRecipeCartaTitleInstructions text-center">Instructions</h1>
 
 					<p className="cocktaiInstructionsList text-center">{currentCocktail.strInstructions}</p>
-					<Link to={"/profile"}>
-						<Button variant="dark" size="lg">
-							Go back
-						</Button>
-					</Link>
+
+					<Button href="/profile" variant="dark" size="lg">
+						Go back
+					</Button>
+					<Button className="heart" variant="warning" onClick={() => actions.favoritesInfo(currentCocktail)}>
+						<i className="far fa-heart" />
+					</Button>
 				</Col>
 			</Row>
 		</Container>

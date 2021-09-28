@@ -26,5 +26,6 @@ export const Drink = props => {
 Drink.propTypes = {
 	strDrink: PropTypes.string,
 	strDrinkThumb: PropTypes.string,
+	idDrink: PropTypes.string,
 	i: PropTypes.string
 };

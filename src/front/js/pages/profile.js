@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { Tab } from "react-bootstrap";
@@ -8,6 +9,7 @@ import { Tabs } from "react-bootstrap";
 import { Search } from "../component/search";
 import { ProfileCarta } from "../component/ProfileCards";
 import { ProfileNavbar } from "../component/ProfileNav";
+import { Drink } from "../component/LibraryCards";
 
 export const Account = () => {
 	const { store } = useContext(Context);
@@ -16,6 +18,18 @@ export const Account = () => {
 			<ProfileNavbar />
 			<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="pillstyle mb-3 pt-5">
 				<Tab eventKey="home" title="Favorites" className="recipespill" />
+				{store.favorites.length > 0 ? (
+					store.favorites.map((favorite, i) => (
+						<ProfileCarta
+							key={i}
+							strDrink={cocktail.strDrink}
+							strDrinkThumb={cocktail.strDrinkThumb}
+							idDrink={cocktail.idDrink}
+						/>
+					))
+				) : (
+					<h1>There Are No Favorites</h1>
+				)}
 				<Tab eventKey="profile" title="Search" className="searchPill">
 					<Search />
 					<div className="scroll">
