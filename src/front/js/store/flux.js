@@ -8,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			cocktails: [],
 			alcoholic: [],
 			nonAlcoholic: [],
-			favorites: [],
+			favorites: JSON.parse(localStorage.getItem("favorites")) || [],
 			filteredCocktails: [],
 			activeUser: []
 		},
@@ -83,15 +83,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			favoritesInfo: item => {
 				let myFavorites = getStore().favorites;
-				let selected = myFavorites.find(element => element === item);
-				if (selected) {
-					myFavorites = myFavorites.filter(element => item !== element);
-					setStore({ favorites: myFavorites });
-				} else {
-					myFavorites = [...myFavorites, item];
-					setStore({ favorites: myFavorites });
+				let itemID = item;
+				if (typeof item !== "string") {
+					itemID = item.idDrink;
 				}
-				console.log(getStore().favorites);
+				let selected = myFavorites.find(element => element.idDrink === itemID);
+				if (selected) {
+					myFavorites = myFavorites.filter(element => itemID !== element.idDrink);
+					localStorage.setItem("favorites", JSON.stringify(myFavorites));
+				} else {
+					const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+					let newStoredFavorites = [];
+					if (storedFavorites !== null) {
+						newStoredFavorites = [...storedFavorites, item];
+					}
+					myFavorites = newStoredFavorites;
+					localStorage.setItem("favorites", JSON.stringify(newStoredFavorites));
+				}
 			},
 
 			getActiveUser: async email => {

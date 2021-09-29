@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 import "../../styles/profilecard.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const ProfileCarta = props => {
+export const FavoriteCarta = props => {
 	const { store, actions } = useContext(Context);
 	return (
 		<Col className="asere">
@@ -23,6 +23,9 @@ export const ProfileCarta = props => {
 						<Button href={"/cocktails/" + props.idDrink} variant="dark">
 							See Full Recipe
 						</Button>
+						<Button variant="danger" onClick={() => actions.favoritesInfo(props.idDrink)}>
+							Remove <i className="fas fa-trash-alt" />
+						</Button>
 					</Container>
 				</Card.Body>
 			</Card>
@@ -30,7 +33,7 @@ export const ProfileCarta = props => {
 	);
 };
 
-ProfileCarta.propTypes = {
+FavoriteCarta.propTypes = {
 	strDrink: PropTypes.string,
 	strDrinkThumb: PropTypes.string,
 	idDrink: PropTypes.string

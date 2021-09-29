@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { Tab } from "react-bootstrap";
@@ -9,7 +9,9 @@ import { Tabs } from "react-bootstrap";
 import { Search } from "../component/search";
 import { ProfileCarta } from "../component/ProfileCards";
 import { ProfileNavbar } from "../component/ProfileNav";
+import { FavoriteCarta } from "../component/FavoriteCards";
 import { Drink } from "../component/LibraryCards";
+import "../../styles/profilecard.scss";
 
 export const Account = () => {
 	const { store } = useContext(Context);
@@ -17,23 +19,24 @@ export const Account = () => {
 		<div className="">
 			<ProfileNavbar />
 			<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="pillstyle mb-3 pt-5">
-				<Tab eventKey="home" title="Favorites" className="recipespill" />
-				{store.favorites.length > 0 ? (
-					store.favorites.map((favorite, i) => (
-						<ProfileCarta
-							key={i}
-							strDrink={cocktail.strDrink}
-							strDrinkThumb={cocktail.strDrinkThumb}
-							idDrink={cocktail.idDrink}
-						/>
-					))
-				) : (
-					<h1>There Are No Favorites</h1>
-				)}
+				<Tab eventKey="favorite" title="Favorites" className="recipespill">
+					<div className="scroll">
+						{store.favorites.map((favorite, i) => {
+							return (
+								<FavoriteCarta
+									key={i}
+									strDrink={favorite.strDrink}
+									strDrinkThumb={favorite.strDrinkThumb}
+									idDrink={favorite.idDrink}
+								/>
+							);
+						})}
+					</div>
+				</Tab>
 				<Tab eventKey="profile" title="Search" className="searchPill">
 					<Search />
 					<div className="scroll">
-						{store.filteredCocktails.map((cocktail, ingredient, i) => {
+						{store.filteredCocktails.map((cocktail, i) => {
 							return (
 								<ProfileCarta
 									key={i}
@@ -58,6 +61,7 @@ export const Account = () => {
 									);
 								})}
 							</div>
+
 							<Row>
 								<Col>
 									<h1 className="text-center p-5" style={{ fontSize: "4rem" }}>
@@ -102,7 +106,6 @@ export const Account = () => {
 						</>
 					)}
 				</Tab>
-				<Tab eventKey="create" title="Create your own" className="recipespill" />
 			</Tabs>
 			<br />
 			<br />
