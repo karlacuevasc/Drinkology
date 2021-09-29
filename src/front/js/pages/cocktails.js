@@ -106,8 +106,12 @@ export const CocktailsInfo = props => {
 					<Button href="/profile" variant="dark" size="lg">
 						Go back
 					</Button>
-					<Button className="heart" variant="warning" onClick={() => actions.favoritesInfo(currentCocktail)}>
-						<i className="far fa-heart" />
+					<Button
+						size="lg"
+						className="heart"
+						variant="danger"
+						onClick={() => actions.favoritesInfo(currentCocktail)}>
+						<i className="fas fa-heart" />
 					</Button>
 				</Col>
 			</Row>

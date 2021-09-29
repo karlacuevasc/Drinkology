@@ -17,10 +17,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 				try {
 					let waitForCocktailsDescription = await fetch(
-						`${process.env.APIURL}/${process.env.APIKEY}/search.php?s=margarita`
+						`${process.env.APIURL}/${process.env.APIKEY}/filter.php?c=Cocktail`
 					);
 					let jsonOfCocktailsDescription = await waitForCocktailsDescription.json();
-					setStore({ cocktails: jsonOfCocktailsDescription.drinks });
+					setStore({ alcoholic: jsonOfCocktailsDescription.drinks });
 				} catch (error) {
 					console.log(error);
 				}
@@ -42,7 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						`${process.env.APIURL}/${process.env.APIKEY}/filter.php?a=Alcoholic`
 					);
 					let jsonOfAlcoholicCocktails = await waitForAlcoholicCocktails.json();
-					setStore({ alcoholic: jsonOfAlcoholicCocktails.drinks });
+					setStore({ cocktails: jsonOfAlcoholicCocktails.drinks });
 				} catch (error) {
 					console.log(error);
 				}
@@ -63,14 +63,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			searchCocktailsInfo: searchParam => {
 				const cocktailStore = getStore().cocktails;
+				const alcoholicStore = getStore().alcoholic;
 				const filteredName = cocktailStore.filter(cocktail =>
 					cocktail.strDrink.toLowerCase().includes(searchParam.toLowerCase())
 				);
-				const filteredIngredient = cocktailStore.filter(cocktail =>
-					cocktail.strIngredient1.toLowerCase().includes(searchParam.toLowerCase())
-				);
 				setStore({ filteredCocktails: filteredName });
-				// setStore({ filteredCocktails: filteredIngredient });
 			},
 
 			getCocktailByID: async cocktailID => {
@@ -189,6 +186,70 @@ const getState = ({ getStore, getActions, setStore }) => {
 						localStorage.setItem("token", JSON.stringify(token));
 						console.log("The response is ok", res);
 						getActions().getActiveUser(email);
+						history.push("/profile");
+
+						return true;
+					} else {
+						throw "Something went wrong";
+					}
+				} catch (error) {
+					throw Error("Something went wrong");
+				}
+			},
+
+			newCocktailForm: async (
+				name,
+				alcohol_content,
+				glassware,
+				first_step,
+				second_step,
+				third_step,
+				fourth_step,
+				fifth_step,
+				first_ingredient,
+				second_ingredient,
+				third_ingredient,
+				fourth_ingredient,
+				fifth_ingredient,
+				first_measurement,
+				second_measurement,
+				third_measurement,
+				fourth_measurement,
+				fifth_measurement
+			) => {
+				console.log("I am the signup function");
+				try {
+					const res = await fetch(`${process.env.BACKEND_URL}/cocktail`, {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							name,
+							alcohol_content,
+							glassware,
+							first_step,
+							second_step,
+							third_step,
+							fourth_step,
+							fifth_step,
+							first_ingredient,
+							second_ingredient,
+							third_ingredient,
+							fourth_ingredient,
+							fifth_ingredient,
+							first_measurement,
+							second_measurement,
+							third_measurement,
+							fourth_measurement,
+							fifth_measurement
+						})
+					});
+					if (res.ok) {
+						const token = await res.json();
+
+						localStorage.setItem("token", JSON.stringify(token));
+						console.log("The response is ok", res);
 						history.push("/profile");
 
 						return true;

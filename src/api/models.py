@@ -26,18 +26,26 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
-
 class Cocktail(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)
+    alcohol_content = db.Column(db.String(120), unique=False, nullable=False)
     first_step = db.Column(db.String(120), unique=False, nullable=False)
     second_step = db.Column(db.String(120), unique=False, nullable=False)
     third_step = db.Column(db.String(120), unique=False, nullable=True)
     fourth_step = db.Column(db.String(120), unique=False, nullable=True)
     fifth_step = db.Column(db.String(120), unique=False, nullable=True)
-    ingredients = db.Column(db.String(120), unique=False, nullable=False)
-    measurements = db.Column(db.String(120), unique=False, nullable=False)
-    garnishes = db.Column(db.String(120), unique=False, nullable=False)
+    first_ingredient = db.Column(db.String(120), unique=False, nullable=False)
+    second_ingredient = db.Column(db.String(120), unique=False, nullable=False)
+    third_ingredient = db.Column(db.String(120), unique=False, nullable=False)
+    fourth_ingredient = db.Column(db.String(120), unique=False, nullable=False)
+    fifth_ingredient = db.Column(db.String(120), unique=False, nullable=False)
+    first_measurement = db.Column(db.String(120), unique=False, nullable=False)
+    second_measurement = db.Column(db.String(120), unique=False, nullable=False)
+    third_measurement = db.Column(db.String(120), unique=False, nullable=False)
+    fourth_measurement = db.Column(db.String(120), unique=False, nullable=False)
+    fifth_measurement = db.Column(db.String(120), unique=False, nullable=False)
+    garnish = db.Column(db.String(120), unique=False, nullable=False)
     glassware = db.Column(db.String(120), unique=False, nullable=False)
     favorite_cocktails = db.relationship('FavoriteCocktail', backref='cocktail', lazy=True)
    
@@ -48,14 +56,23 @@ class Cocktail(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "alcohol_content": self.alcohol_content,
             "first_step": self.first_step,
             "second_step": self.second_step,
             "third_step": self.third_step,
             "fourth_step": self.fourth_step,
             "fifth_step": self.fifth_step,
-            "ingredients": self.ingredients,
-            "measurements": self.measurements,
-            "garnishes": self.garnishes,
+            "first_ingredient": self.first_ingredients,
+            "second_ingredient": self.second_ingredients,
+            "third_ingredient": self.third_ingredients,
+            "fourth_ingredient": self.fourth_ingredients,
+            "fifth_ingredient": self.fifth_ingredients,
+            "first_measurement": self.first_measurement,
+            "second_measurement": self.second_measurement,
+            "third_measurement": self.third_measurement,
+            "fourth_measurement": self.fourth_measurement,
+            "fifth_measurement": self.fifth_measurement,
+            "garnish": self.garnish,
             "glassware": self.glassware
         }
 

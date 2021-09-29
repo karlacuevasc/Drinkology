@@ -1,6 +1,5 @@
 import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
 import { Card, Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Col } from "react-bootstrap";
@@ -23,8 +22,10 @@ export const FavoriteCarta = props => {
 						<Button href={"/cocktails/" + props.idDrink} variant="dark">
 							See Full Recipe
 						</Button>
-						<Button variant="danger" onClick={() => actions.favoritesInfo(props.idDrink)}>
-							Remove <i className="fas fa-trash-alt" />
+						<br />
+						<br />
+						<Button variant="danger" onClick={() => location.reload(actions.favoritesInfo(props.idDrink))}>
+							<i className="fas fa-trash-alt" />
 						</Button>
 					</Container>
 				</Card.Body>

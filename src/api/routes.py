@@ -43,17 +43,56 @@ def get_cocktails():
     return jsonify(all_cocktails), 200
 
 @api.route('/cocktail', methods=["POST"])
-def new_cocktail():
+def create_cocktail():
     body = request.get_json()
+    print("/////////////////////", body)
+    name = body["name"]
+    alcohol_content = body["alcohol_content"]
+    glassware = body["glassware"]
+    first_step = body["first_step"]
+    second_step = body["second_step"]
+    third_step = body["third_step"]
+    fourth_step = body["fourth_step"]
+    fifth_step = body["fifth_step"]
+    first_ingredient = body["first_ingredient"]
+    second_ingredient = body["second_ingredient"]
+    third_ingredient = body["third_ingredient"]
+    fourth_ingredient = body["fourth_ingredient"]
+    fifth_ingredient = body["fifth_ingredient"]
+    first_measurement = body["first_measurement"]
+    second_measurement = body["second_measurement"]
+    third_measurement = body["third_measurement"]
+    fourth_measurement = body["fourth_measurement"]
+    fifth_measurement = body["fifth_measurement"]
+    cocktail_exists = Cocktail.query.filter_by(name=name).first()
+    print("/////////////////////", cocktail_exists)
+    if cocktail_exists is not None:
+        raise APIException("user already exists", 400)
 
-    if body is None:
-        raise APIException("You need to specify the request body as a json object", status_code=400)
-
-    cocktail = Cocktail(name=body['name'], instructions=body['instructions'], ingredients=body['ingredients'], measurements=body['measurements'])
+    cocktail = Cocktail(name=name,alcohol_content=alcohol_content,
+    glassware =glassware,
+    first_step =first_step,
+    second_step =second_step,
+    third_step =third_step,
+    fourth_step =fourth_step,
+    fifth_step =fifth_step,
+    first_ingredient =first_ingredient,
+    second_ingredient =second_ingredient,
+    third_ingredient =third_ingredient,
+    fourth_ingredient =fourth_ingredient,
+    fifth_ingredient =fifth_ingredient,
+    first_measurement =first_measurement,
+    second_measurement =second_measurement,
+    third_measurement =third_measurement,
+    fourth_measurement =fourth_measurement,
+    fifth_measurement =fifth_measurement
+  ) 
+    
     db.session.add(cocktail)
     db.session.commit()
 
-    return jsonify(cocktail.serialize()), 200
+    
+    return jsonify(cocktail.serialize()), 201
 
 @api.route("/login", methods=["POST"])
 def login():

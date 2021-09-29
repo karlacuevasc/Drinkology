@@ -30,11 +30,11 @@ export const Library = props => {
 			<Row className="aboutus2">
 				<Col sm={8} className="aboutuscontainer2" style={{ paddingBottom: "100px" }}>
 					<h1 className="welcomeTitle" style={{ fontSize: "5rem", textAlign: "center" }}>
-						But wait... there&#39;s more!
+						But Wait... There&#39;s More!
 					</h1>
 					<p className="aboutusBody" style={{ marginBottom: "40px", fontSize: "2rem", textAlign: "center" }}>
 						Create an account to discover our exclusive library that contains more than 400 cocktail
-						recipes. And yes you guessed it.. it&#39;s absolutely <strong>free</strong>.
+						recipes.
 					</p>
 					<div style={{ textAlign: "center" }}>
 						<Button className="cocktailbutton" href="/signup" size="lg" variant="dark">

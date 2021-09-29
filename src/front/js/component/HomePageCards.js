@@ -6,6 +6,7 @@ import Over10 from "../../img/over10.jpeg";
 import Share from "../../img/share-with-friends.jpeg";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import "../../styles/cards.scss";
 import PropTypes from "prop-types";
 
@@ -30,10 +31,13 @@ export const Carta2 = () => {
 	return (
 		<Row className="cartasmiddlecontainer">
 			<Col sm={6} className="cartasMiddle">
-				<h1 className="title">Over 10+ Recipes</h1>
+				<h1 className="title">Over 400+ Recipes</h1>
 				<p className="cartasBody">
 					Our exclusive library contains a variety of fun recipes that everyone will absolutely love!
 				</p>
+				<Button href="/library" variant="info">
+					Take Me There
+				</Button>
 			</Col>
 			<Col sm={6}>
 				<Image className="cartasImageMiddle pl-0" src={Over10} />
