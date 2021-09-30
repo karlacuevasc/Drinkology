@@ -35,7 +35,7 @@ export const Carta2 = () => {
 				<p className="cartasBody">
 					Our exclusive library contains a variety of fun recipes that everyone will absolutely love!
 				</p>
-				<Button href="/library" variant="info">
+				<Button href="/library" variant="dark">
 					Take Me There
 				</Button>
 			</Col>

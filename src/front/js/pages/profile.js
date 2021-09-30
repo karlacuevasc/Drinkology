@@ -39,6 +39,26 @@ export const Account = () => {
 						)}
 					</div>
 				</Tab>
+				<Tab eventKey="myBar" title="My Bar" className="recipespill">
+					<div className="scroll">
+						{store.favorites.length > 0 ? (
+							store.favorites.map((favorite, i) => {
+								return (
+									<FavoriteCarta
+										key={i}
+										strDrink={favorite.strDrink}
+										strDrinkThumb={favorite.strDrinkThumb}
+										idDrink={favorite.idDrink}
+									/>
+								);
+							})
+						) : (
+							<Container style={{ height: "100vh", paddingTop: "100px" }}>
+								<h1 className="m-auto">Your List is Empty</h1>
+							</Container>
+						)}
+					</div>
+				</Tab>
 				<Tab eventKey="profile" title="Search" className="searchPill">
 					<Search />
 					<div className="scroll">

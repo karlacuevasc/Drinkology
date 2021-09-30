@@ -100,19 +100,19 @@ export const CocktailsInfo = props => {
 			<Row>
 				<Col>
 					<h1 className="cocktailRecipeCartaTitleInstructions text-center">Instructions</h1>
-
 					<p className="cocktaiInstructionsList text-center">{currentCocktail.strInstructions}</p>
-
-					<Button href="/profile" variant="dark" size="lg">
-						Go back
-					</Button>
-					<Button
-						size="lg"
-						className="heart"
-						variant="danger"
-						onClick={() => actions.favoritesInfo(currentCocktail)}>
-						<i className="fas fa-heart" />
-					</Button>
+					<Container>
+						<Button className="mr-2" href="/profile" variant="dark" size="lg">
+							Go back
+						</Button>
+						<Button
+							size="lg"
+							className="heart"
+							variant="danger"
+							onClick={() => actions.favoritesInfo(currentCocktail)}>
+							<i className="fas fa-heart" />
+						</Button>
+					</Container>
 				</Col>
 			</Row>
 		</Container>

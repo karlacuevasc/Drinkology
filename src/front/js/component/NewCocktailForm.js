@@ -85,33 +85,30 @@ export const NewCocktail = () => {
 	};
 
 	return (
-		<div className="signupImage">
+		<div className="">
 			<div className="signupBackground vh-100">
 				<div className="container py-5 h-100">
 					<div className="row d-flex justify-content-center align-items-center h-100">
-						<div className="col-12 col-md-8 col-lg-6 col-xl-5">
+						<div className="">
 							<div className="card signupCardBackground shadow-2-strong" style={{ borderRadius: "1rem" }}>
 								<div className="card-body p-5 text-center">
 									<ul className="nav d-flex justify-content-center" id="myTab" role="tablist" />
 									<div className="form input d-flex justify-content-center">
 										<form className="loginForm" onSubmit={handleSubmit}>
-											<div>
-												<h1 className="signupTitle">Create Your Cocktail</h1>
-											</div>
 											<Tabs
 												defaultActiveKey="general"
 												id="uncontrolled-tab-example"
-												className="pillstyle mb-3 pt-5">
+												className="pillstyle mb-5 pt-5">
 												<Tab eventKey="general" title="General Info">
 													<div>
-														<div className="input-group-prepend" />
+														<div className="input-group-prepend " />
 
 														<div className="email form-outline mb-4">
 															<input
 																name="name"
 																type="cocktail name"
 																id="typeCocktailNameX"
-																className="form-control form-control-lg"
+																className="form-control form-control-lg "
 																placeholder="Cocktail Name"
 																onChange={e => setName(e.target.value)}
 																value={name}
@@ -266,7 +263,7 @@ export const NewCocktail = () => {
 											</Tabs>
 
 											<button
-												className="signupButton btn btn-primary btn-lg btn-block"
+												className="signupButton btn btn-primary btn-lg btn-block mt-5"
 												type="submit">
 												Create Cocktail
 											</button>
