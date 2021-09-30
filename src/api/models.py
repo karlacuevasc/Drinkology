@@ -45,7 +45,7 @@ class Cocktail(db.Model):
     third_measurement = db.Column(db.String(120), unique=False, nullable=False)
     fourth_measurement = db.Column(db.String(120), unique=False, nullable=False)
     fifth_measurement = db.Column(db.String(120), unique=False, nullable=False)
-    garnish = db.Column(db.String(120), unique=False, nullable=False)
+    garnish = db.Column(db.String(120), unique=False, nullable=True)
     glassware = db.Column(db.String(120), unique=False, nullable=False)
     favorite_cocktails = db.relationship('FavoriteCocktail', backref='cocktail', lazy=True)
    
@@ -62,11 +62,11 @@ class Cocktail(db.Model):
             "third_step": self.third_step,
             "fourth_step": self.fourth_step,
             "fifth_step": self.fifth_step,
-            "first_ingredient": self.first_ingredients,
-            "second_ingredient": self.second_ingredients,
-            "third_ingredient": self.third_ingredients,
-            "fourth_ingredient": self.fourth_ingredients,
-            "fifth_ingredient": self.fifth_ingredients,
+            "first_ingredient": self.first_ingredient,
+            "second_ingredient": self.second_ingredient,
+            "third_ingredient": self.third_ingredient,
+            "fourth_ingredient": self.fourth_ingredient,
+            "fifth_ingredient": self.fifth_ingredient,
             "first_measurement": self.first_measurement,
             "second_measurement": self.second_measurement,
             "third_measurement": self.third_measurement,

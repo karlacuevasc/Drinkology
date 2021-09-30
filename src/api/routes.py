@@ -67,7 +67,7 @@ def create_cocktail():
     cocktail_exists = Cocktail.query.filter_by(name=name).first()
     print("/////////////////////", cocktail_exists)
     if cocktail_exists is not None:
-        raise APIException("user already exists", 400)
+        raise APIException("Cocktail already exists", 400)
 
     cocktail = Cocktail(name=name,alcohol_content=alcohol_content,
     glassware =glassware,
