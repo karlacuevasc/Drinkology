@@ -3,14 +3,14 @@ import { useHistory } from "react-router-dom";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			token: JSON.parse(localStorage.getItem("token")),
+			token: JSON.parse(localStorage.getItem("token")) || [],
 			random: [],
 			cocktails: [],
 			alcoholic: [],
 			nonAlcoholic: [],
 			favorites: JSON.parse(localStorage.getItem("favorites")) || [],
 			filteredCocktails: [],
-			activeUser: []
+			activeUser: localStorage.getItem("activeUser")
 		},
 		actions: {
 			allCocktailsDescription: async () => {
@@ -109,8 +109,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						body: JSON.stringify({ email })
 					});
 					const activeUser = await res.json();
-					setStore({ activeUser: activeUser });
-					sessionStorage.setItem("activeUser", activeUser.first_name);
+					setStore({ activeUser: activeUser.first_name });
+					localStorage.setItem("activeUser", activeUser.first_name);
 				} catch (error) {
 					throw Error("Wrong email or password");
 				}
@@ -155,12 +155,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return true;
 				}
 			},
-
-			// handleLogOut: () => {
-			// 	localStorage.clear();
-			// 	sessionStorage.clear();
-			// 	history.push("/login");
-			// },
 
 			signup: async (email, password, first_name, last_name, date, setMessageState, history) => {
 				console.log("I am the signup function");
