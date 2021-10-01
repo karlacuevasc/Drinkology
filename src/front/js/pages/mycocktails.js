@@ -114,10 +114,10 @@ export const MyCocktailsInfo = props => {
 	const params = useParams();
 	const [currentCocktail, setCurrentCocktail] = useState(null);
 	useEffect(async () => {
-		setCurrentCocktail(await actions.getMyCocktailsInfo());
+		setCurrentCocktail(await actions.getSingleCocktail(params.cocktailId));
 	}, []);
 	//We always need to check for null, for all variables that are being set by and API call//
-	if (currentCocktail === null) {
+	if (currentCocktail === null || currentCocktail === undefined) {
 		return <Image className="mx-auto d-block" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" />;
 	}
 	return (
@@ -133,11 +133,13 @@ export const MyCocktailsInfo = props => {
 				<Col> Ingredients </Col>
 				<Col> Measurements </Col>
 				<Col> Glassware </Col>
+				<Col> Garnishes </Col>
 			</Row>
 			<Row className="cocktailRecipeCartaList">
 				<Col>{currentCocktail.first_ingredient}</Col>
 				<Col>{currentCocktail.first_measurement}</Col>
 				<Col>{currentCocktail.glassware}</Col>
+				<Col>{currentCocktail.garnish}</Col>
 			</Row>
 			<Row className="cocktailRecipeCartaList">
 				<Col md={4}>{currentCocktail.second_ingredient}</Col>

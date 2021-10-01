@@ -12,7 +12,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			activeUser: localStorage.getItem("activeUser")
 		},
 		actions: {
-			getMyCocktailsInfo: () => {
+			getMyCocktailsInfo: async () => {
 				const characterEndPoint = "https://3001-red-stoat-l183e0fb.ws-us18.gitpod.io/api/cocktails";
 				fetch(characterEndPoint)
 					.then(response => response.json())
@@ -22,6 +22,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 						});
 					})
 					.then(() => console.log(getStore().myCocktails));
+			},
+			getSingleCocktail: async id => {
+				try {
+					let waitForCocktailsDescription = await fetch(`${process.env.BACKEND_URL}/cocktail/${id}`);
+					let cocktail = await waitForCocktailsDescription.json();
+					return cocktail;
+				} catch (error) {
+					console.log(error);
+					throw new Error(error.message);
+				}
 			},
 			// getMyCocktailByID: cocktailID => {
 			// 	const cocktailEndPoint = `https://3001-red-stoat-l183e0fb.ws-us18.gitpod.io/api/cocktail/${cocktailID}`;
