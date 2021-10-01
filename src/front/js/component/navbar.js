@@ -27,9 +27,9 @@ export const NavBar = () => {
 				<Nav className="justify-content-center" activeKey="/home">
 					{!store.activeUser ? (
 						<>
-							<Nav.Item className="loginTab pr-3">
+							{/* <Nav.Item className="loginTab pr-3">
 								<Nav.Link href="/library">Library</Nav.Link>
-							</Nav.Item>
+							</Nav.Item> */}
 							<Nav.Item className="loginTab pr-3">
 								<Nav.Link href="/login">Log In</Nav.Link>
 							</Nav.Item>

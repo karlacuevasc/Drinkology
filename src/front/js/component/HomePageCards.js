@@ -31,13 +31,8 @@ export const Carta2 = () => {
 	return (
 		<Row className="cartasmiddlecontainer">
 			<Col sm={6} className="cartasMiddle">
-				<h1 className="title">Over 400+ Recipes</h1>
-				<p className="cartasBody">
-					Our exclusive library contains a variety of fun recipes that everyone will absolutely love!
-				</p>
-				<Button href="/library" variant="dark">
-					Take Me There
-				</Button>
+				<h1 className="title">Unique Recipes</h1>
+				<p className="cartasBody">Explore a library filled authentic recipes that will blow your mind.</p>
 			</Col>
 			<Col sm={6}>
 				<Image className="cartasImageMiddle pl-0" src={Over10} />

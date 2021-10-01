@@ -33,8 +33,8 @@ export const Library = props => {
 						But Wait... There&#39;s More!
 					</h1>
 					<p className="aboutusBody" style={{ marginBottom: "40px", fontSize: "2rem", textAlign: "center" }}>
-						Create an account to discover our exclusive library that contains more than 400 cocktail
-						recipes.
+						Create an account to discover our exclusive library that contains more than{" "}
+						<strong>400 cocktail recipes.</strong>
 					</p>
 					<div style={{ textAlign: "center" }}>
 						<Button className="cocktailbutton" href="/signup" size="lg" variant="dark">
