@@ -9,6 +9,7 @@ import "../../styles/signup.scss";
 export const NewCocktail = () => {
 	const { store, actions } = useContext(Context);
 	const [name, setName] = useState("");
+	const [image, setImage] = useState("");
 	const [alcohol_content, setAlcohol_content] = useState("");
 	const [glassware, setGlassware] = useState("");
 	const [garnish, setGarnish] = useState("");
@@ -40,6 +41,7 @@ export const NewCocktail = () => {
 		e.preventDefault();
 		console.log(
 			name,
+			image,
 			alcohol_content,
 			glassware,
 			garnish,
@@ -62,6 +64,7 @@ export const NewCocktail = () => {
 		actions
 			.newCocktailForm(
 				name,
+				image,
 				alcohol_content,
 				glassware,
 				garnish,
@@ -82,7 +85,7 @@ export const NewCocktail = () => {
 				fifth_measurement,
 				history
 			)
-			.then(data => setFormstatus({ status: "ready", message: null }))
+			.then(data => setFormstatus({ status: "ready", message: "Success" }))
 			.catch(error => {
 				setFormstatus({ status: "error", message: error.message });
 				console.log("This is my error", error);
@@ -117,6 +120,21 @@ export const NewCocktail = () => {
 																placeholder="Cocktail Name"
 																onChange={e => setName(e.target.value)}
 																value={name}
+															/>
+														</div>
+													</div>
+													<div>
+														<div className="input-group-prepend " />
+
+														<div className="email form-outline mb-4">
+															<input
+																name="image"
+																type="cocktail image"
+																id="typeCocktailImageX"
+																className="form-control form-control-lg "
+																placeholder="Image URL"
+																onChange={e => setImage(e.target.value)}
+																value={image}
 															/>
 														</div>
 													</div>
@@ -314,7 +332,7 @@ export const NewCocktail = () => {
 														<div className="email form-outline mb-4">
 															<input
 																type="first step"
-																id="typeFirstIngredientX"
+																id="typeFirstStepX"
 																className="form-control form-control-lg"
 																placeholder="First Step"
 																onChange={e => setFirst_step(e.target.value)}
@@ -328,7 +346,7 @@ export const NewCocktail = () => {
 														<div className="email form-outline mb-4">
 															<input
 																type="second step"
-																id="typeSecondIngredientX"
+																id="typeSecondStepX"
 																className="form-control form-control-lg"
 																placeholder="Second Step"
 																onChange={e => setSecond_step(e.target.value)}
@@ -342,7 +360,7 @@ export const NewCocktail = () => {
 														<div className="email form-outline mb-4">
 															<input
 																type="third step"
-																id="typeThirdIngredientX"
+																id="typeThirdStepX"
 																className="form-control form-control-lg"
 																placeholder="Third Step"
 																onChange={e => setThird_step(e.target.value)}
@@ -356,7 +374,7 @@ export const NewCocktail = () => {
 														<div className="email form-outline mb-4">
 															<input
 																type="fourth step"
-																id="typeFourthIngredientX"
+																id="typeFourthStepX"
 																className="form-control form-control-lg"
 																placeholder="Fourth Step"
 																onChange={e => setFourth_step(e.target.value)}
@@ -370,7 +388,7 @@ export const NewCocktail = () => {
 														<div className="email form-outline mb-4">
 															<input
 																type="fifth step"
-																id="typeFifthIngredientX"
+																id="typeFifthStepX"
 																className="form-control form-control-lg"
 																placeholder="Fifth Step"
 																onChange={e => setFifth_step(e.target.value)}

@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: JSON.parse(localStorage.getItem("token")) || [],
 			random: [],
+			myCocktails: [],
 			cocktails: [],
 			alcoholic: [],
 			nonAlcoholic: [],
@@ -11,6 +12,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 			activeUser: localStorage.getItem("activeUser")
 		},
 		actions: {
+			getMyCocktailsInfo: () => {
+				const characterEndPoint = "https://3001-red-stoat-l183e0fb.ws-us18.gitpod.io/api/cocktails";
+				fetch(characterEndPoint)
+					.then(response => response.json())
+					.then(data => {
+						setStore({
+							myCocktails: data
+						});
+					})
+					.then(() => console.log(getStore().myCocktails));
+			},
+			// getMyCocktailByID: cocktailID => {
+			// 	const cocktailEndPoint = `https://3001-red-stoat-l183e0fb.ws-us18.gitpod.io/api/cocktail/${cocktailID}`;
+			// 	fetch(cocktailEndPoint)
+			// 		.then(response => response.json())
+			// 		.then(data => {
+			// 			setStore({
+			// 				myCocktails: data
+			// 			});
+			// 		})
+			// 		.then(() => console.log(getStore().myCocktails));
+			// },
 			allCocktailsDescription: async () => {
 				try {
 					let waitForCocktailsDescription = await fetch(
@@ -117,7 +140,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			login: async (email, password) => {
+			login: async (email, password, history) => {
 				try {
 					const res = await fetch(`${process.env.BACKEND_URL}/login`, {
 						method: "POST",
@@ -157,7 +180,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			signup: async (email, password, first_name, last_name, date, setMessageState, history) => {
+			signup: async (email, password, first_name, last_name, date, setMessageState) => {
 				console.log("I am the signup function");
 				if (!getActions().ageCheck(date)) {
 					setMessageState({ isActive: true, message: "You must be 21+ to sign up" });
@@ -193,6 +216,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			newCocktailForm: async (
 				name,
+				image,
 				alcohol_content,
 				glassware,
 				garnish,
@@ -210,10 +234,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				second_measurement,
 				third_measurement,
 				fourth_measurement,
-				fifth_measurement
+				fifth_measurement,
+				history
 			) => {
 				try {
 					if (!name || name === "") throw new Error("Missing Name");
+					if (!image || image === "") throw new Error("Missing Image");
+					if (!alcohol_content || alcohol_content === "") throw new Error("Missing Alcohol Content");
+					if (!glassware || glassware === "") throw new Error("Missing Glassware");
+					if (!garnish || garnish === "") throw new Error("Missing Garnish");
+					if (!first_ingredient || first_ingredient === "")
+						throw new Error("You Need at Least One Ingredient");
+					if (!first_measurement || first_measurement === "")
+						throw new Error("You Need at Least One Measurement");
+					if (!first_step || first_step === "") throw new Error("You Need at Least One Step");
+
 					const res = await fetch(`${process.env.BACKEND_URL}/cocktail`, {
 						method: "POST",
 						headers: {
@@ -221,6 +256,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						},
 						body: JSON.stringify({
 							name,
+							image,
 							alcohol_content,
 							glassware,
 							garnish,

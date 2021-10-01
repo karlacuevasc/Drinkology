@@ -19,7 +19,7 @@ def get_users():
     
     return jsonify(all_users), 200
 
-@api.route('/user/<id>', methods=['GET'])
+@api.route('/user/<int:id>', methods=['GET'])
 def get_single_user(id):
     single_user = User.query.get(id)
     
@@ -42,13 +42,22 @@ def get_cocktails():
 
     return jsonify(all_cocktails), 200
 
+@api.route('/cocktail/<int:id>', methods=['GET'])
+def get_single_cocktail(id):
+    single_cocktail = Cocktail.query.get(id)
+    print("single cocktail")
+
+    return jsonify(single_cocktail.serialize()), 200
+
 @api.route('/cocktail', methods=["POST"])
 def create_cocktail():
     body = request.get_json()
     print("/////////////////////", body)
     name = body["name"]
+    image = body["image"]
     alcohol_content = body["alcohol_content"]
     glassware = body["glassware"]
+    garnish = body["garnish"]
     first_step = body["first_step"]
     second_step = body["second_step"]
     third_step = body["third_step"]
@@ -69,8 +78,9 @@ def create_cocktail():
     if cocktail_exists is not None:
         raise APIException("Cocktail already exists", 400)
 
-    cocktail = Cocktail(name=name,alcohol_content=alcohol_content,
+    cocktail = Cocktail(name=name,image=image,alcohol_content=alcohol_content,
     glassware =glassware,
+    garnish =garnish,
     first_step =first_step,
     second_step =second_step,
     third_step =third_step,

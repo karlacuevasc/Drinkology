@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: a54f7bbe9b27
+Revision ID: 1f4fa1a07f14
 Revises: 
-Create Date: 2021-09-30 19:18:19.382635
+Create Date: 2021-10-01 17:59:11.772053
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'a54f7bbe9b27'
+revision = '1f4fa1a07f14'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,6 +21,7 @@ def upgrade():
     op.create_table('cocktail',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=120), nullable=False),
+    sa.Column('image', sa.String(length=120), nullable=False),
     sa.Column('alcohol_content', sa.String(length=120), nullable=False),
     sa.Column('first_step', sa.String(length=120), nullable=False),
     sa.Column('second_step', sa.String(length=120), nullable=False),
@@ -37,7 +38,7 @@ def upgrade():
     sa.Column('third_measurement', sa.String(length=120), nullable=False),
     sa.Column('fourth_measurement', sa.String(length=120), nullable=False),
     sa.Column('fifth_measurement', sa.String(length=120), nullable=False),
-    sa.Column('garnish', sa.String(length=120), nullable=True),
+    sa.Column('garnish', sa.String(length=120), nullable=False),
     sa.Column('glassware', sa.String(length=120), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )

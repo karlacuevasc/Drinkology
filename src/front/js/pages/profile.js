@@ -9,6 +9,7 @@ import { ProfileCarta } from "../component/ProfileCards";
 import { ProfileNavbar } from "../component/ProfileNav";
 import { FavoriteCarta } from "../component/FavoriteCards";
 import { NewCocktail } from "../component/NewCocktailForm";
+import { BarCarta } from "../component/MyBarCards";
 import "../../styles/profilecard.scss";
 
 export const Account = () => {
@@ -16,6 +17,7 @@ export const Account = () => {
 	useEffect(() => {
 		actions.allCocktailsDescription();
 		actions.fetchnonalcoholicInfo();
+		actions.getMyCocktailsInfo();
 	}, []);
 
 	return (
@@ -44,15 +46,10 @@ export const Account = () => {
 				</Tab>
 				<Tab eventKey="myBar" title="My Bar" className="recipespill">
 					<div className="scroll">
-						{store.favorites.length > 0 ? (
-							store.favorites.map((favorite, i) => {
+						{store.myCocktails.length > 0 ? (
+							store.myCocktails.map((cocktail, i) => {
 								return (
-									<FavoriteCarta
-										key={i}
-										strDrink={favorite.strDrink}
-										strDrinkThumb={favorite.strDrinkThumb}
-										idDrink={favorite.idDrink}
-									/>
+									<BarCarta key={i} name={cocktail.name} image={cocktail.image} id={cocktail.id} />
 								);
 							})
 						) : (

@@ -16,6 +16,7 @@ import injectContext from "./store/appContext";
 
 import { NavBar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { MyCocktailsInfo } from "./pages/mycocktails";
 
 //create your first component
 const Layout = () => {
@@ -32,7 +33,7 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/cocktails/:cocktailId">
+						<Route exact path="/cocktails/:id">
 							<CocktailsInfo />
 						</Route>
 						<Route exact path="/signup">
@@ -52,6 +53,9 @@ const Layout = () => {
 						</Route>
 						<Route excat path="/profile">
 							<Account />
+						</Route>
+						<Route excat path="/mycocktails/:cocktailId">
+							<MyCocktailsInfo />
 						</Route>
 					</Switch>
 					<Footer />

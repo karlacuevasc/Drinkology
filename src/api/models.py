@@ -4,11 +4,11 @@ db = SQLAlchemy()
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(120), unique=True, nullable=False)
+    email = db.Column(db.String(300), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
-    first_name = db.Column(db.String(120), unique=False, nullable=False)
-    last_name = db.Column(db.String(120), unique=False, nullable=False)
-    date = db.Column(db.String(120), unique=False, nullable=False)
+    first_name = db.Column(db.String(300), unique=False, nullable=False)
+    last_name = db.Column(db.String(300), unique=False, nullable=False)
+    date = db.Column(db.String(300), unique=False, nullable=False)
     favorite_cocktails = db.relationship('FavoriteCocktail', backref='user', lazy=True)
     
 
@@ -28,25 +28,26 @@ class User(db.Model):
 
 class Cocktail(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), unique=False, nullable=False)
-    alcohol_content = db.Column(db.String(120), unique=False, nullable=False)
-    first_step = db.Column(db.String(120), unique=False, nullable=False)
-    second_step = db.Column(db.String(120), unique=False, nullable=False)
-    third_step = db.Column(db.String(120), unique=False, nullable=True)
-    fourth_step = db.Column(db.String(120), unique=False, nullable=True)
-    fifth_step = db.Column(db.String(120), unique=False, nullable=True)
-    first_ingredient = db.Column(db.String(120), unique=False, nullable=False)
-    second_ingredient = db.Column(db.String(120), unique=False, nullable=False)
-    third_ingredient = db.Column(db.String(120), unique=False, nullable=False)
-    fourth_ingredient = db.Column(db.String(120), unique=False, nullable=False)
-    fifth_ingredient = db.Column(db.String(120), unique=False, nullable=False)
-    first_measurement = db.Column(db.String(120), unique=False, nullable=False)
-    second_measurement = db.Column(db.String(120), unique=False, nullable=False)
-    third_measurement = db.Column(db.String(120), unique=False, nullable=False)
-    fourth_measurement = db.Column(db.String(120), unique=False, nullable=False)
-    fifth_measurement = db.Column(db.String(120), unique=False, nullable=False)
-    garnish = db.Column(db.String(120), unique=False, nullable=True)
-    glassware = db.Column(db.String(120), unique=False, nullable=False)
+    name = db.Column(db.String(300), unique=False, nullable=True)
+    image = db.Column(db.String(400), unique=False, nullable=True)
+    alcohol_content = db.Column(db.String(300), unique=False, nullable=True)
+    first_step = db.Column(db.String(300), unique=False, nullable=True)
+    second_step = db.Column(db.String(300), unique=False, nullable=True)
+    third_step = db.Column(db.String(300), unique=False, nullable=True)
+    fourth_step = db.Column(db.String(300), unique=False, nullable=True)
+    fifth_step = db.Column(db.String(300), unique=False, nullable=True)
+    first_ingredient = db.Column(db.String(300), unique=False, nullable=True)
+    second_ingredient = db.Column(db.String(300), unique=False, nullable=True)
+    third_ingredient = db.Column(db.String(300), unique=False, nullable=True)
+    fourth_ingredient = db.Column(db.String(300), unique=False, nullable=True)
+    fifth_ingredient = db.Column(db.String(300), unique=False, nullable=True)
+    first_measurement = db.Column(db.String(300), unique=False, nullable=True)
+    second_measurement = db.Column(db.String(300), unique=False, nullable=True)
+    third_measurement = db.Column(db.String(300), unique=False, nullable=True)
+    fourth_measurement = db.Column(db.String(300), unique=False, nullable=True)
+    fifth_measurement = db.Column(db.String(300), unique=False, nullable=True)
+    garnish = db.Column(db.String(300), unique=False, nullable=True)
+    glassware = db.Column(db.String(300), unique=False, nullable=True)
     favorite_cocktails = db.relationship('FavoriteCocktail', backref='cocktail', lazy=True)
    
     def __repr__(self):
@@ -56,6 +57,7 @@ class Cocktail(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "image": self.image,
             "alcohol_content": self.alcohol_content,
             "first_step": self.first_step,
             "second_step": self.second_step,
