@@ -2,7 +2,7 @@ import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
 
 export const ProfileNavbar = () => {
-	const { store, actions } = useContext(Context);
+	const { store } = useContext(Context);
 
 	return (
 		<h1 style={{ textAlign: "center", paddingTop: "15vh", paddingBottom: "5vh", fontSize: "3rem" }}>
