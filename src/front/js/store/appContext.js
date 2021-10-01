@@ -22,12 +22,7 @@ const injectContext = PassedComponent => {
 			})
 		);
 
-		useEffect(() => {
-			state.actions.allCocktailsDescription();
-			state.actions.randomcocktailsInfo();
-			state.actions.fetchalcoholicInfo();
-			state.actions.fetchnonalcoholicInfo();
-		}, []);
+		useEffect(() => {}, []);
 
 		return (
 			<Context.Provider value={state}>

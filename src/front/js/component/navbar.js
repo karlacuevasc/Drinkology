@@ -8,13 +8,13 @@ import { SignOut } from "./signout";
 import "../../styles/navbar.scss";
 
 export const NavBar = () => {
-	const { store, actions } = useContext(Context);
+	const { store } = useContext(Context);
 	const history = useHistory();
 
 	const handleLogOut = () => {
 		localStorage.clear();
-		sessionStorage.clear();
-		history.push("/login");
+		history.push("/");
+		location.reload();
 	};
 
 	return (
@@ -25,37 +25,47 @@ export const NavBar = () => {
 				</Navbar.Brand>
 
 				<Nav className="justify-content-center" activeKey="/home">
-					<Nav.Item className="loginTab pr-3">
-						<Nav.Link href="/library">Library</Nav.Link>
-					</Nav.Item>
+					{!store.activeUser ? (
+						<>
+							<Nav.Item className="loginTab pr-3">
+								<Nav.Link href="/login">Log In</Nav.Link>
+							</Nav.Item>
 
-					<Nav.Item className="loginTab pr-3">
-						<Nav.Link href="/login">Log In</Nav.Link>
-					</Nav.Item>
+							<Nav.Item className="signupTab pr-3">
+								<Nav.Link href="/signup">Sign Up</Nav.Link>
+							</Nav.Item>
 
-					<Nav.Item className="signupTab pr-3">
-						<Nav.Link href="/signup">Sign Up</Nav.Link>
-					</Nav.Item>
+							<Nav.Item>
+								<Nav.Link className="aboutTab pr-3" href="/about">
+									About
+								</Nav.Link>
+							</Nav.Item>
 
-					<Nav.Item>
-						<Nav.Link className="aboutTab pr-3" href="/about">
-							About
-						</Nav.Link>
-					</Nav.Item>
+							<Nav.Item>
+								<Nav.Link href="/contact">Contact</Nav.Link>
+							</Nav.Item>
+						</>
+					) : (
+						<>
+							<Nav.Item>
+								<Nav.Link href="/profile">Profile</Nav.Link>
+							</Nav.Item>
 
-					<Nav.Item>
-						<Nav.Link href="/contact">Contact</Nav.Link>
-					</Nav.Item>
+							<Nav.Item>
+								<Nav.Link className="aboutTab pr-3" href="/about">
+									About
+								</Nav.Link>
+							</Nav.Item>
 
-					<Nav.Item>
-						<Nav.Link href="/profile">Profile</Nav.Link>
-					</Nav.Item>
+							<Nav.Item>
+								<Nav.Link href="/contact">Contact</Nav.Link>
+							</Nav.Item>
 
-					<Nav.Item>
-						<Nav.Link onClick={() => handleLogOut()}>Sign Out</Nav.Link>
-						{/* <Nav.Link onClick={() => actions.handleLogOut()}>Sign Out</Nav.Link> */}
-						{/* <SignOut /> */}
-					</Nav.Item>
+							<Nav.Item>
+								<Nav.Link onClick={() => handleLogOut()}>Sign Out</Nav.Link>
+							</Nav.Item>
+						</>
+					)}
 				</Nav>
 			</Container>
 		</Navbar>

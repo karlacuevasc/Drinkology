@@ -1,16 +1,14 @@
-import { useHistory } from "react-router-dom";
-
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			token: JSON.parse(localStorage.getItem("token")),
+			token: JSON.parse(localStorage.getItem("token")) || [],
 			random: [],
 			cocktails: [],
 			alcoholic: [],
 			nonAlcoholic: [],
 			favorites: JSON.parse(localStorage.getItem("favorites")) || [],
 			filteredCocktails: [],
-			activeUser: []
+			activeUser: localStorage.getItem("activeUser")
 		},
 		actions: {
 			allCocktailsDescription: async () => {
@@ -20,7 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						`${process.env.APIURL}/${process.env.APIKEY}/filter.php?c=Cocktail`
 					);
 					let jsonOfCocktailsDescription = await waitForCocktailsDescription.json();
-					setStore({ alcoholic: jsonOfCocktailsDescription.drinks });
+					setStore({ cocktails: jsonOfCocktailsDescription.drinks });
 				} catch (error) {
 					console.log(error);
 				}
@@ -93,9 +91,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let newStoredFavorites = [];
 					if (storedFavorites !== null) {
 						newStoredFavorites = [...storedFavorites, item];
+					} else {
+						newStoredFavorites = [item];
 					}
-					myFavorites = newStoredFavorites;
-					localStorage.setItem("favorites", JSON.stringify(newStoredFavorites));
+					// myFavorites = newStoredFavorites;
+					setStore({ favorites: newStoredFavorites });
+					localStorage.setItem("favorites", JSON.stringify(getStore().favorites));
 				}
 			},
 
@@ -109,8 +110,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						body: JSON.stringify({ email })
 					});
 					const activeUser = await res.json();
-					setStore({ activeUser: activeUser });
-					sessionStorage.setItem("activeUser", activeUser.first_name);
+					setStore({ activeUser: activeUser.first_name });
+					localStorage.setItem("activeUser", activeUser.first_name);
 				} catch (error) {
 					throw Error("Wrong email or password");
 				}
@@ -127,10 +128,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					if (res.ok) {
 						const token = await res.json();
-						// localStorage.setItem("first_name", JSON.stringify(first_name));
 						localStorage.setItem("token", JSON.stringify(token));
 						console.log("The response is ok", res);
 						getActions().getActiveUser(email);
+						history.push("/profile");
 
 						return true;
 					} else {
@@ -155,12 +156,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return true;
 				}
 			},
-
-			// handleLogOut: () => {
-			// 	localStorage.clear();
-			// 	sessionStorage.clear();
-			// 	history.push("/login");
-			// },
 
 			signup: async (email, password, first_name, last_name, date, setMessageState, history) => {
 				console.log("I am the signup function");
@@ -201,6 +196,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				name,
 				alcohol_content,
 				glassware,
+				garnish,
 				first_step,
 				second_step,
 				third_step,
@@ -217,8 +213,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fourth_measurement,
 				fifth_measurement
 			) => {
-				console.log("I am the signup function");
 				try {
+					if (!name || name === "") throw new Error("Missing Name");
 					const res = await fetch(`${process.env.BACKEND_URL}/cocktail`, {
 						method: "POST",
 						headers: {
@@ -228,6 +224,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							name,
 							alcohol_content,
 							glassware,
+							garnish,
 							first_step,
 							second_step,
 							third_step,
@@ -257,7 +254,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						throw "Something went wrong";
 					}
 				} catch (error) {
-					throw Error("Something went wrong");
+					throw Error(error.message);
 				}
 			}
 		}
