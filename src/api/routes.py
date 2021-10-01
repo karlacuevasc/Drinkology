@@ -143,11 +143,20 @@ def favorite_cocktail():
     if body is None:
         raise APIException("You need to specify the request body as a json object", status_code=400)
 
+    # new_favorite = FavoriteCocktail.query.filter_by(user_id=body['user_id'], cocktail_id=body['cocktail_id']).first()
+
+    # if new_favorite is not None:
+    #     return "", 404
+
     favorite = FavoriteCocktail(user_id=body['user_id'], cocktail_id=body['cocktail_id'])
+
     db.session.add(favorite)
     db.session.commit()
 
-    return jsonify(favorite.serialize()), 200
+    # new_favorite = FavoriteCocktail.query.filter_by(user_id=body['user_id'])
+    # new_favorite = list(map(lambda favorite: favorite.serialize(), new_favorite))
+
+    return jsonify(new_favorite), 200
 
 @api.route('/user/<id>', methods=['DELETE'])
 def remove_user(id):

@@ -307,6 +307,22 @@ export const NewCocktail = () => {
 														</div>
 													</div>
 												</Tab>
+												<Tab eventKey="general" title="General Info">
+													<div>
+														<div className="input-group-prepend" />
+
+														<div className="email form-outline mb-4">
+															<input
+																type="first step"
+																id="typeFirstIngredientX"
+																className="form-control form-control-lg"
+																placeholder="First Step"
+																onChange={e => setFirst_step(e.target.value)}
+																value={first_step}
+															/>
+														</div>
+													</div>
+												</Tab>
 												<Tab eventKey="instructions" title="Instructions">
 													<div>
 														<div className="input-group-prepend" />

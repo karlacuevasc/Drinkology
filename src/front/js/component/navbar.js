@@ -40,7 +40,6 @@ export const NavBar = () => {
 									About
 								</Nav.Link>
 							</Nav.Item>
-
 							<Nav.Item>
 								<Nav.Link href="/contact">Contact</Nav.Link>
 							</Nav.Item>
