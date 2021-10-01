@@ -11,6 +11,7 @@ export const NewCocktail = () => {
 	const [name, setName] = useState("");
 	const [alcohol_content, setAlcohol_content] = useState("");
 	const [glassware, setGlassware] = useState("");
+	const [garnish, setGarnish] = useState("");
 	const [first_step, setFirst_step] = useState("");
 	const [second_step, setSecond_step] = useState("");
 	const [third_step, setThird_step] = useState("");
@@ -26,7 +27,8 @@ export const NewCocktail = () => {
 	const [third_measurement, setThird_measurement] = useState("");
 	const [fourth_measurement, setFourth_measurement] = useState("");
 	const [fifth_measurement, setFifth_measurement] = useState("");
-	const [error, setError] = useState(null);
+	const [cocktail, setCocktail] = useState({});
+	const [formStatus, setFormstatus] = useState({ status: "ready", message: null });
 	const history = useHistory();
 	const [messageState, setMessageState] = useState({
 		isActive: false,
@@ -34,11 +36,13 @@ export const NewCocktail = () => {
 	});
 
 	const handleSubmit = e => {
+		setFormstatus({ status: "pending", message: "Pending..." });
 		e.preventDefault();
 		console.log(
 			name,
 			alcohol_content,
 			glassware,
+			garnish,
 			first_step,
 			second_step,
 			third_step,
@@ -60,6 +64,7 @@ export const NewCocktail = () => {
 				name,
 				alcohol_content,
 				glassware,
+				garnish,
 				first_step,
 				second_step,
 				third_step,
@@ -77,9 +82,9 @@ export const NewCocktail = () => {
 				fifth_measurement,
 				history
 			)
-			.then(data => console.log("data"))
+			.then(data => setFormstatus({ status: "ready", message: null }))
 			.catch(error => {
-				setError(error);
+				setFormstatus({ status: "error", message: error.message });
 				console.log("This is my error", error);
 			});
 	};
@@ -143,6 +148,20 @@ export const NewCocktail = () => {
 															/>
 														</div>
 													</div>
+													<div>
+														<div className="input-group-prepend" />
+
+														<div className="email form-outline mb-4">
+															<input
+																type="garnish"
+																id="typeGarnishX"
+																className="form-control form-control-lg"
+																placeholder="Garnish"
+																onChange={e => setGarnish(e.target.value)}
+																value={garnish}
+															/>
+														</div>
+													</div>
 												</Tab>
 												<Tab eventKey="ingredients" title="Ingredients">
 													<div>
@@ -201,19 +220,89 @@ export const NewCocktail = () => {
 															/>
 														</div>
 													</div>
-												</Tab>
-												<Tab eventKey="general" title="General Info">
 													<div>
 														<div className="input-group-prepend" />
 
 														<div className="email form-outline mb-4">
 															<input
-																type="first step"
-																id="typeFirstIngredientX"
+																type="fifth ingredient"
+																id="typeFifthIngredientX"
 																className="form-control form-control-lg"
-																placeholder="First Step"
-																onChange={e => setFirst_step(e.target.value)}
-																value={first_step}
+																placeholder="Fifth Ingredient"
+																onChange={e => setFifth_ingredient(e.target.value)}
+																value={fifth_ingredient}
+															/>
+														</div>
+													</div>
+												</Tab>
+												<Tab eventKey="measurements" title="Measurements">
+													<div>
+														<div className="input-group-prepend" />
+
+														<div className="email form-outline mb-4">
+															<input
+																type="measurements"
+																id="typeFirstMeasurementX"
+																className="form-control form-control-lg"
+																placeholder="First Measurement"
+																onChange={e => setFirst_measurement(e.target.value)}
+																value={first_measurement}
+															/>
+														</div>
+													</div>
+													<div>
+														<div className="input-group-prepend" />
+
+														<div className="email form-outline mb-4">
+															<input
+																type="measurements"
+																id="typeSecondMeasurementX"
+																className="form-control form-control-lg"
+																placeholder="Second Measurement"
+																onChange={e => setSecond_measurement(e.target.value)}
+																value={second_measurement}
+															/>
+														</div>
+													</div>
+													<div>
+														<div className="input-group-prepend" />
+
+														<div className="email form-outline mb-4">
+															<input
+																type="measurements"
+																id="typeThirdMeasurementX"
+																className="form-control form-control-lg"
+																placeholder="Third Measurement"
+																onChange={e => setThird_measurement(e.target.value)}
+																value={third_measurement}
+															/>
+														</div>
+													</div>
+													<div>
+														<div className="input-group-prepend" />
+
+														<div className="email form-outline mb-4">
+															<input
+																type="measurements"
+																id="typeFourthMeasurementX"
+																className="form-control form-control-lg"
+																placeholder="Fourth Measurement"
+																onChange={e => setFourth_measurement(e.target.value)}
+																value={fourth_measurement}
+															/>
+														</div>
+													</div>
+													<div>
+														<div className="input-group-prepend" />
+
+														<div className="email form-outline mb-4">
+															<input
+																type="measurements"
+																id="typeFifthMeasurementX"
+																className="form-control form-control-lg"
+																placeholder="Fifth Measurement"
+																onChange={e => setFifth_measurement(e.target.value)}
+																value={fifth_measurement}
 															/>
 														</div>
 													</div>
@@ -275,8 +364,28 @@ export const NewCocktail = () => {
 															/>
 														</div>
 													</div>
+													<div>
+														<div className="input-group-prepend" />
+
+														<div className="email form-outline mb-4">
+															<input
+																type="fifth step"
+																id="typeFifthIngredientX"
+																className="form-control form-control-lg"
+																placeholder="Fifth Step"
+																onChange={e => setFifth_step(e.target.value)}
+																value={fifth_step}
+															/>
+														</div>
+													</div>
 												</Tab>
 											</Tabs>
+
+											{formStatus.message && (
+												<Alert variant={formStatus.status === "error" ? "danger" : "info"}>
+													{formStatus.message}
+												</Alert>
+											)}
 
 											<button
 												className="signupButton btn btn-primary btn-lg btn-block mt-5"

@@ -12,8 +12,11 @@ import { NewCocktail } from "../component/NewCocktailForm";
 import "../../styles/profilecard.scss";
 
 export const Account = () => {
-	const { store } = useContext(Context);
-	const [active, setActive] = useState();
+	const { store, actions } = useContext(Context);
+	useEffect(() => {
+		actions.allCocktailsDescription();
+		actions.fetchnonalcoholicInfo();
+	}, []);
 
 	return (
 		<div className="">

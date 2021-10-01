@@ -12,13 +12,10 @@ export const SignIn = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		actions
-			.login(email, password)
-			.then(() => history.push("/profile"))
-			.catch(error => {
-				setError(error);
-				console.log("This is my error", error);
-			});
+		actions.login(email, password, history).catch(error => {
+			setError(error);
+			console.log("This is my error", error);
+		});
 	};
 
 	return (
@@ -75,7 +72,7 @@ export const SignIn = () => {
 							</a>
 						</div>
 					</div>
-					<button className="loginButton btn btn-primary btn-lg btn-block" type="submit">
+					<button href="/profile" className="loginButton btn btn-primary btn-lg btn-block" type="submit">
 						Log In
 					</button>
 				</form>

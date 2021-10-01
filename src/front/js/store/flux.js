@@ -14,13 +14,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			allCocktailsDescription: async () => {
-				const store = getStore();
 				try {
 					let waitForCocktailsDescription = await fetch(
 						`${process.env.APIURL}/${process.env.APIKEY}/filter.php?c=Cocktail`
 					);
 					let jsonOfCocktailsDescription = await waitForCocktailsDescription.json();
-					setStore({ alcoholic: jsonOfCocktailsDescription.drinks });
+					setStore({ cocktails: jsonOfCocktailsDescription.drinks });
 				} catch (error) {
 					console.log(error);
 				}
@@ -36,7 +35,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 			fetchalcoholicInfo: async () => {
-				const store = getStore();
 				try {
 					let waitForAlcoholicCocktails = await fetch(
 						`${process.env.APIURL}/${process.env.APIKEY}/filter.php?a=Alcoholic`
@@ -49,7 +47,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			fetchnonalcoholicInfo: async () => {
-				const store = getStore();
 				try {
 					let waitForNonAlcoholicCocktails = await fetch(
 						`${process.env.APIURL}/${process.env.APIKEY}/filter.php?a=Non_Alcoholic`
@@ -80,22 +77,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			favoritesInfo: item => {
 				let myFavorites = getStore().favorites;
+				console.log("these are my favorites", myFavorites);
 				let itemID = item;
 				if (typeof item !== "string") {
 					itemID = item.idDrink;
 				}
 				let selected = myFavorites.find(element => element.idDrink === itemID);
+				console.log("these are my selected", selected);
 				if (selected) {
 					myFavorites = myFavorites.filter(element => itemID !== element.idDrink);
 					localStorage.setItem("favorites", JSON.stringify(myFavorites));
 				} else {
 					const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
+					console.log("these are my stored", storedFavorites);
 					let newStoredFavorites = [];
 					if (storedFavorites !== null) {
 						newStoredFavorites = [...storedFavorites, item];
+					} else {
+						newStoredFavorites = [item];
 					}
-					myFavorites = newStoredFavorites;
-					localStorage.setItem("favorites", JSON.stringify(newStoredFavorites));
+					// myFavorites = newStoredFavorites;
+					setStore({ favorites: newStoredFavorites });
+					localStorage.setItem("favorites", JSON.stringify(getStore().favorites));
 				}
 			},
 
@@ -127,10 +130,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					if (res.ok) {
 						const token = await res.json();
-						// localStorage.setItem("first_name", JSON.stringify(first_name));
 						localStorage.setItem("token", JSON.stringify(token));
 						console.log("The response is ok", res);
 						getActions().getActiveUser(email);
+						history.push("/profile");
 
 						return true;
 					} else {
@@ -180,7 +183,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						localStorage.setItem("token", JSON.stringify(token));
 						console.log("The response is ok", res);
 						getActions().getActiveUser(email);
-						history.push("/profile");
 
 						return true;
 					} else {
@@ -195,6 +197,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				name,
 				alcohol_content,
 				glassware,
+				garnish,
 				first_step,
 				second_step,
 				third_step,
@@ -211,8 +214,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fourth_measurement,
 				fifth_measurement
 			) => {
-				console.log("I am the signup function");
 				try {
+					if (!name || name === "") throw new Error("Missing Name");
 					const res = await fetch(`${process.env.BACKEND_URL}/cocktail`, {
 						method: "POST",
 						headers: {
@@ -222,6 +225,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							name,
 							alcohol_content,
 							glassware,
+							garnish,
 							first_step,
 							second_step,
 							third_step,
@@ -251,7 +255,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						throw "Something went wrong";
 					}
 				} catch (error) {
-					throw Error("Something went wrong");
+					throw Error(error.message);
 				}
 			}
 		}

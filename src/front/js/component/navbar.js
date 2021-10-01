@@ -8,7 +8,7 @@ import { SignOut } from "./signout";
 import "../../styles/navbar.scss";
 
 export const NavBar = () => {
-	const { store, actions } = useContext(Context);
+	const { store } = useContext(Context);
 	const history = useHistory();
 
 	const handleLogOut = () => {
@@ -27,22 +27,19 @@ export const NavBar = () => {
 				<Nav className="justify-content-center" activeKey="/home">
 					{!store.activeUser ? (
 						<>
-							{/* <Nav.Item className="loginTab pr-3">
-								<Nav.Link href="/library">Library</Nav.Link>
-							</Nav.Item> */}
 							<Nav.Item className="loginTab pr-3">
 								<Nav.Link href="/login">Log In</Nav.Link>
 							</Nav.Item>
 							<Nav.Item className="signupTab pr-3">
 								<Nav.Link href="/signup">Sign Up</Nav.Link>
 							</Nav.Item>{" "}
-							<Nav.Item>
-								<Nav.Link className="aboutTab pr-3" href="/about">
-									About
-								</Nav.Link>
+							<Nav.Item className="aboutTab pr-3">
+								<Nav.Link href="/about">About</Nav.Link>
 							</Nav.Item>
 							<Nav.Item>
-								<Nav.Link href="/contact">Contact</Nav.Link>
+								<Nav.Link className="contactTab pl-0" href="/contact">
+									Contact
+								</Nav.Link>
 							</Nav.Item>
 						</>
 					) : (
@@ -52,16 +49,19 @@ export const NavBar = () => {
 							</Nav.Item>
 
 							<Nav.Item>
-								<Nav.Link onClick={() => handleLogOut()}>Sign Out</Nav.Link>
-							</Nav.Item>
-							<Nav.Item>
 								<Nav.Link className="aboutTab pr-3" href="/about">
 									About
 								</Nav.Link>
 							</Nav.Item>
 
 							<Nav.Item>
-								<Nav.Link href="/contact">Contact</Nav.Link>
+								<Nav.Link className="contactTab pl-0" href="/contact">
+									Contact
+								</Nav.Link>
+							</Nav.Item>
+
+							<Nav.Item>
+								<Nav.Link onClick={() => handleLogOut()}>Sign Out</Nav.Link>
 							</Nav.Item>
 						</>
 					)}

@@ -23,8 +23,8 @@ export const Register = () => {
 		e.preventDefault();
 		console.log(email, password, first_name, last_name, date);
 		actions
-			.signup(email, password, first_name, last_name, date, setMessageState, history)
-			.then(data => console.log("data"))
+			.signup(email, password, first_name, last_name, date, setMessageState)
+			.then(data => history.push("/profile"))
 			.catch(error => {
 				setError(error);
 				console.log("This is my error", error);
