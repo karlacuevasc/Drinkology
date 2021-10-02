@@ -19,7 +19,7 @@ export const CocktailsInfo = props => {
 		setCurrentCocktail(await actions.getCocktailByID(params.cocktailId));
 	}, []);
 	//We always need to check for null, for all variables that are being set by and API call//
-	if (currentCocktail === null) {
+	if (currentCocktail === null || currentCocktail === undefined) {
 		return <Image className="mx-auto d-block" src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" />;
 	}
 	return (
