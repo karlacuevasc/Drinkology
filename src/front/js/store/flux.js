@@ -13,8 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			getMyCocktailsInfo: async () => {
-				const characterEndPoint = "https://3001-red-stoat-l183e0fb.ws-us18.gitpod.io/api/cocktails";
-				fetch(characterEndPoint)
+				await fetch(`${process.env.BACKEND_URL}/cocktails`)
 					.then(response => response.json())
 					.then(data => {
 						setStore({
