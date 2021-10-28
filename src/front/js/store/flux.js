@@ -32,17 +32,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					throw new Error(error.message);
 				}
 			},
-			// getMyCocktailByID: cocktailID => {
-			// 	const cocktailEndPoint = `https://3001-red-stoat-l183e0fb.ws-us18.gitpod.io/api/cocktail/${cocktailID}`;
-			// 	fetch(cocktailEndPoint)
-			// 		.then(response => response.json())
-			// 		.then(data => {
-			// 			setStore({
-			// 				myCocktails: data
-			// 			});
-			// 		})
-			// 		.then(() => console.log(getStore().myCocktails));
-			// },
+
 			allCocktailsDescription: async () => {
 				try {
 					let waitForCocktailsDescription = await fetch(
