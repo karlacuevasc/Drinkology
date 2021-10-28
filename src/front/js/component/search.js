@@ -21,7 +21,7 @@ export const Search = () => {
 	useEffect(
 		() => {
 			if (searchParam === "") {
-				actions.searchCocktailsInfo("");
+				actions.clearFilteredCocktails("");
 			}
 		},
 		[searchParam]

@@ -73,15 +73,17 @@ export const Account = () => {
 							);
 						})}
 					</div>
-					<Row>
-						<Col>
-							<h1 className="text-center p-5" style={{ fontSize: "4rem" }}>
-								Alcoholic
-							</h1>
-						</Col>
-					</Row>
+
 					{store.filteredCocktails.length === 0 && (
 						<>
+							<Row>
+								<Col>
+									<h1 className="text-center p-5" style={{ fontSize: "4rem" }}>
+										Alcoholic
+									</h1>
+								</Col>
+							</Row>
+
 							<div className="scroll">
 								{store.cocktails.map((cocktail, i) => {
 									return (

@@ -90,11 +90,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			searchCocktailsInfo: searchParam => {
 				const cocktailStore = getStore().cocktails;
-				const alcoholicStore = getStore().alcoholic;
 				const filteredName = cocktailStore.filter(cocktail =>
 					cocktail.strDrink.toLowerCase().includes(searchParam.toLowerCase())
 				);
 				setStore({ filteredCocktails: filteredName });
+			},
+
+			clearFilteredCocktails: searchParam => {
+				let filteredCocktailStore = getStore().filteredCocktails;
+				let clearArray = (filteredCocktailStore = []);
+				setStore({ filteredCocktails: clearArray });
 			},
 
 			getCocktailByID: async cocktailID => {
