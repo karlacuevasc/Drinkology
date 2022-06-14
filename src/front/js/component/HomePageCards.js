@@ -5,7 +5,7 @@ import Iphone from "../../img/on-the-go.jpeg";
 import Share from "../../img/share-with-friends.jpeg";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import "../../styles/cards.scss";
+import "../../styles/cards.css";
 
 export const Carta = () => {
 	return (

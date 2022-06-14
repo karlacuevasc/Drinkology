@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import LogoWhite from "../../img/logo(white).png";
 import { Container } from "react-bootstrap";
-import "../../styles/footer.scss";
+import "../../styles/footer.css";
 
 export const Footer = () => {
 	return (
@@ -13,7 +13,7 @@ export const Footer = () => {
 				<div className="text-white-small">
 					<Row>
 						<Col sm={4}>
-							<div clasName="flex-column justify-content-between">
+							<div className="flex-column justify-content-between">
 								<img src={LogoWhite} className="logo" />
 							</div>
 						</Col>

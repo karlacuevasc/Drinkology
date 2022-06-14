@@ -1,18 +1,13 @@
 import React, { useContext, useEffect, Component } from "react";
 import { Context } from "../store/appContext";
 import { Drink } from "../component/LibraryCards";
-import { Button } from "react-bootstrap";
+import { Button, Row, Col, Image, Jumbotron } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { PropTypes } from "prop-types";
 import { CocktailsRecipeCard } from "./cocktails";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Image } from "react-bootstrap";
-import { Jumbotron } from "react-bootstrap";
 import Miami from "../../img/miami.jpeg";
-
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../styles/library.scss";
+import "../../styles/library.css";
 
 export const Library = props => {
 	const { store } = useContext(Context);

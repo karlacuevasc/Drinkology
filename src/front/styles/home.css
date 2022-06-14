@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,700&family=Lora:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-// @import url('~aos/src/sass/_animations.scss');
-// @import url('~aos/src/sass/_easing.scss');
+/* // @import url('~aos/src/sass/_animations.scss');
+// @import url('~aos/src/sass/_easing.scss'); */
 
 body{
-    // background-image: url(https://miro.medium.com/max/1000/1*y-_byCrjIpAhg0SrHjIRTg.jpeg);
-    // color: white;
+    /* // background-image: url(https://miro.medium.com/max/1000/1*y-_byCrjIpAhg0SrHjIRTg.jpeg);
+    // color: white; */
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow-x:hidden;
 }
 
-// Style for Jumbotron
+/* // Style for Jumbotron */
 
 .jumbotron{
-    // background-image: url("../img/cocktail4.jpg");
+    /* // background-image: url("../img/cocktail4.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -21,7 +21,7 @@ body{
 
 }
 
-// .display-2{
+/* // .display-2{
 //     color: white;
 //     font-size: 55px;
 //     text-align:inherit;
@@ -44,7 +44,7 @@ body{
 //     transform: translate(-50%, -50%);
 
  
-// }
+// } */
 
 .first-title{
     font-size: 2rem;
@@ -67,18 +67,18 @@ body{
     transition-duration: 0.3s;
 }
 
-// .navbar-toggler{
+/* // .navbar-toggler{
 //     background: black;
 //     color: white;
 // }
 
 // .navbar-toggler-icon{
 //     background: white;
-// }
+// } */
 
 .m-auto{
-    // border: 2px solid #92a39a;
-    // box-shadow: 10px 5px 5px #b97747;
+    /* // border: 2px solid #92a39a;
+    // box-shadow: 10px 5px 5px #b97747; */
     background-color: grey;
 
 }
@@ -119,7 +119,7 @@ body{
     width: 35em;
 }
 
-// Color for Account
+/* // Color for Account */
 .account-color {
     background:#3b302a;
 }

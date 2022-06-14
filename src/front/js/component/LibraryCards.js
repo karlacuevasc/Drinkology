@@ -5,7 +5,7 @@ import { Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
-import "../../styles/librarycards.scss";
+import "../../styles/librarycards.css";
 
 export const Drink = props => {
 	const { store, actions } = useContext(Context);

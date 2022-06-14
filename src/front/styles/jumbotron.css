@@ -1,7 +1,7 @@
 .drink{
   background: linear-gradient(217deg, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555) 70.71%),
   url("../img//bartender.jpeg");
-    // background-image: url("../img/Abbracci.png");
+    /* // background-image: url("../img/Abbracci.png"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

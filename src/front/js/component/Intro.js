@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Container } from "react-bootstrap";
 import { Jumbotron } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../styles/jumbotron.scss";
+import "../../styles/jumbotron.css";
 
 export const Banner = () => {
 	return (

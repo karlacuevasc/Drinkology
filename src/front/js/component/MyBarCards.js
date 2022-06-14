@@ -4,7 +4,7 @@ import { Card, Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import PropTypes from "prop-types";
-import "../../styles/profilecard.scss";
+import "../../styles/profilecard.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const BarCarta = props => {

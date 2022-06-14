@@ -1,16 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Container, Tab } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Tabs } from "react-bootstrap";
+import { Container, Tab, Row, Col, Tabs } from "react-bootstrap";
 import { Search } from "../component/search";
 import { ProfileCarta } from "../component/ProfileCards";
 import { ProfileNavbar } from "../component/ProfileNav";
 import { FavoriteCarta } from "../component/FavoriteCards";
 import { NewCocktail } from "../component/NewCocktailForm";
 import { BarCarta } from "../component/MyBarCards";
-import "../../styles/profilecard.scss";
+import "../../styles/profilecard.css";
 
 export const Account = () => {
 	const { store, actions } = useContext(Context);

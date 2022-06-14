@@ -5,7 +5,7 @@ import { Nav } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { SignOut } from "./signout";
-import "../../styles/navbar.scss";
+import "../../styles/navbar.css";
 
 export const NavBar = () => {
 	const { store } = useContext(Context);

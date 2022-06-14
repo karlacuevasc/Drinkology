@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
 import { SignIn } from "../component/Sign";
-import "../../styles/login.scss";
+import "../../styles/login.css";
 
 export const Login = () => {
 	return (

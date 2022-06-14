@@ -4,7 +4,7 @@ import { Carta, Carta3 } from "../component/HomePageCards";
 import { Banner } from "../component/Intro";
 import { DrinkologyLogo } from "../component/logo";
 import { Library } from "./library";
-import "../../styles/cards.scss";
+import "../../styles/cards.css";
 
 export const Home = () => {
 	const { actions } = useContext(Context);

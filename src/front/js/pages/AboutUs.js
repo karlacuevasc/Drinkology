@@ -1,13 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Karla } from "../component/AboutUsCards";
-import { Luis } from "../component/AboutUsCards";
-import { Jumbotron } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Image } from "react-bootstrap";
+import { Karla, Luis } from "../component/AboutUsCards";
+import { Jumbotron, Row, Col, Image } from "react-bootstrap";
 import Miami from "../../img/miami.jpeg";
-import "../../styles/aboutus.scss";
+import "../../styles/aboutus.css";
 
 export const Aboutus = () => {
 	const { store, actions } = useContext(Context);

@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import { Card } from "react-bootstrap";
-import { Image } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Image, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../../styles/cocktails.scss";
+import "../../styles/cocktails.css";
 import { Drink } from "../component/LibraryCards";
 
 export const CocktailsInfo = props => {

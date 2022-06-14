@@ -2,13 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import ScriptTag from "react-script-tag";
 import { Context } from "../store/appContext";
-import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
-import { Col } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Button from "react-bootstrap/Button";
-import "../../styles/contact.scss";
+import { Container, Row, Col, Form, Jumbotron, Button } from "react-bootstrap";
+import "../../styles/contact.css";
 
 export const Contact = () => {
 	const { store, actions } = useContext(Context);

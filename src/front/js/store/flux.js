@@ -44,8 +44,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error);
 				}
 			},
-			randomcocktailsInfo: () => {
-				const randomEndPoint = `${process.env.APIURL}/${process.env.APIKEY}/randomselection.php`;
+			randomcocktailsInfo: async () => {
+				const randomEndPoint = await `${process.env.APIURL}/${process.env.APIKEY}/randomselection.php`;
 				fetch(randomEndPoint)
 					.then(response => response.json())
 					.then(data => {

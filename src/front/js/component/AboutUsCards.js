@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import Lucho from "../../img/luis.jpg";
 import KC from "../../img/karla.jpg";
-import "../../styles/cards.scss";
+import "../../styles/cards.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export const Karla = () => {

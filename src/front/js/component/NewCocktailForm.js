@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { Tabs } from "react-bootstrap";
-import { Tab } from "react-bootstrap";
-import { Alert } from "react-bootstrap";
-import "../../styles/signup.scss";
+import { Tabs, Tab, Alert, Button } from "react-bootstrap";
+import "../../styles/signup.css";
 
 export const NewCocktail = () => {
 	const { store, actions } = useContext(Context);
@@ -405,11 +403,13 @@ export const NewCocktail = () => {
 												</Alert>
 											)}
 
-											<button
-												className="signupButton btn btn-primary btn-lg btn-block mt-5"
+											<Button
+												variant="primary"
+												size="lg"
+												className="signupButton mt-5"
 												type="submit">
 												Create Cocktail
-											</button>
+											</Button>
 											<br />
 										</form>
 									</div>

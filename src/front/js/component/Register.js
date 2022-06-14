@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Alert from "react-bootstrap/Alert";
-import "../../styles/signup.scss";
+import "../../styles/signup.css";
 
 export const Register = () => {
 	const { store, actions } = useContext(Context);

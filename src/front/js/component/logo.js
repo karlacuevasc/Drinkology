@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Image } from "react-bootstrap";
 import Logo from "../../img/logo.png";
 import { Container } from "react-bootstrap";
-import "../../styles/logo.scss";
+import "../../styles/logo.css";
 
 export const DrinkologyLogo = () => {
 	return (

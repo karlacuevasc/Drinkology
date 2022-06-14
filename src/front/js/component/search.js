@@ -1,12 +1,8 @@
 import React, { useState, useEffect, useContext, Component } from "react";
 import { Context } from "../store/appContext";
-import { Card } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import { Form } from "react-bootstrap";
-import { FormControl } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../../styles/profilecard.scss";
-import "../../styles/search.scss";
+import { Card, Button, Form, FormControl } from "react-bootstrap";
+import "../../styles/profilecard.css";
+import "../../styles/search.css";
 
 export const Search = () => {
 	const { actions, store } = useContext(Context);
